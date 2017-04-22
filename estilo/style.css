@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	overflow:hidden; /* Eliminamos errores de float */
+	background:#111068;
+}
+ 
+.wrapper {
+	margin:auto; /* Centramos los elementos */
+	overflow:hidden; /* Eliminamos errores de float */
+}
+ 
+header .logo {
+	margin-left: 20px;
+	font-size:95px;
+	line-height:110px;
+	float:left;
+}
+
+div#cuerpo{
+	height: 500px;
+	width: 100%;
+	background: #54A035
+}
+
+nav{
+	float: left;
+  	width: 35%;/* Ancho del menú */
+	text-align: center;
+}
+nav ul{
+	list-style: none; /* Eliminamos el puntito negro */
+    display: block;
+}
+nav ul li {
+    float: left; /* Alineamos los botones del menú */
+    margin: 0 5px; /* Distancia de separación entre botones */
+}
+
+nav li a {
+	text-decoration: none; /* Quitamos el subrayado de los enlaces */
+    font-size: 15px; /* Tamaño del texto del menú */
+    color: #ffffff; /* Color del texto */
+    padding: 3px 10px; /* Establecemos ancho y alto de los botones */
+    cursor: pointer;
+	line-height: 50px;
+	font-family: verdana;
+    font-weight: bold;
+
+}
+
+div#registro a{
+	text-decoration: none; /* Quitamos el subrayado de los enlaces */
+    font-size: 15px; /* Tamaño del texto del menú */
+    color: yellow; /* Color del texto */
+	padding: 3px 10px; /* Establecemos ancho y alto de los botones */
+    cursor: pointer;
+	line-height: 50px;
+	font-family: verdana;
+    font-weight: bold;
+	border-right: 1px solid yellow;
+}
+
+.linea{
+	border-left: 1px solid yellow;
+}
+
+footer
+{
+	float: left;
+	width: 100%;
+	height: 60px;
+	background: #9A729B;
+}
