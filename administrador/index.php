@@ -108,7 +108,7 @@ function respuestaHTTP ()
 						<div class="row">
 							<div class="col-sm-6 col-left-topbar">
 								<div class="left-topbar">
-									Compra y venda sus servicios, inicia sesión... 
+									Compra y venda sus servicios, inicia sesión ahora... 
 									<a href="#"><i class="fa fa-long-arrow-right"></i></a>
 								</div>
 							</div>
@@ -256,8 +256,8 @@ function respuestaHTTP ()
 							<div class="main-content">
 								<div class="commerce commerce-account">
 									<h2 class="commerce-account-heading">Inicio de Sesión</h2>
-									<form class="login">
-										<div class="login form-row form-row-wide">
+									<div class="login">
+										<div class="form-row form-row-wide">
 											<label for="login">
 												Usuario <span class="required">*</span>
 											</label>
@@ -271,7 +271,7 @@ function respuestaHTTP ()
 											
 											<button class="btn btn-outline rounded" onclick="enviarHTTP()">Entrar</button>
 										</div>
-									</form>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -55,9 +55,15 @@ $tipouser = $_SESSION["tipouser"];
             <div class="row">
               <div class="col-sm-6 col-left-topbar">
                 <div class="left-topbar">
-                  Administración 
-                  <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                   Administración
+                  <a href="#"><i class="fa fa-long-arrow-right"></i></a>&nbsp;
+                  Salir
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                 </div>
+                
+                   
+                
+                
               </div>
               <div class="col-sm-6 col-right-topbar">
              
@@ -89,17 +95,37 @@ $tipouser = $_SESSION["tipouser"];
                       <nav class="collapse navbar-collapse primary-navbar-collapse">
 
                         <ul class="nav navbar-nav primary-nav">
+                    
+                          <?php
+                          session_start();
+                          $idtipo=$_SESSION["idtipo"];
+                          $login=$_SESSION["login"];
+                          ?>
 
-
+                          <?php
+                          session_start();
+                          $usuario = $_SESSION["s_username"];
+                          $tipouser = $_SESSION["tipouser"];
+                          ?>
                         <? echo $login; ?>&nbsp;&nbsp;&nbsp;&nbsp;
                           <li class="current-menu-item menu-item-has-children dropdown">
-                            <a href="menu_mantenimiento.php" target="centro1" class="dropdown-hover">
-                              <span class="underline">Mantenimiento</span> <span class="caret"></span>
+                            <a href="categoria/todos_categoria.php" target="centro1" class="dropdown-hover">
+                              <span class="underline">Categoría</span> <span class="caret"></span>
+                            </a>
+                          </li>
+                           <li class="current-menu-item menu-item-has-children dropdown">
+                            <a href="ciudad/todos_ciudad.php" target="centro1" class="dropdown-hover">
+                              <span class="underline">Ciudad</span> <span class="caret"></span>
+                            </a>
+                          </li>
+                           <li class="current-menu-item menu-item-has-children dropdown">
+                            <a href="estado/todos_estados.php" target="centro1" class="dropdown-hover">
+                              <span class="underline">Estados</span> <span class="caret"></span>
                             </a>
                           </li>
                           <li class="current-menu-item menu-item-has-children dropdown">
-                            <a href="logout.php" class="dropdown-hover">
-                              <span class="underline">Salir</span> <span class="caret"></span>
+                            <a href="super_usuario/todo_usuario.php" target="centro1" class="dropdown-hover">
+                              <span class="underline">Usuarios</span> <span class="caret"></span>
                             </a>
                           </li>
                         </ul>
@@ -115,14 +141,14 @@ $tipouser = $_SESSION["tipouser"];
           </div>
         </div>
       </header>
+      
 
-<div class="container">
+     
+<div class="container" height="600px">
   
 <iframe name="centro1" width="1024px" scrolling="no" frameborder="0"></iframe>
 
 </div>
-
-
     <script type='text/javascript' src='../js/jquery.js'></script>
     <script type='text/javascript' src='../js/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='../js/easing.min.js'></script>

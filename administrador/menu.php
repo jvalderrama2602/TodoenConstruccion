@@ -5,7 +5,7 @@ $login=$_SESSION["login"];
 ?>
 <html>
 <head>
-<title>MENU</title>
+<title>Menu</title>
 
 </head>
 
