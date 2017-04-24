@@ -1,8 +1,28 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <title>Administración</title>
+
+    <link rel="shortcut icon" href="../images/favicon.ico">
+
+    <link rel='stylesheet' href='../css/settings.css' type='text/css' media='all'/>
+
+    <link rel='stylesheet' href='../css/bootstrap.min.css' type='text/css' media='all'/>
+
+    <link rel='stylesheet' href='../css/font-awesome.min.css' type='text/css' media='all'/>
+
+    <link rel='stylesheet' href='../css/elegant-icon.css' type='text/css' media='all'/>
+
+    <link rel='stylesheet' href='../css/style.css' type='text/css' media='all'/>
+
+    <link rel='stylesheet' href='../css/commerce.css' type='text/css' media='all'/>
+
 </head>
 
 <body>
@@ -45,5 +65,89 @@ while ($query_result = $result2->fetch_array())
 <table>
 	<tr><td><a href="../categoria/agregar_categoria.php">AGREGAR CATEGORIA</a></td></tr>
 </table>
+
+
+	<div id="wrapper" class="wide-wrap">
+			<div class="offcanvas-overlay"></div>
+			
+		
+			<div class="content-container">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="main-content">
+								
+
+								<div class="commerce">
+									<form>
+										<table class="table shop_table cart">
+											<thead>
+												<tr>
+													<th class="product-remove hidden-xs">Acción</th>
+													<th class="product-name">Código</th>
+													<th class="product-price text-center">Nombre</th>
+													<th class="product-quantity text-center">Status</th>
+													<th class="product-subtotal text-center hidden-xs"></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="cart_item">
+													<td class="product-remove hidden-xs">
+														<a href="#" class="remove" title="Remove this item">&times;</a>
+													</td>
+													
+													<td class="product-subtotal hidden-xs text-center">
+														<span class="amount">01</span>
+													</td>
+													<td class="product-name">
+														<a href="shop-detail-1.html">Codigo de Categoria</a>
+														<dl class="variation">
+			
+													</td>
+													<td class="product-price text-center">
+														<span class="amount">Aqui va el status</span>
+													</td>
+													<td class="product-quantity text-center">
+														<div class="quantity">
+															
+														</div>
+													</td>
+													
+												</tr>
+											</tbody>
+										</table>
+									</form>
+							
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+ <script type='text/javascript' src='../js/jquery.js'></script>
+
+    <script type='text/javascript' src='../js/jquery-migrate.min.js'></script>
+
+    <script type='text/javascript' src='../js/easing.min.js'></script>
+
+    <script type='text/javascript' src='../js/bootstrap.min.js'></script>
+
+    <script type='text/javascript' src='../js/superfish-1.7.4.min.js'></script>
+
+    <script type='text/javascript' src='../js/script.js'></script>
+
+
+
 </body>
 </html>
