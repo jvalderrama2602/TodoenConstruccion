@@ -1,6 +1,5 @@
 <footer>
 
-	Footer1234
 	
 
 </footer>

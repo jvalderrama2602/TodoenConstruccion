@@ -29,7 +29,7 @@ include('header.php');
 
 <div id="compra_venta" >
 	
-	<div id='venta' onClick="window.location ='venta.php'">
+	<div id='venta' onClick="window.location ='venta10.php'">
 	<center>
 		<h3>Venta</h3>
 		<?
