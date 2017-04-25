@@ -34,37 +34,7 @@ include_once('../../conexion/conexion.php');
 	$result2 = $db->query($sql2);
 ?>
 
-<table align="center" width="500px" border="1">
-<tr>
-	<td align="center" colspan="4">CATEGORIA</td>
-</tr>
-<tr>
-	<td>CODIGO</td><td>NOMBRE</td><td>SUSPENDIDO</td><td>ACCION</td>
-</tr>
-<?	
-while ($query_result = $result2->fetch_array())
-{
-	$idestado= $query_result['idcategoria'];
-	$nombre_estado= $query_result['nombre_categoria'];
-	$suspendido= $query_result['suspendido_categoria'];
-	
-	echo "<tr> \n";
-	echo "<td>$idestado</td> \n";
-	echo "<td>$nombre_estado</td> \n";
-	echo "<td>$suspendido</td> \n";
-	
-?>
-	<td align="center">
-    	<a href="modificar_usuarios.php?codigo=+<?=$idestado;?>" target="_blank" onClick="window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;"><img src="../imagenes/modificar.png" title='MODIFICAR CATEGORIA' width='20' class='linkboton'/></a>
-    </td></tr>
-<?
-}
-?>
-</table>
 
-<table>
-	<tr><td><a href="../categoria/agregar_categoria.php">AGREGAR CATEGORIA</a></td></tr>
-</table>
 
 
 	<div id="wrapper" class="wide-wrap">
@@ -91,29 +61,45 @@ while ($query_result = $result2->fetch_array())
 												</tr>
 											</thead>
 											<tbody>
-												<tr class="cart_item">
-													<td class="product-remove hidden-xs">
-														<a href="#" class="remove" title="Remove this item">&times;</a>
-													</td>
-													
-													<td class="product-subtotal hidden-xs text-center">
-														<span class="amount">01</span>
-													</td>
-													<td class="product-name">
-														<a href="shop-detail-1.html">Codigo de Categoria</a>
-														<dl class="variation">
-			
-													</td>
-													<td class="product-price text-center">
-														<span class="amount">Aqui va el status</span>
-													</td>
-													<td class="product-quantity text-center">
-														<div class="quantity">
-															
-														</div>
-													</td>
-													
-												</tr>
+											
+
+
+															<?	
+															while ($query_result = $result2->fetch_array())
+															{
+																$idestado= $query_result['idcategoria'];
+																$nombre_estado= $query_result['nombre_categoria'];
+																$suspendido= $query_result['suspendido_categoria'];
+																
+																echo "<tr class='cart_item'> \n
+																<td class='product-remove hidden-xs'>\n
+																<a href='#' class='remove' title='Remove this item'>&times;</a>\n
+																</td>"\n;
+
+
+																echo "<td class='product-subtotal hidden-xs text-center'>\n
+																	<span class='amount'>$idestado</span>\n
+																	</td> \n";
+																echo "<td class='product-name'> \n
+																	<a href='#''>$nombre_estado</a> \n
+																	<dl class='variation'> \n
+																	</td> \n";
+																echo "<td class='product-price text-center'>\n
+																	<span class='amount'>$suspendido</span>\n
+																	</td> \n";
+																
+															?>
+																<td class="product-quantity text-center">
+																	<div class="quantity">
+																		<a href="modificar_usuarios.php?codigo=+<?=$idestado;?>" target="_blank" onClick="window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;">Editar</a>
+																	</div>
+																</td>												
+															</tr>
+															<?
+															}
+															?>
+
+								
 											</tbody>
 										</table>
 									</form>
@@ -128,7 +114,9 @@ while ($query_result = $result2->fetch_array())
 
 
 
-
+<table>
+	<tr><td><a href="../categoria/agregar_categoria.php">AGREGAR CATEGORIA</a></td></tr>
+</table>
 
 
 
