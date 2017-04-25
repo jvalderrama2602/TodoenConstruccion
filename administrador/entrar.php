@@ -351,7 +351,7 @@ include_once('../conexion/conexion.php');
 
                                 <td class='product-remove hidden-xs'>\n
 
-                                <a href='#' class='remove' title='Remove this item'>&times;</a>\n
+                                <a href='modificar_usuarios.php?codigo=+<?=$idestado;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Remove this item'>&times;</a>\n
 
                                 </td>";
 
@@ -381,17 +381,7 @@ include_once('../conexion/conexion.php');
 
                                 
 
-                              ?>
-
-                                <td class="product-quantity text-center">
-
-                                  <div class="quantity">
-
-                                    <a href="modificar_usuarios.php?codigo=+<?=$idestado;?>" target="_blank" onClick="window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;">Editar</a>
-
-                                  </div>
-
-                                </td>                       
+                              ?>        
 
                               </tr>
 
@@ -867,13 +857,9 @@ include_once('../conexion/conexion.php');
     div.style.display='';
     break;
     default:
-    aler("alert");
-
-       
+    aler("alert");     
     }
-
 }
-
     </script>
 
 
@@ -886,7 +872,7 @@ include_once('../conexion/conexion.php');
 
 
 
-
+  
 
     <script type='text/javascript' src='../js/jquery.js'></script>
 

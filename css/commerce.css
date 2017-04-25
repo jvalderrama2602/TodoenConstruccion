@@ -3808,6 +3808,7 @@ textarea.commerce .quantity input.qty {
 .commerce table.cart td {
   vertical-align: middle;
   font-size: 1em;
+  text-align: center;
 }
 @media (max-width: 480px) {
   .commerce table.cart th,

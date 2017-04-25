@@ -300,6 +300,7 @@ table {
 .main-content table > colgroup + thead > tr:first-child > td,
 .main-content table > thead:first-child > tr:first-child > td {
   border-top: 0;
+  text-align: center;
 }
 .main-content table > tbody + tbody {
   border-top: 1px solid #dedede;
