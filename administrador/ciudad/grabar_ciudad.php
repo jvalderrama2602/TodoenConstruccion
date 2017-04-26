@@ -17,7 +17,7 @@ $nombre=strtoupper($_GET['nombre']);
 	{  $id='';  }
 	else
 	{
-		$query = "INSERT INTO ciudad (nombre_ciudad,estado_idestado,mantenimiento_usuario_idmantenimiento_usuario,login_usuario,suspendido) VALUES('$nombre','$estado','$idusuario','$login','')";
+		$query = "INSERT INTO ciudad (nombre_ciudad,estado_idestado,suspendido) VALUES('$nombre','$estado','')";
 		mysqli_query($db, $query);
 	
 		$id=mysqli_insert_id($db);

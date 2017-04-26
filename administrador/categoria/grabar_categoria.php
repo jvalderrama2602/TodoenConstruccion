@@ -16,7 +16,7 @@ $nombre=strtoupper($_GET['usuario']);
 	{  $id='';  }
 	else
 	{
-		$query = "INSERT INTO categoria (nombre_categoria,suspendido_categoria,mantenimiento_usuario_idmantenimiento_usuario,login_usuario) VALUES('$nombre','','$idusuario','$login')";
+		$query = "INSERT INTO categoria (nombre_categoria,suspendido_categoria) VALUES('$nombre','')";
 		mysqli_query($db, $query);
 	
 		$id=mysqli_insert_id($db);
