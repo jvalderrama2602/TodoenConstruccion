@@ -785,23 +785,6 @@ include_once('../conexion/conexion.php');
                               ?>                
 
 
-
-
-
-
-
-
-                       <!-- <tr>
-                          <td id="mostrarcat" colspan="6" class="actions">
-                            <div class="coupon">
-                              <label for="coupon_code">Nombre de la Categoría:</label> 
-                              <input type="text" name="nombre" class="input-text" id="nombre" value="" placeholder="Ingrese Nombre de Categoría" onkeypress="return validar(event)"/> 
-                               
-                              <input type="button" class="button rounded" name="Grabar" value="Grabar" onclick="enviarHTTP()"/>
-                            </div>
-                            <!- - <input type="submit" class="button update-cart-button rounded" name="update_cart" value="Update Cart"/>- ->
-                          </td>
-                        </tr>-->
                       </tbody>
 
 
@@ -826,7 +809,7 @@ include_once('../conexion/conexion.php');
 
 
 
-                            <form id="mostrarcat" name="formulario_usuario">
+                     <!--       <form id="mostrarcat" name="formulario_usuario">
                             <table width="385" align="center">
                             <tr id="x1" style="display: none"><td colspan="2">El Estado Ya Existe</td></tr>
                             <tr id="x2" style="display: none"><td colspan="2">El Estado Se Registro Correctamente</td></tr>
@@ -853,11 +836,11 @@ include_once('../conexion/conexion.php');
                                 div=document.getElementById("mostrarcat"); 
                                 div.style.display='';
                               }
-                            </script>
+                            </script>-->
 
                               <div class="form-row">                    
 
-                             <a href="javascript:mostrarcat()" class="btn btn-outline rounded">Agregar Categoría</a>
+                             <a data-rel="loginModal" href="#" class="btn btn-outline rounded">Agregar Categoría</a>
 
                             </div>
 
@@ -881,7 +864,47 @@ include_once('../conexion/conexion.php');
 
 <!-- aqui termina query de categorías -->
 
+  <div class="modal fade user-login-modal" id="userloginModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form name="formulario_usuario" id="userloginModalForm">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+              </button>
+              <h4 class="modal-title">Agregar Categoría</h4>
+            </div>
+            <div class="modal-body">
+              
+              <div class="form-group">
+                <label>Ingrese Nombre de la categoría</label>
+                <input type="text" id="nombre" name="log" required class="form-control" value="" placeholder="Nombre de la categoría" onkeypress="return validar(event)">
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+             
+              <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP01()">Grabar</button>
+            </div>
+           <div id="x1" style="display: none" class="modal-footer">
+               <label>La categoría ya existe</label>
+             
+            </div>
+                 
+             <div id="x2" style="display: none" class="modal-footer">
+               <label>La categoría Se Registro Correctamente</label>
+           
+             
+            </div>
+                 
 
+
+
+          </form>
+        </div>
+      </div>
+     
+    </div>
 
 <!-- aqui termina query de ciudades -->
 
@@ -1800,10 +1823,10 @@ function getXMLHTTPRequest()
 
 var http = getXMLHTTPRequest();
 
-function enviarHTTP () 
+function enviarHTTP01 () 
 {
   var valor = window.document.formulario_usuario.nombre.value; 
-  
+
   if(valor!="")
   {
     var query= "usuario=" + valor;
@@ -1824,11 +1847,13 @@ function respuestaHTTP ()
       if(respuesta_php=="")
       {
         document.getElementById('x1').style.display = '';
+        
         document.getElementById('x2').style.display = 'none';
       }
       else
       {
         document.getElementById('x1').style.display = 'none';
+     
         document.getElementById('x2').style.display = '';
         window.document.formulario_usuario.nombre.value="";
       } 
@@ -1836,22 +1861,6 @@ function respuestaHTTP ()
   }
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
