@@ -1,7 +1,7 @@
 <?php
 	$host='localhost:3306';
 	$userid='todoenco';
-	$password='d63u7wdX8N';
+	$password='+VU_V+X8~loL';
 	$basedatos="todoenco_construccion";
 	
 	$db = new mysqli($host, $userid, $password, $basedatos);

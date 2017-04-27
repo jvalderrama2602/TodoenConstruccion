@@ -3593,11 +3593,6 @@ include_once('../conexion/conexion.php');
     </script>
 
 
-
-
-
-
-
 <script type="text/javascript">
 
 function validar(e) { // 1
@@ -3615,7 +3610,6 @@ function validar(e) { // 1
 } 
 
 </script>
-
 
 
 <script language="javascript" type="text/javascript">
@@ -3643,9 +3637,7 @@ function getXMLHTTPRequest()
 }
 
 
-
 var http = getXMLHTTPRequest();
-
 
 
 function enviarHTTP01 () 
@@ -3672,8 +3664,6 @@ function enviarHTTP01 ()
 
 }
 
-
-
 function respuestaHTTP () 
 
 {
@@ -3696,8 +3686,6 @@ function respuestaHTTP ()
 
         document.getElementById('x1').style.display = '';
 
-        
-
         document.getElementById('x2').style.display = 'none';
 
       }
@@ -3708,13 +3696,14 @@ function respuestaHTTP ()
 
         document.getElementById('x1').style.display = 'none';
 
-     
-
         document.getElementById('x2').style.display = '';
 
         window.document.formulario_usuario.nombre.value="";
 		  
-		window.location.reload();
+		    window.location.reload();
+
+        window.onload="mostrar(0)";
+
 
       } 
 
@@ -3727,83 +3716,14 @@ function respuestaHTTP ()
 </script>
 
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
     <script type='text/javascript' src='../js/jquery.js'></script>
-
-
-
-
-
-
-
     <script type='text/javascript' src='../js/jquery-migrate.min.js'></script>
-
-
-
-
-
-
-
     <script type='text/javascript' src='../js/easing.min.js'></script>
 
-
-
-
-
-
-
     <script type='text/javascript' src='../js/bootstrap.min.js'></script>
-
-
-
-
-
-
-
     <script type='text/javascript' src='../js/superfish-1.7.4.min.js'></script>
-
-
-
-
-
-
 
     <script type='text/javascript' src='../js/script.js'></script>
 
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
 </body>
-
-
-
-
-
-
-
 </html>
