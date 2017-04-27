@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
 session_start();
+
+
+
+
 
 
 
@@ -10,7 +18,15 @@ $usuario = $_SESSION["s_username"];
 
 
 
+
+
+
+
 $tipouser = $_SESSION["tipouser"];
+
+
+
+
 
 
 
@@ -22,11 +38,27 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
+
+
+
+
 <!doctype html>
 
 
 
+
+
+
+
 <html>
+
+
+
+
 
 
 
@@ -36,7 +68,17 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
 
 
 
@@ -44,7 +86,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
     <title>Administración</title>
+
+
+
+
 
 
 
@@ -52,7 +102,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
     <link rel='stylesheet' href='../css/settings.css' type='text/css' media='all'/>
+
+
+
+
 
 
 
@@ -60,7 +118,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
     <link rel='stylesheet' href='../css/font-awesome.min.css' type='text/css' media='all'/>
+
+
+
+
 
 
 
@@ -68,19 +134,43 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
     <link rel='stylesheet' href='../css/style.css' type='text/css' media='all'/>
+
+
+
+
 
 
 
     <link rel='stylesheet' href='../css/commerce.css' type='text/css' media='all'/>
 
+
+
   
+
+
 
     
 
 
 
+
+
+
+
 </head>
+
+
+
+
+
+
+
+
 
 
 
@@ -96,7 +186,19 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
+
+
+
+
   <!--MENU DEL MOVIL-->
+
+
+
+
 
 
 
@@ -104,7 +206,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
       <div class="offcanvas-wrap">
+
+
+
+
 
 
 
@@ -112,7 +222,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
           <a class="offcanvas-user-wishlist-link" href="menu_mantenimiento.php" target="centro1" >
+
+
+
+
 
 
 
@@ -120,7 +238,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
           </a>
+
+
+
+
 
 
 
@@ -128,7 +254,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
             <i class="fa fa-user"></i>Salir
+
+
+
+
 
 
 
@@ -136,7 +270,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -144,7 +286,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
           <ul class="offcanvas-nav">
+
+
+
+
 
 
 
@@ -152,7 +302,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
             </li>
+
+
+
+
 
 
 
@@ -160,7 +318,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
             </li><li><a href="#">Noticias</a></li>
+
+
+
+
 
 
 
@@ -168,7 +334,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
           </ul>
+
+
+
+
 
 
 
@@ -176,7 +350,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -184,7 +366,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
 <!--AQUI TERMINA EL MENU DEL MOVIL -->
+
+
+
+
 
 
 
@@ -192,7 +382,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
       <div class="offcanvas-overlay"></div>
+
+
+
+
 
 
 
@@ -200,7 +398,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
         <div class="topbar">
+
+
+
+
 
 
 
@@ -208,7 +414,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
             <div class="row">
+
+
+
+
 
 
 
@@ -216,7 +430,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                 <div class="left-topbar">
+
+
+
+
 
 
 
@@ -224,7 +446,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                   <a href="#"><i class="fa fa-long-arrow-right"></i></a>&nbsp;
+
+
+
+
 
 
 
@@ -232,7 +462,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                     <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+
+
+
+
 
 
 
@@ -240,7 +478,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                 
+
+
+
+
 
 
 
@@ -248,15 +494,31 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                 
 
 
 
+
+
+
+
                 
+
+
+
+
 
 
 
               </div>
+
+
+
+
 
 
 
@@ -264,7 +526,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
              
+
+
+
+
 
 
 
@@ -272,7 +542,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
             </div>
+
+
+
+
 
 
 
@@ -280,7 +558,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -288,7 +574,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
           <div class="navbar navbar-default navbar-scroll-fixed">
+
+
+
+
 
 
 
@@ -296,7 +590,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
               <div class="container">
+
+
+
+
 
 
 
@@ -304,7 +606,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                   <div class="navbar-default-col">
+
+
+
+
 
 
 
@@ -312,7 +622,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                       <div class="navbar-header">
+
+
+
+
 
 
 
@@ -320,7 +638,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           <span class="sr-only">Navegación</span>
+
+
+
+
 
 
 
@@ -328,7 +654,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           <span class="icon-bar bar-middle"></span>
+
+
+
+
 
 
 
@@ -336,7 +670,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                         </button>
+
+
+
+
 
 
 
@@ -344,7 +686,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                         <a class="navbar-brand" href="./">
+
+
+
+
 
 
 
@@ -352,7 +702,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           <img class="logo-fixed" alt="todo" src="../imagen/logo.png">
+
+
+
+
 
 
 
@@ -360,17 +718,35 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                         </a>
+
+
+
+
 
 
 
                       </div>
 
+
+
                          <?php
 
 
 
+
+
+
+
                           session_start();
+
+
+
+
 
 
 
@@ -378,13 +754,27 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           $login=$_SESSION["login"];
+
+
+
+
 
 
 
                           ?>
 
+
+
                           <?php
+
+
+
+
 
 
 
@@ -392,7 +782,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           $usuario = $_SESSION["s_username"];
+
+
+
+
 
 
 
@@ -400,7 +798,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           ?>
+
+
+
+
 
 
 
@@ -412,15 +818,35 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
+
+
+
+
                         <ul class="nav navbar-nav primary-nav">                  
+
+
+
+
 
 
 
                          
 
+
+
                         
 
+
+
                         <li class="current-menu-item menu-item-has-children dropdown">
+
+
+
+
 
 
 
@@ -428,7 +854,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                               <span class="underline"><? echo $login; ?></span> <span class="caret"></span>
+
+
+
+
 
 
 
@@ -436,11 +870,23 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           </li>
 
 
 
+
+
+
+
                           <li class="current-menu-item menu-item-has-children dropdown">
+
+
+
+
 
 
 
@@ -448,7 +894,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                               <span class="underline">Categoría</span> <span class="caret"></span>
+
+
+
+
 
 
 
@@ -456,11 +910,23 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           </li>
 
 
 
+
+
+
+
                            <li class="current-menu-item menu-item-has-children dropdown">
+
+
+
+
 
 
 
@@ -468,7 +934,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                               <span class="underline">Ciudad</span> <span class="caret"></span>
+
+
+
+
 
 
 
@@ -476,7 +950,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                           </li>
+
+
+
+
 
 
 
@@ -484,7 +966,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                             <a href="javascript:mostrar(2)"  class="dropdown-hover">
+
+
+
+
 
 
 
@@ -492,11 +982,23 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                             </a>
 
 
 
+
+
+
+
                           </li>
+
+
+
+
 
 
 
@@ -504,7 +1006,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                             <a href="javascript:mostrar(3)"  class="dropdown-hover">
+
+
+
+
 
 
 
@@ -512,7 +1022,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                             </a>
+
+
+
+
 
 
 
@@ -520,7 +1038,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                         </ul>
+
+
+
+
 
 
 
@@ -528,7 +1054,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                       <div class="header-right"></div>
+
+
+
+
 
 
 
@@ -536,7 +1070,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
                   </div>
+
+
+
+
 
 
 
@@ -544,7 +1086,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -552,7 +1102,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
            
+
+
+
+
 
 
 
@@ -560,7 +1118,15 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -568,13 +1134,27 @@ $tipouser = $_SESSION["tipouser"];
 
 
 
+
+
+
+
   </div>   
+
+
 
 <!--comienzo query de categorías-->
 
+
+
 <?
 
+
+
 include_once('../conexion/conexion.php');
+
+
+
+
 
 
 
@@ -582,11 +1162,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
   $result2 = $db->query($sql2);
 
 
 
+
+
+
+
 ?>
+
+
+
+
 
 
 
@@ -594,9 +1186,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       <div class="offcanvas-overlay"></div>
 
+
+
       <div class="content-container">
+
+
+
+
 
 
 
@@ -604,7 +1206,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           <div class="row">
+
+
+
+
 
 
 
@@ -612,11 +1222,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="main-content">
+
+
 
   
 
+
+
                 <div class="commerce">
+
+
+
+
 
 
 
@@ -624,7 +1246,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     <table class="table shop_table cart">
+
+
+
+
 
 
 
@@ -632,7 +1262,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         <tr>
+
+
+
+
 
 
 
@@ -640,7 +1278,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-name">Código</th>
+
+
+
+
 
 
 
@@ -648,7 +1294,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-quantity text-center">Status</th>
+
+
+
+
 
 
 
@@ -656,7 +1310,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         </tr>
+
+
+
+
 
 
 
@@ -664,7 +1326,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                       <tbody>
+
+
+
+
 
 
 
@@ -672,11 +1342,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               while ($query_result = $result2->fetch_array())
 
 
 
+
+
+
+
                               {
+
+
+
+
 
 
 
@@ -684,7 +1366,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 $nombre_estado= $query_result['nombre_categoria'];
+
+
+
+
 
 
 
@@ -692,7 +1382,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 
+
+
+
+
 
 
 
@@ -700,11 +1398,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 <td class='product-remove hidden-xs'>\n
 
 
 
+
+
+
+
                                 <a href='modificar_usuarios.php?codigo=+<?=$idestado;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar ésta Categoría'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>\n
+
+
+
+
 
 
 
@@ -720,7 +1430,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                                 echo "<td class='product-subtotal hidden-xs text-center'>\n
+
+
+
+
 
 
 
@@ -728,7 +1454,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -736,7 +1470,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <a href='#'>$nombre_estado</a> \n
+
+
+
+
 
 
 
@@ -744,7 +1486,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -752,7 +1502,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <span class='amount'>$suspendido</span>\n
+
+
+
+
 
 
 
@@ -760,7 +1518,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 
+
+
+
+
 
 
 
@@ -768,8 +1534,18 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               </tr>
+
                               
+
+
+
+
+
 
 
 
@@ -778,18 +1554,37 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               }
+
+
+
+
 
 
 
                               ?>                
 
 
+
+
+
                       </tbody>
 
 
 
+
+
+
+
                     </table>
+
+
+
+
 
 
 
@@ -801,7 +1596,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
+
+
                 </div>
+
+
+
+
 
 
 
@@ -809,42 +1616,85 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                      <!--       <form id="mostrarcat" name="formulario_usuario">
+
                             <table width="385" align="center">
+
                             <tr id="x1" style="display: none"><td colspan="2">El Estado Ya Existe</td></tr>
+
                             <tr id="x2" style="display: none"><td colspan="2">El Estado Se Registro Correctamente</td></tr>
 
+
+
                             <tr>
+
                               <td>NOMBRE</td>
+
                                 <td width="285">
+
                                     <input type="text" name="nombre" size="45" maxlength="20" placeholder=" Nombre De La Categoria" onkeypress="return validar(event)"/>
+
                                 </td>
+
                             </tr>
+
                             </table>
+
+
 
                             <table  width="360" align="center">
+
                             <tr><td height="15"></td></tr>
+
                             <tr>
+
                               <td align="center"><button type="button" value="Grabar" onclick="enviarHTTP()">Grabar</button> </td>
+
                             </tr>
+
                             </table>
 
+
+
                             </form>
+
                             <script>
+
                               document.getElementById("mostrarcat").style.display="none";
+
                               function mostrarcat(){
+
                                 div=document.getElementById("mostrarcat"); 
+
                                 div.style.display='';
+
                               }
+
                             </script>-->
+
+
 
                               <div class="form-row">                    
 
+
+
                              <a data-rel="loginModal" href="#" class="btn btn-outline rounded">Agregar Categoría</a>
+
+
 
                             </div>
 
+
+
             </div>
+
+
+
+
 
 
 
@@ -852,7 +1702,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
         </div>
+
+
+
+
 
 
 
@@ -860,51 +1718,101 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
     </div>
+
+
 
 <!-- aqui termina query de categorías -->
 
+
+
   <div class="modal fade user-login-modal" id="userloginModal" tabindex="-1" role="dialog" aria-hidden="true">
+
       <div class="modal-dialog">
+
         <div class="modal-content">
+
           <form name="formulario_usuario" id="userloginModalForm">
+
             <div class="modal-header">
+
               <button type="button" class="close" data-dismiss="modal">
+
                 <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+
               </button>
+
               <h4 class="modal-title">Agregar Categoría</h4>
+
             </div>
+
             <div class="modal-body">
+
               
+
               <div class="form-group">
+
                 <label>Ingrese Nombre de la categoría</label>
+
                 <input type="text" id="nombre" name="log" required class="form-control" value="" placeholder="Nombre de la categoría" onkeypress="return validar(event)">
+
               </div>
+
               
+
             </div>
+
             <div class="modal-footer">
+
              
+
               <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP01()">Grabar</button>
+
             </div>
+
            <div id="x1" style="display: none" class="modal-footer">
+
                <label>La categoría ya existe</label>
+
              
+
             </div>
+
                  
+
              <div id="x2" style="display: none" class="modal-footer">
+
                <label>La categoría Se Registro Correctamente</label>
+
            
+
              
+
             </div>
+
                  
+
+
+
+
 
 
 
           </form>
+
         </div>
+
       </div>
+
      
+
     </div>
+
+
 
 <!-- aqui termina query de ciudades -->
 
@@ -912,15 +1820,33 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
 <?
+
+
 
   
 
+
+
   $sql2 = "SELECT idciudad,nombre_ciudad,estado_idestado,suspendido FROM ciudad";
+
+
 
   $result2 = $db->query($sql2);
 
+
+
 ?>
+
+
+
+
 
 
 
@@ -928,9 +1854,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       <div class="offcanvas-overlay"></div>
 
+
+
       <div class="content-container">
+
+
+
+
 
 
 
@@ -938,7 +1874,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           <div class="row">
+
+
+
+
 
 
 
@@ -946,11 +1890,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="main-content">
+
+
 
   
 
+
+
                 <div class="commerce">
+
+
+
+
 
 
 
@@ -958,7 +1914,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     <table class="table shop_table cart">
+
+
+
+
 
 
 
@@ -966,7 +1930,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         <tr>
+
+
+
+
 
 
 
@@ -974,7 +1946,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-name">Código</th>
+
+
+
+
 
 
 
@@ -982,7 +1962,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-quantity text-center">Estado</th>
+
+
+
+
 
 
 
@@ -990,11 +1978,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         </tr>
 
 
 
+
+
+
+
                       </thead>
+
+
+
+
 
 
 
@@ -1004,19 +2004,43 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
                               <?  
+
+
 
                               while ($query_result = $result2->fetch_array())
 
+
+
                               {
+
+
 
                                 $idciudad= $query_result['idciudad'];
 
+
+
                                 $nombre_ciudad= $query_result['nombre_ciudad'];
+
+
 
                                 $estado_idestado= $query_result['estado_idestado'];
 
+
+
                                 $suspendido= $query_result['suspendido'];
+
+
+
+
+
+
 
 
 
@@ -1026,7 +2050,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 <td class='product-remove hidden-xs'>\n
+
+
+
+
 
 
 
@@ -1034,7 +2066,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 </td>";
+
+
+
+
 
 
 
@@ -1042,11 +2082,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <span class='amount'>$idciudad</span>\n
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -1054,7 +2106,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <a href='#'>$nombre_ciudad</a> \n
+
+
+
+
 
 
 
@@ -1062,7 +2122,17 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
+
+
 
 
 
@@ -1070,7 +2140,11 @@ include_once('../conexion/conexion.php');
 
                                  $sql60 = "SELECT nombre_estado FROM estado WHERE idestado='$estado_idestado' LIMIT 1";
 
+
+
                                  $result60 = $db->query($sql60);
+
+
 
                                  $fila60 = $result60 -> fetch_array();
 
@@ -1078,7 +2152,17 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
                                 echo "<td class='product-price text-center'>\n
+
+
+
+
 
 
 
@@ -1086,7 +2170,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -1094,7 +2186,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <span class='amount'>$suspendido</span>\n
+
+
+
+
 
 
 
@@ -1102,9 +2202,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               ?>
 
+
+
              
+
+
+
+
 
 
 
@@ -1112,7 +2222,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               <?
+
+
+
+
 
 
 
@@ -1120,7 +2238,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               ?>                
+
+
+
+
 
 
 
@@ -1128,7 +2254,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     </table>
+
+
+
+
 
 
 
@@ -1136,11 +2270,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="form-row">                    
+
+
 
  <a href="../administrador/ciudad/agregar_ciudad.php" class="btn btn-outline rounded">Agregar Ciudad</a>
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -1148,7 +2294,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -1156,7 +2310,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -1164,7 +2326,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -1172,7 +2342,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
 <!-- aqui termina ciudades -->
+
+
+
+
 
 
 
@@ -1182,13 +2360,29 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
 <? 
+
+
 
   $sql2 = "SELECT idestado,nombre_estado,suspendido_estado FROM estado";
 
+
+
   $result2 = $db->query($sql2);
 
+
+
 ?>
+
+
+
+
 
 
 
@@ -1196,9 +2390,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       <div class="offcanvas-overlay"></div>
 
+
+
       <div class="content-container">
+
+
+
+
 
 
 
@@ -1206,7 +2410,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           <div class="row">
+
+
+
+
 
 
 
@@ -1214,11 +2426,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="main-content">
+
+
 
   
 
+
+
                 <div class="commerce">
+
+
+
+
 
 
 
@@ -1226,7 +2450,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     <table class="table shop_table cart">
+
+
+
+
 
 
 
@@ -1234,7 +2466,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         <tr>
+
+
+
+
 
 
 
@@ -1242,7 +2482,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-name">Código</th>
+
+
+
+
 
 
 
@@ -1250,7 +2498,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-quantity text-center">Status</th>
+
+
+
+
 
 
 
@@ -1258,7 +2514,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         </tr>
+
+
+
+
 
 
 
@@ -1266,21 +2530,43 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                       <tbody>
+
+
+
+
 
 
 
                                 <?  
 
+
+
                                 while ($query_result = $result2->fetch_array())
+
+
 
                                 {
 
+
+
                                   $idestado= $query_result['idestado'];
+
+
 
                                   $nombre_estado= $query_result['nombre_estado'];
 
+
+
                                   $suspendido= $query_result['suspendido_estado'];
+
+
+
+
 
 
 
@@ -1288,7 +2574,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 echo "<tr class='cart_item'> \n
+
+
+
+
 
 
 
@@ -1296,7 +2590,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 <a href='modificar_usuarios.php?codigo=+<?=$idestado;?>' target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Remove this item'>&times;</a>\n
+
+
+
+
 
 
 
@@ -1304,7 +2606,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 echo "<td class='product-subtotal hidden-xs text-center'>\n
+
+
+
+
 
 
 
@@ -1312,7 +2622,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -1320,7 +2638,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <a href='#'>$nombre_estado</a> \n
+
+
+
+
 
 
 
@@ -1328,7 +2654,17 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
+
+
 
 
 
@@ -1338,7 +2674,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 echo "<td class='product-price text-center'>\n
+
+
+
+
 
 
 
@@ -1346,13 +2690,27 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
                               ?>
 
+
+
              
+
+
+
+
 
 
 
@@ -1360,7 +2718,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               <?
+
+
+
+
 
 
 
@@ -1368,7 +2734,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               ?>                
+
+
+
+
 
 
 
@@ -1376,7 +2750,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     </table>
+
+
+
+
 
 
 
@@ -1384,11 +2766,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="form-row">                    
+
+
 
  <a href="../administrador/estado/agregar_estados.php" class="btn btn-outline rounded">Agregar Estado</a>
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -1396,7 +2790,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -1404,7 +2806,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -1412,7 +2822,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -1420,7 +2838,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
 <!-- TERMINA LOS ESTADOS -->
+
+
+
+
 
 
 
@@ -1428,7 +2854,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
 ?>
+
+
+
+
+
+
+
+
 
 
 
@@ -1450,13 +2888,37 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  <div id="wrapper5" style="display:none" class="wide-wrap ">
+
+
+
+
 
 
 
       <div class="offcanvas-overlay"></div>
 
+
+
       <div class="content-container">
+
+
+
+
 
 
 
@@ -1464,7 +2926,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           <div class="row">
+
+
+
+
 
 
 
@@ -1472,11 +2942,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="main-content">
+
+
 
   
 
+
+
                 <div class="commerce">
+
+
+
+
 
 
 
@@ -1484,7 +2966,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     <table class="table shop_table cart">
+
+
+
+
 
 
 
@@ -1492,7 +2982,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         <tr>
+
+
+
+
 
 
 
@@ -1500,7 +2998,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-name">Código</th>
+
+
+
+
 
 
 
@@ -1508,7 +3014,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                           <th class="product-quantity text-center">Apellido</th>
+
+
+
+
 
 
 
@@ -1516,7 +3030,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                         </tr>
+
+
+
+
 
 
 
@@ -1524,33 +3046,67 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                       <tbody>
+
+
+
+
 
 
 
                                 <?
 
+
+
                                 $sql2 = "SELECT idmantenimiento_usuario,nombre,apellido,suspendido FROM mantenimiento_usuario ";
+
+
 
                                 $result2 = $db->query($sql2);
 
+
+
                                 
+
+
 
                               while ($query_result = $result2->fetch_array())
 
+
+
                               {
+
+
 
                                 $id_usuario= $query_result['idmantenimiento_usuario'];
 
+
+
                                 $nombre= $query_result['nombre'];
+
+
 
                                 $apellido= $query_result['apellido'];
 
+
+
                                 $suspendido= $query_result['suspendido'];
+
+
 
                                 
 
+
+
                                 echo "<tr class='cart_item'> \n
+
+
+
+
 
 
 
@@ -1558,7 +3114,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 <a href='modificar_usuarios.php?codigo=+<?=$id_usuario;?>' target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Remove this item'>&times;</a>\n
+
+
+
+
 
 
 
@@ -1566,7 +3130,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 echo "<td class='product-subtotal hidden-xs text-center'>\n
+
+
+
+
 
 
 
@@ -1574,7 +3146,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -1582,7 +3162,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <a href='#'>$nombre</a> \n
+
+
+
+
 
 
 
@@ -1590,7 +3178,17 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
+
+
 
 
 
@@ -1600,7 +3198,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                 echo "<td class='product-price text-center'>\n
+
+
+
+
 
 
 
@@ -1608,7 +3214,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   </td> \n";
+
+
+
+
 
 
 
@@ -1616,7 +3230,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                                   <span class='amount'>$suspendido</span>\n
+
+
+
+
 
 
 
@@ -1624,9 +3246,19 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               ?>
 
+
+
              
+
+
+
+
 
 
 
@@ -1634,7 +3266,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               <?
+
+
+
+
 
 
 
@@ -1642,7 +3282,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                               ?>                
+
+
+
+
 
 
 
@@ -1650,7 +3298,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
                     </table>
+
+
+
+
 
 
 
@@ -1658,11 +3314,23 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               <div class="form-row">                    
+
+
 
  <a href="../administrador/super_usuario/agregar.php" class="btn btn-outline rounded">Agregar Usuario</a>
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -1670,7 +3338,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
               </div>
+
+
+
+
 
 
 
@@ -1678,7 +3354,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -1686,7 +3370,15 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
       </div>
+
+
+
+
 
 
 
@@ -1696,171 +3388,348 @@ include_once('../conexion/conexion.php');
 
 
 
+
+
+
+
+
+
 <script type="text/javascript">
+
+
+
+
 
 
 
     function mostrar(x){
 
+
+
     switch (x) {
+
+
 
     case 0:  
 
+
+
     div=document.getElementById("wrapper2"); 
+
+
 
     div.style.display='';
 
+
+
     div=document.getElementById("wrapper3"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper4"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper5"); 
 
+
+
     div.style.display='none';
+
+
+
+
 
 
 
     break;
+
+
 
     case 1: 
 
+
+
     div=document.getElementById("wrapper2"); 
+
+
 
     div.style.display='none'; 
 
+
+
     div=document.getElementById("wrapper3"); 
+
+
 
     div.style.display='';
 
+
+
     div=document.getElementById("wrapper4"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper5"); 
 
+
+
     div.style.display='none';
 
+
+
     break;
+
+
 
     case 2: 
 
+
+
     div=document.getElementById("wrapper2"); 
+
+
 
     div.style.display='none'; 
 
+
+
     div=document.getElementById("wrapper3"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper4"); 
 
+
+
     div.style.display='';
+
+
 
     div=document.getElementById("wrapper5"); 
 
+
+
     div.style.display='none';
 
+
+
     break;
+
+
 
     case 3: 
 
+
+
     div=document.getElementById("wrapper2"); 
+
+
 
     div.style.display='none'; 
 
+
+
     div=document.getElementById("wrapper3"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper4"); 
 
+
+
     div.style.display='none';
+
+
 
     div=document.getElementById("wrapper5"); 
 
+
+
     div.style.display='';
+
+
 
     break;
 
+
+
     default:
+
+
 
     aler("alert");     
 
+
+
     }
 
+
+
 }
+
+
 
     </script>
 
 
 
+
+
+
+
 <script type="text/javascript">
+
 function validar(e) { // 1
+
     tecla = (document.all) ? e.keyCode : e.which; // 2
+
     if (tecla==8) return true; // 3
+
     patron =/[A-Za-z\s]/; // 4
+
     te = String.fromCharCode(tecla); // 5
+
     return patron.test(te); // 6
+
 } 
+
 </script>
 
+
+
 <script language="javascript" type="text/javascript">
+
 function getXMLHTTPRequest() 
+
 {
+
   try { req = new XMLHttpRequest(); } 
+
   catch(err1) 
+
   {
+
       try { req = new ActiveXObject("Msxml2.XMLHTTP"); } 
+
     catch (err2) 
+
     {try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
+
   }
+
   return req;
+
 }
+
+
 
 var http = getXMLHTTPRequest();
 
+
+
 function enviarHTTP01 () 
+
 {
+
   var valor = window.document.formulario_usuario.nombre.value; 
 
+
+
   if(valor!="")
+
   {
+
     var query= "usuario=" + valor;
+
     http.open ("GET", "categoria/grabar_categoria.php?" + query, true);
+
     http.onreadystatechange = respuestaHTTP;
+
     http.send(null); // se envia la petición
+
   }
+
 }
 
+
+
 function respuestaHTTP () 
+
 {
+
   if (http.readyState == 4) 
+
   {  
+
     if (http.status == 200) 
+
     { 
+
       var respuesta_php = http.responseText; 
+
       
+
       if(respuesta_php=="")
+
       {
+
         document.getElementById('x1').style.display = '';
+
         
+
         document.getElementById('x2').style.display = 'none';
+
       }
+
       else
+
       {
+
         document.getElementById('x1').style.display = 'none';
+
      
+
         document.getElementById('x2').style.display = '';
+
         window.document.formulario_usuario.nombre.value="";
+		  
+		window.location.reload();
+
       } 
+
     }
+
   }
+
 }
+
 </script>
+
+
+
+
+
 
 
 
@@ -1869,7 +3738,15 @@ function respuestaHTTP ()
 
 
 
+
+
+
+
     <script type='text/javascript' src='../js/jquery.js'></script>
+
+
+
+
 
 
 
@@ -1877,7 +3754,15 @@ function respuestaHTTP ()
 
 
 
+
+
+
+
     <script type='text/javascript' src='../js/easing.min.js'></script>
+
+
+
+
 
 
 
@@ -1885,7 +3770,15 @@ function respuestaHTTP ()
 
 
 
+
+
+
+
     <script type='text/javascript' src='../js/superfish-1.7.4.min.js'></script>
+
+
+
+
 
 
 
@@ -1895,9 +3788,21 @@ function respuestaHTTP ()
 
 
 
+
+
+
+
+
+
    
 
+
+
 </body>
+
+
+
+
 
 
 

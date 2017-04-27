@@ -33,3 +33,4 @@
 [25-Apr-2017 00:37:58 America/Caracas] PHP Warning:  include_once(): Failed opening '../../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/todoenco/public_html/administrador/entrar.php on line 433
 [25-Apr-2017 00:56:37 America/Caracas] PHP Warning:  include_once(../../conexion/conexion.php): failed to open stream: No such file or directory in /home/todoenco/public_html/administrador/entrar.php on line 568
 [25-Apr-2017 00:56:37 America/Caracas] PHP Warning:  include_once(): Failed opening '../../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/todoenco/public_html/administrador/entrar.php on line 568
+[27-Apr-2017 13:07:51 America/Caracas] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/todoenco/public_html/administrador/entrar.php on line 1309
