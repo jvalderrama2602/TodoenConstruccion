@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    
+
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
@@ -50,42 +50,118 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
   </head>
-  
+
   <body>
-        
+
     <!-- Main Container -->
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="primary-color tool-login">
+      <div id="toolbar" class="nav-material">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
-          <i class="ion-android-menu white-text"></i>
+          <i class="ion-android-menu"></i>
+        </div>
+        <h1 class="title none">Shuttle</h1>
+        <div class="open-right" id="open-right" data-activates="slide-out">
+          <i class="ion-android-person"></i>
         </div>
       </div>
       <!-- End of Toolbar -->
 
       <!-- Page Contents -->
-      <div class="page fullscreen grey lighten-4">
-        
-        <div class="login-form z-depth-1">
-          <h1>Login</h1>
-          <div class="input-field">
-            <i class="ion-android-contact prefix"></i> 
-            <input class="validate" id="login" type="text"> 
-            <label for="login">Username</label>
-          </div>
+      <div class="animated fadeinup">
 
-          <div class="input-field" style="margin-bottom:20px;">
-            <i class="ion-android-lock prefix"></i> 
-            <input class="validate" id="login-psw" type="password"> 
-            <label for="login-psw">Password</label>
-          </div>
+        <!-- Hero Header -->
+        <div class="hero-material animated fadeindown">
+          <div class="parallax primary-color">
 
-          <a class="waves-effect waves-light btn-large accent-color block m-b-20 animated bouncein delay-2" href="index.html">Login</a> 
-          <span>Don't have an account? <a class="primary-text" href="signup.html">Sign Up</a></span>
+            <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
+              <a class="btn-floating btn-large accent-color" href="#!">
+                <i class="ion-android-add"></i>
+              </a>
+              <ul>
+                <li><a class="btn-floating red"><i class="ion-android-home"></i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="ion-android-star"></i></a></li>
+                <li><a class="btn-floating green"><i class="ion-android-attach"></i></a></li>
+                <li><a class="btn-floating blue"><i class="ion-android-share-alt"></i></a></li>
+              </ul>
+            </div>
+            <div class="banner-title">Material Layout</div>
+          </div>
         </div>
-    
-      </div> 
+   <div class="upnext">
+          <h5></h5>
+
+          <div class="next-song animated fadeinright delay-1">
+            <span>1</span>
+            <span>I'm Selfish</span>
+            <span>|</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-2">
+            <span>2</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-3">
+            <span>3</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-4">
+            <span>4</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-5">
+            <span>5</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-6">
+            <span>6</span>
+            <span>I'm Selfish</span>
+            <i class="ion-ios-more"></i>
+          </div>
+        </div>
+        <!-- Article Content -->
+        <div class="animated fadeinup delay-1">
+          <div class="section">
+            <p class="text-flow"><span class="dropcap">A</span> wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <blockquote class="accent-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>
+            <p class="text-flow">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer primary-color">
+          <div class="section center">
+            <h2 class="heading white-text">Shuttle</h2>
+            <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <div class="footer-icons">
+              <i class="ion-social-facebook m-10 white-text"></i>
+              <i class="ion-social-twitter m-10 white-text"></i>
+              <i class="ion-social-pinterest m-10 white-text"></i>
+              <i class="ion-social-instagram m-10 white-text"></i>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+              <span>Made with <i class="ion-ios-heart"></i> by Codnauts</span>
+            </div>
+          </div>
+        </footer>
+
+
+      </div>
       <!-- End of Page Contents -->
 
       <!-- Sidebars -->
@@ -136,7 +212,7 @@
                 <a href="blank.html">Blank</a>
               </li>
             </ul>
-          </div>  
+          </div>
         </li>
         <li>
           <div class="collapsible-header waves-effect">
@@ -387,10 +463,10 @@
         </li>
       </ul>
       <!-- End of Sidebars -->
-        
+
     </div>
     <!-- End of Main Container -->
-    
+
     <!-- Scripts -->
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
     <script src="js/helper.js"></script>

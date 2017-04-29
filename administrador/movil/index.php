@@ -1,8 +1,15 @@
+
+
+
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Shuttle - Material Design Mobile Template</title>
+    <title>Inicio de Sesión</title>
     <meta name="description" content="Material Design Mobile Template">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -49,6 +56,66 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+function getXMLHTTPRequest()
+{
+  try { req = new XMLHttpRequest(); }
+  catch(err1)
+  {
+      try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+    catch (err2)
+    {try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
+  }
+  return req;
+}
+var http = getXMLHTTPRequest();
+function enviarHTTP ()
+{
+  var login = document.getElementById("login").value;
+
+  var password = document.getElementById("login-psw").value;
+
+  var cont=0;
+
+
+  if(login==""){ alert("El Login Se Encuentra Vacio");cont=1; }
+
+  if(password=="")
+  { alert("El Password Se Encuentra Vacio");cont=1; }
+  if(cont==0)
+  {
+    var query= "login=" + login +"&password=" + password;
+    http.open ("GET", "../consultar_usuario.php?" + query, true);
+    http.onreadystatechange = respuestaHTTP;
+    http.send(null); // se envia la petición
+  }
+}
+
+function respuestaHTTP ()
+{
+
+  if (http.readyState == 4)  {
+    if (http.status == 200){
+      alert("respuestaHTTP");
+      var respuesta_php = http.responseText;
+        if(isNaN(respuesta_php)==true)
+      {
+        if(respuesta_php==no_existe){
+        alert('no_existe');
+      }
+        if(respuesta_php==clave_invalida){
+        alert('clave_invalida');
+      }
+      }
+      else
+      {
+        window.location='../entrar.php';
+      }
+    }
+  }
+}
+</script>
   </head>
 
   <body>
@@ -57,116 +124,33 @@
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="transparent">
+      <div id="toolbar" class="primary-color tool-login">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
-          <i class="ion-android-menu"></i>
-        </div>
-        <h1 class="title">Shuttle</h1>
-        <div class="open-right" id="open-right" data-activates="slide-out">
-          <i class="ion-android-person"></i>
+          <i class="ion-android-menu white-text"></i>
         </div>
       </div>
       <!-- End of Toolbar -->
 
       <!-- Page Contents -->
-      <div class="animated fadeinup">
+      <div class="page fullscreen grey lighten-4">
 
-        <!-- Album Cover -->
-      <!--  <div class="hero-header animated fadein">
-          <img src="img/player.jpg" alt="">
-          <! Floating Action Button
-          <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
-              <a class="btn-floating btn-large accent-color" href="#!">
-                <i class="ion-ios-settings-strong"></i>
-              </a>
-              <ul>
-                <li><a class="btn-floating red"><i class="ion-android-attach"></i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="ion-android-attach"></i></a></li>
-                <li><a class="btn-floating green"><i class="ion-android-attach"></i></a></li>
-                <li><a class="btn-floating blue"><i class="ion-android-attach"></i></a></li>
-              </ul>
-            </div>
-        </div>-->
+        <div class="login-form z-depth-1">
+          <h1>Inicio de sesión</h1>
+          <div class="input-field">
+            <i class="ion-android-contact prefix"></i>
+            <input class="validate" name="login" id="login" type="text">
+            <label for="login">Usuario</label>
+          </div>
 
-        <!-- Player Info
-        <div class="player-info blue animated fadein delay-2"> <!-- album information
-          <h4>Blue Love</h4>
-          <span>Bob &amp; The Band</span>
-        </div> -->
+          <div class="input-field" style="margin-bottom:20px;">
+            <i class="ion-android-lock prefix"></i>
+            <input class="validate" id="login-psw" name="password" type="password">
+            <label for="login-psw">Password</label>
+          </div>
 
-        <!-- Progress Bar -->
-       <!-- <div class="progress white">
-          <div class="determinate accent-color" style="width: 70%"></div>
-        </div>-->
-
-        <!-- Player Controllers -->
-        <div class="player-controllers blue animated fadein delay-3">
-          <i class="ion-ios-rewind left-align"></i>
-          <i class="ion-ios-play center-align"></i>
-          <i class="ion-ios-fastforward right-align"></i>
+          <a class="waves-effect waves-light btn-large accent-color block m-b-20 animated bouncein delay-2" onclick="enviarHTTP()">Entrar</a>
+          <!--<span>Don't have an account? <a class="primary-text" href="signup.html">Sign Up</a></span>-->
         </div>
-
-        <!-- Song List -->
-        <div class="upnext">
-          <h5></h5>
-
-          <div class="next-song animated fadeinright delay-1">
-            <span>1</span>
-            <span>I'm Selfish</span>
-            <span>|</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-
-          <div class="next-song animated fadeinright delay-2">
-            <span>2</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-
-          <div class="next-song animated fadeinright delay-3">
-            <span>3</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-
-          <div class="next-song animated fadeinright delay-4">
-            <span>4</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-
-          <div class="next-song animated fadeinright delay-5">
-            <span>5</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-
-          <div class="next-song animated fadeinright delay-6">
-            <span>6</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="page-footer primary-color">
-          <div class="section center">
-            <h2 class="heading white-text">Shuttle</h2>
-            <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            <div class="footer-icons">
-              <i class="ion-social-facebook m-10 white-text"></i>
-              <i class="ion-social-twitter m-10 white-text"></i>
-              <i class="ion-social-pinterest m-10 white-text"></i>
-              <i class="ion-social-instagram m-10 white-text"></i>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container center">
-              <span>Made with <i class="ion-ios-heart"></i> by Codnauts</span>
-            </div>
-          </div>
-        </footer>
 
       </div>
       <!-- End of Page Contents -->
