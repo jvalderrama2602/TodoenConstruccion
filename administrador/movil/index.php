@@ -29,24 +29,13 @@ ini_set('display_errors', '1');
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/" >
-    -->
-
-    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-    <!--
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="">
-    -->
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <!-- Icons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
@@ -97,7 +86,7 @@ function respuestaHTTP ()
 
   if (http.readyState == 4)  {
     if (http.status == 200){
-      alert("respuestaHTTP");
+
       var respuesta_php = http.responseText;
         if(isNaN(respuesta_php)==true)
       {
@@ -110,7 +99,7 @@ function respuestaHTTP ()
       }
       else
       {
-        window.location='../entrar.php';
+        window.location='entrar.php';
       }
     }
   }

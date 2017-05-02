@@ -1,8 +1,14 @@
+<?php
+session_start();
+$usuario = $_SESSION["s_username"];
+$tipouser = $_SESSION["tipouser"];
+?>
+
 <!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Shuttle - Material Design Mobile Template</title>
+    <title>Todo en Construcción</title>
     <meta name="description" content="Material Design Mobile Template">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -39,7 +45,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <!-- Icons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
@@ -61,7 +67,7 @@
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
-        <h1 class="title none">Shuttle</h1>
+        <h1 class="title none">Administración</h1>
         <div class="open-right" id="open-right" data-activates="slide-out">
           <i class="ion-android-person"></i>
         </div>
@@ -70,12 +76,30 @@
 
       <!-- Page Contents -->
       <div class="animated fadeinup">
+  <?php
 
+                    session_start();
+
+                    $idtipo=$_SESSION["idtipo"];
+
+                    $login=$_SESSION["login"];
+
+                    ?>
+
+                    <?php
+
+                    session_start();
+
+                    $usuario = $_SESSION["s_username"];
+
+                    $tipouser = $_SESSION["tipouser"];
+
+                    ?>
         <!-- Hero Header -->
         <div class="hero-material animated fadeindown">
           <div class="parallax primary-color">
 
-            <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
+            <div style="display:none" class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
               <a class="btn-floating btn-large accent-color" href="#!">
                 <i class="ion-android-add"></i>
               </a>
@@ -86,61 +110,47 @@
                 <li><a class="btn-floating blue"><i class="ion-android-share-alt"></i></a></li>
               </ul>
             </div>
-            <div class="banner-title">Material Layout</div>
+            <div class="banner-title" style="color:gray">HOLA <? echo $login; ?></div>
           </div>
         </div>
    <div class="upnext">
           <h5></h5>
 
+
           <div class="next-song animated fadeinright delay-1">
             <span>1</span>
-            <span>I'm Selfish</span>
-            <span>|</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
+            <span> <a href="categoria.php" class="dropdown-hover"> <span class="underline">Categoría</span>  <span class="caret"></span></a>
+      </span>
+            <span></span>
+            <span></span>
+            <a href="categoria.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span><i class="ion-ios-more"></i></a>
           </div>
-
           <div class="next-song animated fadeinright delay-2">
             <span>2</span>
-            <span>I'm Selfish</span>
+            <span>Ciudad</span>
             <i class="ion-ios-more"></i>
           </div>
 
           <div class="next-song animated fadeinright delay-3">
             <span>3</span>
-            <span>I'm Selfish</span>
+            <span>Estados</span>
             <i class="ion-ios-more"></i>
           </div>
 
           <div class="next-song animated fadeinright delay-4">
             <span>4</span>
-            <span>I'm Selfish</span>
+            <span>Usuarios</span>
             <i class="ion-ios-more"></i>
           </div>
 
           <div class="next-song animated fadeinright delay-5">
             <span>5</span>
-            <span>I'm Selfish</span>
+            <span>Salir</span>
             <i class="ion-ios-more"></i>
           </div>
 
-          <div class="next-song animated fadeinright delay-6">
-            <span>6</span>
-            <span>I'm Selfish</span>
-            <i class="ion-ios-more"></i>
-          </div>
         </div>
         <!-- Article Content -->
-        <div class="animated fadeinup delay-1">
-          <div class="section">
-            <p class="text-flow"><span class="dropcap">A</span> wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
-            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            <blockquote class="accent-border">"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog."</blockquote>
-            <p class="text-flow">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
-            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-          </div>
-        </div>
-
         <!-- Footer -->
         <footer class="page-footer primary-color">
           <div class="section center">
@@ -479,5 +489,6 @@
     <script src="js/vendor/swiper.min.js"></script>
     <script src="js/vendor/materialize.min.js"></script>
     <script src="js/main.js"></script>
+    <script type='text/javascript' src='scripts.js'></script>
   </body>
 </html>
