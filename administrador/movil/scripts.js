@@ -262,145 +262,73 @@ function getXMLHTTPRequest()
 
 }
 
-
-
 var http = getXMLHTTPRequest();
-
   function enviarHTTP01 ()
-
   {
-
     var valor = window.document.formulario_usuario01.nombre.value;
-
     if(valor!="")
-
     {
-
       var query= "usuario=" + valor;
-
       http.open ("GET", "../categoria/grabar_categoria.php?" + query, true);
-
       http.onreadystatechange = respuestaHTTP01;
-
     http.send(null); // se envia la petición
-
   }
-
 }
 
-
-
-
-
 function enviarHTTP02 ()
-
 {
-
-	alert("ENTRA");
-
 	var estado = window.document.formulario_usuario02.tipo.value;
-
 	var nombre = window.document.formulario_usuario02.nombre.value;
-
-	alert(estado);
-
-	alert(nombre);
-
 	if(estado!=0 && nombre!="")
-
 	{
-
 		var query= "estado=" + estado +"&nombre=" + nombre;
-
-		http.open ("GET", "ciudad/grabar_ciudad.php?" + query, true);
-
+		http.open ("GET", "../ciudad/grabar_ciudad.php?" + query, true);
 		http.onreadystatechange = respuestaHTTP02;
-
 		http.send(null); // se envia la petición
-
 	}
-
 }
 
 
 
 function respuestaHTTP01 ()
-
 {
-
   if (http.readyState == 4)
-
   {
-
     if (http.status == 200)
-
     {
-
       var respuesta_php = http.responseText;
-
       if(respuesta_php=="")
-
       {
         Materialize.toast('Atención Registro ya existe', 3000);
       }
-
       else
-
       {
         Materialize.toast('Registro correcto', 3000);
         window.document.formulario_usuario01.nombre.value="";
         location.reload(true);
       }
-
     }
-
   }
-
 }
 
 
 function respuestaHTTP02 ()
-
 {
-
   if (http.readyState == 4)
-
   {
-
     if (http.status == 200)
-
     {
-
       var respuesta_php = http.responseText;
-
       if(respuesta_php=="")
-
       {
-
-        document.getElementById('x102').style.display = '';
-
-        document.getElementById('x202').style.display = 'none';
-
+        Materialize.toast('Atención Registro ya existe', 3000);
       }
-
       else
-
       {
-
-        document.getElementById('x102').style.display = 'none';
-
-        document.getElementById('grabar02').style.display = 'none';
-
-        document.getElementById('x202').style.display = '';
-
-
-
+        Materialize.toast('Registro correcto', 3000);
         window.document.formulario_usuario02.nombre.value="";
-
+        location.reload(true);
       }
-
     }
-
   }
-
 }

@@ -124,16 +124,21 @@ $tipouser = $_SESSION["tipouser"];
             $result2 = $db->query($sql2);
             ?>
             <?
-           while ($query_result = $result2->fetch_array())
-           {
-           $idestado= $query_result['idcategoria'];
-           $nombre_estado= $query_result['nombre_categoria'];
-           $suspendido= $query_result['suspendido_categoria'];
+            while ($query_result = $result2->fetch_array())
+            {
+            $idciudad= $query_result['idciudad'];
+            $nombre_ciudad= $query_result['nombre_ciudad'];
+            $estado_idestado= $query_result['estado_idestado'];
+            $suspendido= $query_result['suspendido'];
            echo "<div class='next-song animated fadeinright delay-1'>";
-           echo "<span>$idestado</span>";
-           echo "<span>$nombre_estado</span>";
+           echo "<span>$idciudad</span>";
+           echo "<span>$nombre_ciudad</span>";
+           $sql60 = "SELECT nombre_estado FROM estado WHERE idestado='$estado_idestado' LIMIT 1";
+           $result60 = $db->query($sql60);
+           $fila60 = $result60 -> fetch_array();
+           echo "<span>$fila60[nombre_estado]</span>";
            echo "<span>$suspendido</span>";
-           echo "<a href='modificar_usuarios.php?codigo=+<?=$idestado;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar ésta Categoría'><i class='ion-ios-more'></i></a>";
+           echo "<a href='modificar_usuarios.php?codigo=+<?=$idciudad;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar ésta Ciudad'><i class='ion-ios-more'></i></a>";
           echo"  </div>";
           }
           ?>
@@ -198,7 +203,7 @@ $tipouser = $_SESSION["tipouser"];
             </ul>
           </div>-->
         </li>
- <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Ciudades</a></li>
+ <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Categorías</a></li>
   <li><a href="estados.php" class="waves-effect"><i class="ion-android-map"></i> Estados</a></li>
    <li><a href="usuarios.php" class="waves-effect"><i class="ion-android-map"></i> Usuarios</a></li>
 
@@ -215,22 +220,45 @@ $tipouser = $_SESSION["tipouser"];
 
     <!-- End of Main Container -->
 <!-- Modal Trigger -->
-
+<?
+//require_once('../conexion/conexion.php');
+  $sql2 = "SELECT idestado,nombre_estado FROM estado WHERE suspendido_estado='' ORDER BY nombre_estado ASC ";
+  $result2 = $db->query($sql2);
+?>
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
-<div class="modal-content">
-<h4>Agregar Categoría</h4>
+    <div class="modal-content">
+    <form name="formulario_usuario02">
+    <h4>Agregar Ciudad</h4>
+    <p></p>
+      <label>Seleccione el Estado</label>
+            <select name="tipo" class="browser-default">
+            <option value="0" disabled selected>Seleccione ....</option>
+            <?
+            while ($query_result = $result2->fetch_array())
+            {
+            $idestado= $query_result['idestado'];
+            $nombre_estado= $query_result['nombre_estado'];
+            ?><option <? echo"value='$idestado'"; ?>><? echo"$nombre_estado"; ?></option><?
+            }
+            ?>
+            </select>
 <p></p>
-<div class="input-field">
-<form name="formulario_usuario01">
-<input id="nombre" type="text" class="validate">
-<label for="first_name">Ingrese Nombre de la categoría</label>
-</div>
-</div>
-<div id="grabar01" class="modal-footer">
-<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="enviarHTTP01()">Agregar</a>
+    <div class="input-field">
+
+
+
+          <input id="nombre" type="text" class="validate">
+          <label for="first_name">Ingrese Nombre de la Ciudad</label>
+
+          <div id="grabar01" class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="enviarHTTP02()">Agregar</a>
+          </div>
+
+
 </div>
 </form>
+</div>
 </div>
 
     <!-- Scripts -->
