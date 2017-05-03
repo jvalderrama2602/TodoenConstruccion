@@ -69,7 +69,7 @@ $tipouser = $_SESSION["tipouser"];
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
-        <h1 class="title none">Ciudades</h1>
+        <h1 class="title none">Usuarios</h1>
         <!--<div class="open-right" id="open-right" data-activates="slide-out">
           <i class="ion-android-person"></i>
         </div>-->
@@ -102,7 +102,7 @@ $tipouser = $_SESSION["tipouser"];
           <div class="parallax primary-color">
 
             <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
-              <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large accent-color" href="#modal1">
+              <a class="waves-effect waves-light btn mod1al-trigger btn-floating btn-large acce1nt-color" href="agregar_u.php">
 
               <i class="ion-android-add"></i>
 
@@ -121,25 +121,23 @@ $tipouser = $_SESSION["tipouser"];
           <h5></h5>
            <?
             include_once('../../conexion/conexion.php');
-            $sql2 = "SELECT idciudad,nombre_ciudad,estado_idestado,suspendido FROM ciudad";
+            $sql2 = "SELECT idmantenimiento_usuario,nombre,apellido,suspendido FROM mantenimiento_usuario ";
             $result2 = $db->query($sql2);
             ?>
             <?
             while ($query_result = $result2->fetch_array())
             {
-            $idciudad= $query_result['idciudad'];
-            $nombre_ciudad= $query_result['nombre_ciudad'];
-            $estado_idestado= $query_result['estado_idestado'];
+            $id_usuario= $query_result['idmantenimiento_usuario'];
+            $nombre= $query_result['nombre'];
+            $apellido= $query_result['apellido'];
             $suspendido= $query_result['suspendido'];
+
            echo "<div class='next-song animated fadeinright delay-1'>";
-           echo "<span>$idciudad</span>";
-           echo "<span>$nombre_ciudad&nbsp|&nbsp</span>";
-           $sql60 = "SELECT nombre_estado FROM estado WHERE idestado='$estado_idestado' LIMIT 1";
-           $result60 = $db->query($sql60);
-           $fila60 = $result60 -> fetch_array();
-           echo "<span>$fila60[nombre_estado]&nbsp|&nbsp</span>";
-           echo "<span>$suspendido</span>";
-           echo "<a href='modificar_usuarios.php?codigo=+<?=$idciudad;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar ésta Ciudad'><i class='ion-ios-more'></i></a>";
+           echo "<span>$id_usuario</span>";
+           echo "<span>$nombre&nbsp</span>";
+           echo "<span>$apellido&nbsp</span>";
+           echo "<span>$suspendido&nbsp</span>";
+           echo "<a href='modificar_usuarios.php?codigo=+<?=$id_usuario;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar éste usuario'><i class='ion-ios-more'></i></a>";
           echo"  </div>";
           }
           ?>
@@ -205,8 +203,8 @@ $tipouser = $_SESSION["tipouser"];
           </div>-->
         </li>
  <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Categorías</a></li>
-  <li><a href="estados.php" class="waves-effect"><i class="ion-android-map"></i> Estados</a></li>
-   <li><a href="usuarios.php" class="waves-effect"><i class="ion-android-map"></i> Usuarios</a></li>
+  <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Ciudades</a></li>
+   <li><a href="estados.php" class="waves-effect"><i class="ion-android-map"></i> Estados</a></li>
 
 
 
@@ -221,42 +219,22 @@ $tipouser = $_SESSION["tipouser"];
 
     <!-- End of Main Container -->
 <!-- Modal Trigger -->
-<?
-//require_once('../conexion/conexion.php');
-  $sql2 = "SELECT idestado,nombre_estado FROM estado WHERE suspendido_estado='' ORDER BY nombre_estado ASC ";
-  $result2 = $db->query($sql2);
-?>
+
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-    <form name="formulario_usuario02">
-    <h4>Agregar Ciudad</h4>
+    <form name="formulario_usuario03">
+    <h4>Agregar Estado</h4>
     <p></p>
-      <label>Seleccione el Estado</label>
-            <select name="tipo" class="browser-default">
-            <option value="0" disabled selected>Seleccione ....</option>
-            <?
-            while ($query_result = $result2->fetch_array())
-            {
-            $idestado= $query_result['idestado'];
-            $nombre_estado= $query_result['nombre_estado'];
-            ?><option <? echo"value='$idestado'"; ?>><? echo"$nombre_estado"; ?></option><?
-            }
-            ?>
-            </select>
-<p></p>
+
     <div class="input-field">
 
-
-
           <input id="nombre" type="text" class="validate">
-          <label for="first_name">Ingrese Nombre de la Ciudad</label>
+          <label for="first_name">Ingrese Nombre del Estado</label>
 
           <div id="grabar01" class="modal-footer">
-          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="enviarHTTP02()">Agregar</a>
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="enviarHTTP03()">Agregar</a>
           </div>
-
-
 </div>
 </form>
 </div>

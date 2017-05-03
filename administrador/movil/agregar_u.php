@@ -1,15 +1,8 @@
-
-<?php
-session_start();
-$usuario = $_SESSION["s_username"];
-$tipouser = $_SESSION["tipouser"];
-?>
-
 <!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Todo en Construcción</title>
+    <title>Agregar usuario</title>
     <meta name="description" content="Material Design Mobile Template">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -34,7 +27,6 @@ $tipouser = $_SESSION["tipouser"];
     <link rel="canonical" href="http://www.example.com/" >
     -->
 
-
     <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
     <!--
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,7 +39,7 @@ $tipouser = $_SESSION["tipouser"];
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <!-- Icons -->
-    <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+     <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
@@ -65,89 +57,75 @@ $tipouser = $_SESSION["tipouser"];
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="nav-material">
+      <div id="toolbar" class="primary-color z-depth-1">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
-        <h1 class="title none">Ciudades</h1>
-        <!--<div class="open-right" id="open-right" data-activates="slide-out">
+        <h1 class="title">Usuario</h1>
+        <div class="open-right" id="open-right" data-activates="slide-out">
           <i class="ion-android-person"></i>
-        </div>-->
+        </div>
       </div>
       <!-- End of Toolbar -->
 
       <!-- Page Contents -->
-      <div class="animated fadeinup">
-  <?php
+      <div class="page animated fadeinup">
+<?
+require_once('../../conexion/conexion.php');
 
-                    session_start();
+  $sql2 = "SELECT idtipo_super_usuario,tipo_nombre FROM tipo_super_usuario WHERE suspendido=''";
+  $result2 = $db->query($sql2);
+?>
 
-                    $idtipo=$_SESSION["idtipo"];
+        <!-- Form Inputs -->
+        <div class="form-inputs p-20">
 
-                    $login=$_SESSION["login"];
 
-                    ?>
+          <h4 class="shipping-address">Datos del Usuario</h4>
+          <div>
 
-                    <?php
-
-                    session_start();
-
-                    $usuario = $_SESSION["s_username"];
-
-                    $tipouser = $_SESSION["tipouser"];
-
-                    ?>
-        <!-- Hero Header -->
-        <div class="hero-material animated fadeindown">
-          <div class="parallax primary-color">
-
-            <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
-              <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large accent-color" href="#modal1">
-
-              <i class="ion-android-add"></i>
-
-              </a>
-             <!-- <ul>
-                <li><a class="btn-floating red"><i class="ion-android-home"></i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="ion-android-star"></i></a></li>
-                <li><a class="btn-floating green"><i class="ion-android-attach"></i></a></li>
-                <li><a class="btn-floating blue"><i class="ion-android-share-alt"></i></a></li>
-              </ul>-->
-            </div>
-            <div class="banner-title" style="color:gray">HOLA <? echo $login; ?></div>
-          </div>
-        </div>
-   <div class="upnext">
-          <h5></h5>
-           <?
-            include_once('../../conexion/conexion.php');
-            $sql2 = "SELECT idciudad,nombre_ciudad,estado_idestado,suspendido FROM ciudad";
-            $result2 = $db->query($sql2);
-            ?>
-            <?
+          <label>Seleccione tipo de usuario:</label>
+          <select class="browser-default" id="test3" required>
+            <option value="" disabled selected>--</option>
+              <?
             while ($query_result = $result2->fetch_array())
             {
-            $idciudad= $query_result['idciudad'];
-            $nombre_ciudad= $query_result['nombre_ciudad'];
-            $estado_idestado= $query_result['estado_idestado'];
-            $suspendido= $query_result['suspendido'];
-           echo "<div class='next-song animated fadeinright delay-1'>";
-           echo "<span>$idciudad</span>";
-           echo "<span>$nombre_ciudad&nbsp|&nbsp</span>";
-           $sql60 = "SELECT nombre_estado FROM estado WHERE idestado='$estado_idestado' LIMIT 1";
-           $result60 = $db->query($sql60);
-           $fila60 = $result60 -> fetch_array();
-           echo "<span>$fila60[nombre_estado]&nbsp|&nbsp</span>";
-           echo "<span>$suspendido</span>";
-           echo "<a href='modificar_usuarios.php?codigo=+<?=$idciudad;?>'  target='_blank' onClick='window.open(this.href, this.target,'width=1130,height=650,scrollbars=yes,top=60,left=90,menubar=NO,titlebar=NO'); return false;' class='remove' title='Editar ésta Ciudad'><i class='ion-ios-more'></i></a>";
-          echo"  </div>";
-          }
-          ?>
-
+              $idtipo_usuario= $query_result['idtipo_super_usuario'];
+              $nombre_usuario= $query_result['tipo_nombre'];
+              ?><option <? echo"value='$idtipo_usuario'"; ?>><? echo"$nombre_usuario"; ?></option><?
+            }
+            ?>
+          </select>
+            <div class="input-field">
+              <input id="nombre" type="text" class="validate" required="required">
+              <label for="first_name">Nombre</label>
+            </div>
+            <div class="input-field">
+              <input id="apellido" type="text" class="validate" required="required">
+              <label for="last_name">Apellido</label>
+            </div>
+          </div>
+          <div class="input-field">
+            <input id="email" type="email" required="required">
+            <label for="company">Email</label>
+          </div>
+          <div class="input-field">
+            <input id="login" type="text" class="validate" required="required">
+            <label for="address">Login</label>
+          </div>
+          <div class="input-field">
+            <input id="password" type="password" required="required">
+            <label for="apt">Password</label>
+          </div>
+          <div class="input-field">
+            <input id="confirmacion" type="password" class="validate" required="required">
+            <label for="city">Confirme su password</label>
+          </div>
+          <a class="waves-effect waves-light btn-large primary-color block" onclick="enviarHTTP04()">Agregar Usuario</a>
         </div>
-        <!-- Article Content -->
+
         <!-- Footer -->
-        <footer class="page-footer primary-color">
+         <footer class="page-footer primary-color">
           <div class="section center">
             <h2 class="heading white-text">Todo en Construcción</h2>
             <p class="center-align grey-text text-lighten-4">Compra y ofrece tus servicios.</p>
@@ -165,13 +143,12 @@ $tipouser = $_SESSION["tipouser"];
           </div>
         </footer>
 
-
       </div>
       <!-- End of Page Contents -->
 
       <!-- Sidebars -->
       <!-- Left Sidebar -->
-      <ul id="slide-out-left" class="side-nav collapsible">
+     <ul id="slide-out-left" class="side-nav collapsible">
         <li class="sidenav-avatar bg-material">
           <div class="opacity-overlay-gradient"></div>
           <div class="bottom">
@@ -205,7 +182,8 @@ $tipouser = $_SESSION["tipouser"];
           </div>-->
         </li>
  <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Categorías</a></li>
-  <li><a href="estados.php" class="waves-effect"><i class="ion-android-map"></i> Estados</a></li>
+  <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Ciudades</a></li>
+   <li><a href="estados.php" class="waves-effect"><i class="ion-android-map"></i> Estados</a></li>
    <li><a href="usuarios.php" class="waves-effect"><i class="ion-android-map"></i> Usuarios</a></li>
 
 
@@ -219,48 +197,11 @@ $tipouser = $_SESSION["tipouser"];
 
       </ul>
 
+
+      <!-- End of Sidebars -->
+
+    </div>
     <!-- End of Main Container -->
-<!-- Modal Trigger -->
-<?
-//require_once('../conexion/conexion.php');
-  $sql2 = "SELECT idestado,nombre_estado FROM estado WHERE suspendido_estado='' ORDER BY nombre_estado ASC ";
-  $result2 = $db->query($sql2);
-?>
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-    <form name="formulario_usuario02">
-    <h4>Agregar Ciudad</h4>
-    <p></p>
-      <label>Seleccione el Estado</label>
-            <select name="tipo" class="browser-default">
-            <option value="0" disabled selected>Seleccione ....</option>
-            <?
-            while ($query_result = $result2->fetch_array())
-            {
-            $idestado= $query_result['idestado'];
-            $nombre_estado= $query_result['nombre_estado'];
-            ?><option <? echo"value='$idestado'"; ?>><? echo"$nombre_estado"; ?></option><?
-            }
-            ?>
-            </select>
-<p></p>
-    <div class="input-field">
-
-
-
-          <input id="nombre" type="text" class="validate">
-          <label for="first_name">Ingrese Nombre de la Ciudad</label>
-
-          <div id="grabar01" class="modal-footer">
-          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="enviarHTTP02()">Agregar</a>
-          </div>
-
-
-</div>
-</form>
-</div>
-</div>
 
     <!-- Scripts -->
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
@@ -274,6 +215,6 @@ $tipouser = $_SESSION["tipouser"];
     <script src="js/vendor/swiper.min.js"></script>
     <script src="js/vendor/materialize.min.js"></script>
     <script src="js/main.js"></script>
-    <script type='text/javascript' src='scripts.js'></script>
+     <script type='text/javascript' src='scripts.js'></script>
   </body>
 </html>

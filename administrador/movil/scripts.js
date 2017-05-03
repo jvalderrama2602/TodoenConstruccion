@@ -288,6 +288,42 @@ function enviarHTTP02 ()
 	}
 }
 
+function enviarHTTP03 ()
+{
+  var valor = window.document.formulario_usuario03.nombre.value;
+  if(valor!="")
+  {
+    var query= "usuario=" + valor;
+    http.open ("GET", "../estado/grabar_estados.php?" + query, true);
+    http.onreadystatechange = respuestaHTTP03;
+    http.send(null); // se envia la petición
+  }
+}
+
+function enviarHTTP04 ()
+{
+  var tipo = document.getElementById("test3").value;
+  var nombre = document.getElementById("nombre").value;
+  var apellido = document.getElementById("apellido").value;
+  var email = document.getElementById("email").value;
+  var login = document.getElementById("login").value;
+  var pass = document.getElementById("password").value;
+  var confirmacion = document.getElementById("confirmacion").value;
+  var cont=0;
+
+
+
+  if(pass==confirmacion)
+  {
+
+    var query="tipo=" + tipo + "&nombre=" + nombre +"&apellido=" + apellido +"&email=" + email +"&login=" + login +"&pass=" + pass +"&confirmacion=" + confirmacion;
+    http.open ("GET", "../super_usuario/grabar_usuario.php?" + query, true);
+    http.onreadystatechange = respuestaHTTP04;
+    http.send(null); // se envia la petición
+  }
+  else
+  {alert('No son iguales el pass')}
+}
 
 
 function respuestaHTTP01 ()
@@ -328,6 +364,54 @@ function respuestaHTTP02 ()
         Materialize.toast('Registro correcto', 3000);
         window.document.formulario_usuario02.nombre.value="";
         location.reload(true);
+      }
+    }
+  }
+}
+
+function respuestaHTTP03 ()
+{
+
+  if (http.readyState == 4)
+  {
+    if (http.status == 200)
+    {
+      var respuesta_php = http.responseText;
+      if(respuesta_php=="")
+      {
+        Materialize.toast('Atención Registro ya existe', 3000);
+      }
+      else
+      {
+        Materialize.toast('Registro correcto', 3000);
+        window.document.formulario_usuario03.nombre.value="";
+        location.reload(true);
+      }
+    }
+  }
+}
+
+function respuestaHTTP04 ()
+{
+  if (http.readyState == 4)
+  {
+    if (http.status == 200)
+    {
+      var respuesta_php = http.responseText;
+
+      alert(respuesta_php);
+
+      if(respuesta_php!=0)
+      {
+
+        Materialize.toast('Se Ha Registrado Correctamente', 3000);
+        location.href="usuarios.php";
+      }
+      else
+      {
+
+      Materialize.toast('NO Se Ha Registrado', 3000);
+      location.href="usuarios.php";
       }
     }
   }
