@@ -1,33 +1,21 @@
 
 
+
   function actualizar(x){
 
     switch (x) {
-
       case 0:
-
       document.getElementById('x1').style.display = 'none';
-
       document.getElementById('x2').style.display = 'none';
-
       document.getElementById('grabar').style.display = '';
-
       div=document.getElementById("wrapper2");
-
       div.style.display='none';
-
       div=document.getElementById("wrapper3");
-
       div.style.display='none';
-
       div=document.getElementById("wrapper4");
-
       div.style.display='none';
-
       div=document.getElementById("wrapper5");
-
       div.style.display='none';
-
       location.reload(true);
 
       break;
@@ -90,11 +78,41 @@
 
       case 3:
 
-      document.getElementById('x1').style.display = 'none';
+      document.getElementById('x103').style.display = 'none';
 
-      document.getElementById('x2').style.display = 'none';
+      document.getElementById('x203').style.display = 'none';
 
-      document.getElementById('grabar').style.display = '';
+      document.getElementById('grabar03').style.display = '';
+
+      div=document.getElementById("wrapper2");
+
+      div.style.display='none';
+
+      div=document.getElementById("wrapper3");
+
+      div.style.display='none';
+
+      div=document.getElementById("wrapper4");
+
+      div.style.display='';
+
+      div=document.getElementById("wrapper5");
+
+      div.style.display='none';
+
+      location.reload(true);
+
+      break;
+
+      case 4:
+
+      location.reload(true);
+
+      document.getElementById('x104').style.display = 'none';
+
+      document.getElementById('x204').style.display = 'none';
+
+      document.getElementById('grabar04').style.display = '';
 
       div=document.getElementById("wrapper2");
 
@@ -110,9 +128,8 @@
 
       div=document.getElementById("wrapper5");
 
-      div.style.display='none';
+      div.style.display='';
 
-      location.reload(true);
 
       break;
 
@@ -323,55 +340,94 @@ function enviarHTTP02 ()
 }
 
 
+function enviarHTTP03 ()
+{
+  var valor = window.document.formulario_usuario03.nombre.value;
+
+  if(valor!="")
+  {
+    var query= "usuario=" + valor;
+    http.open ("GET", "estado/grabar_estados.php?" + query, true);
+    http.onreadystatechange = respuestaHTTP03;
+    http.send(null); // se envia la petición
+  }
+}
+
+
+function enviarHTTP04 ()
+{
+  var tipo = document.getElementById("test3u").value;
+  var nombre = document.getElementById("nombreu").value;
+  var apellido = document.getElementById("apellidou").value;
+  var email = document.getElementById("emailu").value;
+  var login = document.getElementById("loginu").value;
+  var pass = document.getElementById("passwordu").value;
+  var confirmacion = document.getElementById("confirmacionu").value;
+  var cont=0;
+alert(tipo,nombre,apellido,email,login,pass,confirmacion);
+  if(pass==confirmacion)
+  {
+    var query="tipo=" + tipo + "&nombre=" + nombre +"&apellido=" + apellido +"&email=" + email +"&login=" + login +"&pass=" + pass +"&confirmacion=" + confirmacion;
+    http.open ("GET", "super_usuario/grabar_usuario.php?" + query, true);
+    http.onreadystatechange = respuestaHTTP04;
+
+    http.send(null);
+     // se envia la petición
+  }
+  else
+  {alert('No son iguales el pass')}
+}
+
 
 function respuestaHTTP01 ()
-
 {
-
   if (http.readyState == 4)
-
   {
-
     if (http.status == 200)
-
     {
-
       var respuesta_php = http.responseText;
-
       if(respuesta_php=="")
-
       {
-
         document.getElementById('x101').style.display = '';
-
         document.getElementById('x201').style.display = 'none';
-
       }
-
       else
-
       {
-
         document.getElementById('x101').style.display = 'none';
-
         document.getElementById('grabar01').style.display = 'none';
-
         document.getElementById('x201').style.display = '';
-
-
-
         window.document.formulario_usuario01.nombre.value="";
-
       }
-
     }
-
   }
-
 }
 
 
 function respuestaHTTP02 ()
+{
+  if (http.readyState == 4)
+  {
+    if (http.status == 200)
+    {
+      var respuesta_php = http.responseText;
+      if(respuesta_php=="")
+      {
+        document.getElementById('x102').style.display = '';
+        document.getElementById('x202').style.display = 'none';
+      }
+      else
+      {
+        document.getElementById('x102').style.display = 'none';
+        document.getElementById('grabar02').style.display = 'none';
+       document.getElementById('x202').style.display = '';
+        window.document.formulario_usuario02.nombre.value="";
+      }
+    }
+  }
+}
+
+
+function respuestaHTTP03 ()
 
 {
 
@@ -389,9 +445,9 @@ function respuestaHTTP02 ()
 
       {
 
-        document.getElementById('x102').style.display = '';
+        document.getElementById('x103').style.display = '';
 
-        document.getElementById('x202').style.display = 'none';
+        document.getElementById('x203').style.display = 'none';
 
       }
 
@@ -399,15 +455,15 @@ function respuestaHTTP02 ()
 
       {
 
-        document.getElementById('x102').style.display = 'none';
+        document.getElementById('x103').style.display = 'none';
 
-        document.getElementById('grabar02').style.display = 'none';
+        document.getElementById('grabar03').style.display = 'none';
 
-        document.getElementById('x202').style.display = '';
+        document.getElementById('x203').style.display = '';
 
 
 
-        window.document.formulario_usuario02.nombre.value="";
+        window.document.formulario_usuario03.nombre.value="";
 
       }
 
@@ -417,3 +473,31 @@ function respuestaHTTP02 ()
 
 }
 
+function respuestaHTTP04 ()
+{
+
+  if (http.readyState == 4)
+  {
+    if (http.status == 200)
+    {
+      var respuesta_php = http.responseText;
+
+      if(respuesta_php!=0)
+      {
+        document.getElementById('x104').style.display = 'none';
+        document.getElementById('grabar04').style.display = 'none';
+        document.getElementById('x204').style.display = '';
+        window.document.formulario_usuario04.nombre.value="";
+
+      }
+      else
+      {
+      alert('NO Se Ha Registrado')
+
+      }
+
+    }
+
+  }
+
+}

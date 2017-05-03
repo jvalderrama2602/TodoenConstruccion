@@ -13,7 +13,7 @@ function validar(e) { // 1
     patron =/[A-Za-z\s]/; // 4
     te = String.fromCharCode(tecla); // 5
     return patron.test(te); // 6
-} 
+}
 </script>
 
 </head>
@@ -21,27 +21,27 @@ function validar(e) { // 1
 <body>
 <?
 require_once('../../conexion/conexion.php');
-	
+
 	$sql2 = "SELECT idtipo_super_usuario,tipo_nombre FROM tipo_super_usuario WHERE suspendido=''";
 	$result2 = $db->query($sql2);
 ?>
 
 <script language="javascript" type="text/javascript">
-function getXMLHTTPRequest() 
+function getXMLHTTPRequest()
 {
-	try { req = new XMLHttpRequest(); } 
-	catch(err1) 
+	try { req = new XMLHttpRequest(); }
+	catch(err1)
 	{
-  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); } 
-		catch (err2) 
+  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+		catch (err2)
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
 	}
 	return req;
 }
 
 var http = getXMLHTTPRequest();
-	
-function enviarHTTP () 
+
+function enviarHTTP ()
 {
 	var tipo = document.getElementById("test3").value;
 	var nombre = document.getElementById("nombre").value;
@@ -51,12 +51,12 @@ function enviarHTTP ()
 	var pass = document.getElementById("password").value;
 	var confirmacion = document.getElementById("confirmacion").value;
 	var cont=0;
-	
+
 		alert(tipo);
-	
+
 	if(pass==confirmacion)
 	{
-		
+
 		var query="tipo=" + tipo + "&nombre=" + nombre +"&apellido=" + apellido +"&email=" + email +"&login=" + login +"&pass=" + pass +"&confirmacion=" + confirmacion;
 		http.open ("GET", "grabar_usuario.php?" + query, true);
 		http.onreadystatechange = respuestaHTTP;
@@ -67,30 +67,30 @@ function enviarHTTP ()
 }
 
 
-function respuestaHTTP () 
+function respuestaHTTP ()
 {
-	if (http.readyState == 4) 
-	{  
-		if (http.status == 200) 
-		{ 
-			var respuesta_php = http.responseText; 
-			
+	if (http.readyState == 4)
+	{
+		if (http.status == 200)
+		{
+			var respuesta_php = http.responseText;
+
 			alert(respuesta_php);
-			
+
 			if(respuesta_php!=0)
 			{
 				alert('Se Ha Registrado Correctamente')
-				
+
 			}
 			else
 			{
 				alert('NO Se Ha Registrado')
-				
+
 			}
 		}
 	}
 }
-	
+
 </script>
 
 <table width="400" align="center">
@@ -109,7 +109,7 @@ function respuestaHTTP ()
 				?><option <? echo"value='$idtipo_usuario'"; ?>><? echo"$nombre_usuario"; ?></option><?
 			}
 			?>
-        </select>	
+        </select>
 	</td>
 </tr>
 <tr>

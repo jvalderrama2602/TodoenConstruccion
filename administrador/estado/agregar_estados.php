@@ -11,28 +11,29 @@ function validar(e) { // 1
     patron =/[A-Za-z\s]/; // 4
     te = String.fromCharCode(tecla); // 5
     return patron.test(te); // 6
-} 
+}
 </script>
 
 <script language="javascript" type="text/javascript">
-function getXMLHTTPRequest() 
+function getXMLHTTPRequest()
 {
-	try { req = new XMLHttpRequest(); } 
-	catch(err1) 
+	try { req = new XMLHttpRequest(); }
+	catch(err1)
 	{
-  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); } 
-		catch (err2) 
+  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+		catch (err2)
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
 	}
 	return req;
 }
 
+
 var http = getXMLHTTPRequest();
 
-function enviarHTTP () 
+function enviarHTTP ()
 {
-	var valor = window.document.formulario_usuario.nombre.value; 
-	
+	var valor = window.document.formulario_usuario.nombre.value;
+
 	if(valor!="")
 	{
 		var query= "usuario=" + valor;
@@ -42,14 +43,14 @@ function enviarHTTP ()
 	}
 }
 
-function respuestaHTTP () 
+function respuestaHTTP ()
 {
-	if (http.readyState == 4) 
-	{  
-		if (http.status == 200) 
-		{ 
-			var respuesta_php = http.responseText; 
-			
+	if (http.readyState == 4)
+	{
+		if (http.status == 200)
+		{
+			var respuesta_php = http.responseText;
+
 			if(respuesta_php=="")
 			{
 				document.getElementById('x1').style.display = '';
@@ -60,7 +61,7 @@ function respuestaHTTP ()
 				document.getElementById('x1').style.display = 'none';
 				document.getElementById('x2').style.display = '';
 				window.document.formulario_usuario.nombre.value="";
-			}	
+			}
 		}
 	}
 }

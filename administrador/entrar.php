@@ -692,95 +692,7 @@ require_once('../conexion/conexion.php');
 
 
 
-
-
-<!--
-
-
-
-
-
-  <form name="formulario_usuario">
-
-            <table width="385" align="center">
-
-            <tr id="x1" style="display: none"><td colspan="2">La Ciudad Ya Existe</td></tr>
-
-            <tr id="x2" style="display: none"><td colspan="2">La Ciudad  Se Registro Correctamente</td></tr>
-
-            <tr><td align="center" colspan="2">CIUDAD</td></tr>
-
-            <tr>
-
-              <td width="99">ESTADO</td>
-
-              <td>
-
-                <select name="tipo" id="test3">
-
-                      <option value="0">Seleccione ....</option>
-
-                        <?
-
-                  while ($query_result = $result2->fetch_array())
-
-                  {
-
-                    $idestado= $query_result['idestado'];
-
-                    $nombre_estado= $query_result['nombre_estado'];
-
-                    ?><option <? echo"value='$idestado'"; ?>><? echo"$nombre_estado"; ?></option><?
-
-                  }
-
-                  ?>
-
-                    </select>
-
-              </td>
-
-            </tr>
-
-            <tr>
-
-              <td>NOMBRE</td>
-
-                <td width="274">
-
-                    <input type="text" name="nombre" size="45" maxlength="20" placeholder=" Nombre De La Ciudad" onkeypress="return validar(event)"/>
-
-                </td>
-
-            </tr>
-
-            </table>
-
-
-
-            <table  width="360" align="center">
-
-            <tr><td height="15"></td></tr>
-
-            <tr>
-
-              <td align="center"><button type="button" value="Grabar" onclick="enviarHTTP02()">Grabar</button> </td>
-
-            </tr>
-
-            </table>
-
-
-
-</form>-->
-
 </div>
-
-
-
-
-
-
 
 <!-- aqui termina ciudades -->
 
@@ -944,27 +856,27 @@ $result2 = $db->query($sql2);
 
           <div class="form-group">
 
-            <label>Ingrese Nombre de la categoría</label>
+            <label>Ingrese Nombre del estado</label>
 
-            <input type="text" id="nombre" name="log" required class="form-control" value="" placeholder="Nombre de la categoría" onkeypress="return validar(event)">
+            <input type="text" id="nombre" name="log" required class="form-control" value="" placeholder="Nombre del Estado" onkeypress="return validar(event)">
 
           </div>
 
         </div>
 
-        <div id="grabar" class="modal-footer">
+        <div id="grabar03" class="modal-footer">
 
-          <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP01()">Grabar</button>
+          <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP03()">Grabar</button>
 
         </div>
 
-        <div id="x1" style="display: none" class="modal-footer">
+        <div id="x103" style="display: none" class="modal-footer">
 
           <label>La categoría ya existe</label>
 
         </div>
 
-        <div id="x2" style="display: none" class="modal-footer">
+        <div id="x203" style="display: none" class="modal-footer">
 
           <label>La categoría Se Registro Correctamente <div class="modal-footer">
 
@@ -1118,7 +1030,7 @@ $result2 = $db->query($sql2);
 
 </form>
 
-<div class="form-row"> <a data-rel="userloginModal4" href="#" class="btn btn-outline rounded">Agregar Usuario</a>
+<div class="form-row"> <a data-rel="loginModal4" href="#" class="btn btn-outline rounded">Agregar Usuario</a>
 
 </div>
 
@@ -1157,36 +1069,92 @@ $result2 = $db->query($sql2);
           <h4 class="modal-title">Agregar Usuario</h4>
 
         </div>
+<?
+//require_once('../../conexion/conexion.php');
+
+  $sql2 = "SELECT idtipo_super_usuario,tipo_nombre FROM tipo_super_usuario WHERE suspendido=''";
+  $result2 = $db->query($sql2);
+?>
 
         <div class="modal-body">
 
+         <div class="form-group">
+             <label>Seleccione Tipo de Usuario</label>
+             <select name="tipo" id="test3u" required>
+             <option value="0">Seleccione ....</option>
+             <?
+              while ($query_result = $result2->fetch_array())
+              {
+                $idtipo_usuario= $query_result['idtipo_super_usuario'];
+                $nombre_usuario= $query_result['tipo_nombre'];
+                ?><option <? echo"value='$idtipo_usuario'"; ?>><? echo"$nombre_usuario"; ?></option><?
+              }
+              ?>
+                </select>
+        </div>
           <div class="form-group">
 
-            <label>Ingrese Nombre de la categoría</label>
+            <label>Ingrese Nombre del Usuario</label>
 
-            <input type="text" id="nombre" name="log" required class="form-control" value="" placeholder="Nombre de la categoría" onkeypress="return validar(event)">
+            <input type="text" id="nombreu" name="log" required class="form-control" value="" placeholder="Nombre del Usuario" onkeypress="return validar(event)" required="required">
+
+          </div>
+
+           <div class="form-group">
+
+            <label>Ingrese Apellido del Usuario</label>
+
+            <input type="text" id="apellidou" name="log" required class="form-control" value="" placeholder="Apellido del Usuario" onkeypress="return validar(event)" required="required">
+
+          </div>
+           <div class="form-group">
+
+            <label>Ingrese E-Mail</label>
+
+            <input type="email" id="emailu" name="log" required class="form-control" value="" placeholder="Email" required="required">
+
+          </div>
+          <div class="form-group">
+
+            <label>Ingrese Login</label>
+
+            <input type="text" id="loginu" name="log" required class="form-control" value="" placeholder="Usuario" required="required">
+
+          </div>
+          <div class="form-group">
+
+            <label>Password</label>
+
+            <input type="text" id="passwordu" name="log" required class="form-control" value="" placeholder="Clave" required="required">
+
+          </div>
+          <div class="form-group">
+
+            <label>Confirmación Password</label>
+
+            <input type="text" id="confirmacionu" name="log" required class="form-control" value="" placeholder="Confirme la clave" required="required">
 
           </div>
 
         </div>
 
-        <div id="grabar" class="modal-footer">
+        <div id="grabar04" class="modal-footer">
 
-          <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP01()">Grabar</button>
-
-        </div>
-
-        <div id="x1" style="display: none" class="modal-footer">
-
-          <label>La categoría ya existe</label>
+          <button type="button" class="btn btn-default btn-outline" onclick="enviarHTTP04()">Grabar</button>
 
         </div>
 
-        <div id="x2" style="display: none" class="modal-footer">
+        <div id="x104" style="display: none" class="modal-footer">
 
-          <label>La categoría Se Registro Correctamente <div class="modal-footer">
+          <label>Usuario ya existe</label>
 
-          <button type="button" class="btn btn-default btn-outline" data-dismiss="modal" onclick="actualizar(0)">Continuar</button>
+        </div>
+
+        <div id="x204" style="display: none" class="modal-footer">
+
+          <label>El usuario Se Registro Correctamente <div class="modal-footer">
+
+          <button type="button" class="btn btn-default btn-outline" data-dismiss="modal" onclick="actualizar(4)">Continuar</button>
 
         </div></label>
 
