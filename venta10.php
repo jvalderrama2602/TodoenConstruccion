@@ -8,7 +8,7 @@ include('header.php');
 
         <div class="row">
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <p class="lead">Venta</p>
                 <div class="list-group">
                     <a href="#" class="list-group-item">Category 1</a>
@@ -17,10 +17,7 @@ include('header.php');
                 </div>
             </div>
 
-            <div class="col-md-9">
-
-                
-           
+            <div class="col-md-10">
                 <div class="row">
 
  <?               
@@ -40,13 +37,14 @@ while ($query_result = $result2->fetch_array())
 
 ?>					<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="data:image/jpg; base64 ,<? echo base64_encode($fila60[fotos_producto]); ?>" />
+                            <img src="data:image/jpg; base64 ,<? echo base64_encode($fila60[fotos_producto]); ?>" width="200" />
                             <div class="caption">
-                                <h4 class="pull-right">Bs. <? echo $monto_producto; ?></h4>
+                                
                                 <h4>
-                                	<a href="#"><? echo $nombre_producto; ?></a>
+                                	<a href="single.php"><? echo $nombre_producto; ?></a>
                                 </h4>
                                 <p><? echo $descripcion_producto ; ?></p>
+                                <h4 class="pull-right">Bs. <? echo $monto_producto; ?></h4>
 								<a href="mostrar_producto.php?idproducto" class="btn btn-danger btn-xs">Leer mas</a>
                             </div>
                             <div class="ratings">

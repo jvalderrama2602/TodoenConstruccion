@@ -41,7 +41,7 @@ include('header.php');
 				$idusuarios= $query_result['idfotos_productos'];
 				$imagen_servicio= $query_result['fotos_producto'];
 		?>
-    			<img src="data:image/jpg; base64 ,<? echo base64_encode($imagen_servicio); ?>" />
+    			<img src="data:image/jpg; base64 ,<? echo base64_encode($imagen_servicio); ?>" width="100" height="100" />
 		<?
 			}
 		?>
