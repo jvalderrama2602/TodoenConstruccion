@@ -25,28 +25,29 @@ $apellido_usuario = $_SESSION["apellido_usuario"];
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/jquery.nivo.slider.js"></script>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 $(window).on('load', function() {
-    $('#slider').nivoSlider(); 
-}); 
+    $('#slider').nivoSlider();
+});
 </script>
 
 <script language="javascript" type="text/javascript">
-function getXMLHTTPRequest() 
+function getXMLHTTPRequest()
 {
-	try { req = new XMLHttpRequest(); } 
-	catch(err1) 
+	try { req = new XMLHttpRequest(); }
+	catch(err1)
 	{
-  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); } 
-		catch (err2) 
+  		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+		catch (err2)
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
 	}
 	return req;
 }
 
 var http = getXMLHTTPRequest();
+var http2 = getXMLHTTPRequest();
 
-function enviarHTTP () 
+function enviarHTTP ()
 {
 	var login = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
@@ -60,14 +61,14 @@ function enviarHTTP ()
 	}
 }
 
-function respuestaHTTP () 
+function respuestaHTTP ()
 {
-	if (http.readyState == 4) 
-	{  
-		if (http.status == 200) 
-		{ 
-			var respuesta_php = http.responseText; 
-			
+	if (http.readyState == 4)
+	{
+		if (http.status == 200)
+		{
+			var respuesta_php = http.responseText;
+
 			if(isNaN(respuesta_php)==true)
 			{
 				if(respuesta_php=='no_existe')
@@ -82,7 +83,31 @@ function respuestaHTTP ()
 		}
 	}
 }
+
+
+function enviarHTTPlogout ()
+{
+
+		http2.open ("GET", "logout.php", true);
+		http2.onreadystatechange = respuestaHTTPlogout;
+		http2.send(null); // se envia la petición
+
+}
+
+function respuestaHTTPlogout ()
+{
+		if (http2.readyState == 4)
+	{
+		if (http2.status == 200)
+		{
+			var respuesta = http2.responseText;
+            window.location="index.php";
+		}
+	}
+}
 </script>
+
+
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -122,7 +147,7 @@ require_once('conexion/conexion.php');
 						</li>
 						<li><a href="#">Galerias</a>
 						</li><li><a href="#">Noticias</a></li>
-						<li><a href="#">Blog</a></li>	
+						<li><a href="#">Blog</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -138,7 +163,7 @@ require_once('conexion/conexion.php');
 						<div class="row">
 							<div class="col-sm-6 col-left-topbar">
 								<div class="left-topbar">
-									Compra y venda sus servicios, abra su cuenta ya! 
+									Compra y venda sus servicios, abra su cuenta ya!
 									<a href="#"><i class="fa fa-long-arrow-right"></i></a>
 								</div>
 							</div>
@@ -149,7 +174,7 @@ require_once('conexion/conexion.php');
 										if($idusuario!="")
 										{ ?>
 										<ul class="nav top-nav">
-											<li><a>&nbsp&nbsp&nbsp&nbsp&nbsp Salir</a></li>
+											<li><a onClick="enviarHTTPlogout()">&nbsp&nbsp&nbsp&nbsp&nbsp Salir</a></li>
 										</ul>
 										<ul class="nav top-nav">
 											<li><a href="mi_cuenta.php?idusuario=+<?=$idusuario;?>">&nbsp Cuenta</a></li>
@@ -169,7 +194,7 @@ require_once('conexion/conexion.php');
 										<ul class="nav top-nav">
 											<li><a href='login.php'>Registrarse&nbsp</a></li>
 										</ul>
-										<? } ?> 
+										<? } ?>
 									</div>
 								</div>
 							</div>
@@ -208,20 +233,20 @@ require_once('conexion/conexion.php');
 														<a href="index.php" class="dropdown-hover">
 															<span class="underline">Inicio</span> <span class="caret"></span>
 														</a>
-														
+
 													</li>
 													<li class="menu-item-has-children megamenu megamenu-fullwidth dropdown">
 														<a href="#" class="dropdown-hover">
 															<span class="underline">Galerías</span> <span class="caret"></span>
 														</a>
-														
+
 													</li>
-												
+
 													<li class="menu-item-has-children dropdown">
 														<a href="#" class="dropdown-hover">
 															<span class="underline">Noticias</span> <span class="caret"></span>
 														</a>
-														
+
 													</li>
 													<li class="menu-item-has-children dropdown">
 														<a href="#" class="dropdown-hover">
@@ -275,12 +300,12 @@ require_once('conexion/conexion.php');
 				</div>
 			</header>
 
-			
+
 
 		<div class="modal fade user-login-modal" id="userloginModal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					
+
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -312,11 +337,11 @@ require_once('conexion/conexion.php');
 							</span>
 							<button class="btn btn-default btn-outline" onclick="enviarHTTP()">Iniciar</button>
 						</div>
-					
+
 				</div>
 			</div>
 		</div>
-		<!-- registro 
+		<!-- registro
 		<div class="modal fade user-register-modal" id="userregisterModal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -355,7 +380,7 @@ require_once('conexion/conexion.php');
 					</form>
 				</div>
 			</div>
-		</div> 
+		</div>
 		 -->
 
 		<div class="modal fade user-lostpassword-modal" id="userlostpasswordModal" tabindex="-1" role="dialog" aria-hidden="true">

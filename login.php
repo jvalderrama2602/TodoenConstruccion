@@ -1,27 +1,7 @@
 <?
-
-
-
 include('header.php');
-
-
-
 require_once('conexion/conexion.php');
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
 <script language="javascript">
 
 
@@ -108,163 +88,56 @@ function soloNumeros(evt)
 
 }
 
-
-
 </script>
-
-
-
-
-
-
-
 <script language="javascript" type="text/javascript">
-
-
-
 function getXMLHTTPRequest()
-
-
-
 {
-
-
-
 	try { req = new XMLHttpRequest(); }
-
-
-
 	catch(err1)
-
-
-
 	{
-
-
-
   		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
-
-
-
 		catch (err2)
-
-
-
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
-
-
-
 	}
-
-
-
 	return req;
-
-
-
 }
-
-
-
-
-
-
-
 var http = getXMLHTTPRequest();
-
-
-
 var http2 = getXMLHTTPRequest();
 
-
-
-
-
-
-
-function enviarHTTPc ()
-
-
-
+function enviarHTTPcc ()
 {
-
-
-
 	var nombre = document.getElementById("nombrec").value;
-
-
-
 	var apellido = document.getElementById("apellidoc").value;
-
-
 	var elementos = document.getElementsByName("nac");
-
-
-
  	for(var i=0; i<elementos.length; i++)
-
-
-
 	{ if(elementos[i].checked==true){ var nac=elementos[i].value;} }
-
-
-
 
 	var ci = document.getElementById("ci").value;
 
-
-
 	var lista = document.getElementById("cod_cel");
 
-
-
 	var valorSeleccionado = lista.options[lista.selectedIndex].value;
-
-
-
 	var num_cel = document.getElementById("num_cel").value;
-
-
 
 	var cod_local = document.getElementById("cod_local").value;
 
-
-
 	var num_local = document.getElementById("num_local").value;
-
-
 
 	var lista_category = document.getElementById("category");
 
-
-
 	var valorSeleccionado_lista_category = lista_category.options[lista_category.selectedIndex].value;
-
-
 
 	var lista2 = document.getElementById("subcategory");
 
-
-
 	var valorSeleccionado2 = lista2.options[lista2.selectedIndex].value;
-
-
 
 	var email = document.getElementById("emailc").value;
 
-
-
 	var login = document.getElementById("loginc").value;
-
-
 
 	var pass = document.getElementById("passc").value;
 
-
-
 	var cont=0;
-
-
 	if(login==""){alert('El Login se encuentra vacio');cont=1;}
 
 
@@ -273,42 +146,16 @@ function enviarHTTPc ()
 
 
 	{
-
-
-
 		var tel_cel=valorSeleccionado+'-'+num_cel;
-
-
-
 		var tel_loc=cod_local+'-'+num_local;
-
-
-
 		var query= "nombre=" + nombre +"&apellido=" + apellido +"&nac=" + nac +"&ci=" + ci +"&tel_cel=" + tel_cel +"&tel_loc=" + tel_loc +"&idestado=" + valorSeleccionado_lista_category +"&idciudad=" + valorSeleccionado2 +"&email=" + email +"&login=" + login +"&pass=" + pass;
-
-
-
 		http.open ("GET", "grabar_registro.php?" + query, true);
-
-
-
-		http.onreadystatechange = respuestaHTTPc;
-
-
-
+		http.onreadystatechange = respuestaHTTPcc;
 		http.send(null); // se envia la petición
-
-
-
 	}
-
-
-
 }
 
-
-
-function respuestaHTTPc ()
+function respuestaHTTPcc ()
 {
 if (http.readyState == 4)
 	{
@@ -320,156 +167,48 @@ if (http.readyState == 4)
 
 			if(respuesta_php!="")
 			{
-				alert('Se Ha Registrado Correctamente')
-				window.location="index.php";
+				//alert('Se Ha Registrado Correctamente')
+				window.location="bienvenida.php";
 			}
 		}
 	}
 }
-
-
-
-
-
-
 
 function enviarHTTP20 ()
-
-
-
 {
-
-
-
 	var nombre = document.getElementById("loginc").value;
-
-
-
-
-
-
-
 	if(nombre!="")
-
-
-
 	{
-
-
-
 		var query= "login=" + nombre;
-
-
-
 		http2.open ("GET", "verificar_login.php?" + query, true);
-
-
-
-		http2.onreadystatechange = respuestaHTTP2c;
-
-
-
+		http2.onreadystatechange = respuestaHTTP2cc;
 		http2.send(null); // se envia la petición
-
-
-
 	}
-
-
 
 }
 
-
-
-
-
-
-
-function respuestaHTTP2c ()
-
-
-
+function respuestaHTTP2cc ()
 {
-
-
-
 	if (http2.readyState == 4)
 
-
-
 	{
-
-
-
 		if (http2.status == 200)
-
-
-
-		{
-
-
-
+    {
 			var respuesta_php2 = http2.responseText;
-
-
 			if(isNaN(respuesta_php2)==true)
-
-
-
 			{
-
-
-
 				document.getElementById('x1').style.display = '';
-
-
-
 				document.getElementById('x2').style.display = 'none';
-
-
-
 			}
-
-
-
 			else
-
-
-
 			{
-
-
-
-
 				document.getElementById('x1').style.display = 'none';
-
-
-
 				document.getElementById('x2').style.display = '';
-
-
 				document.getElementById("loginc").value='';
-
 			}
-
-
-
 		}
-
-
-
 	}
-
-
-
 }
-
-
-
-
-
-
-
 </script>
 
 
@@ -595,13 +334,13 @@ function respuestaHTTP2c ()
 										<div class="form-row">
 											<div id="x1" style="display: none">
 												<div class="alert alert-success">
-													El Login es valido
+													El usuario seleccionado está disponible
 												</div>
 											</div>
 
 											<div id="x2" style="display: none">
 												<div class="alert alert-danger">
-													El Login <strong>NO</strong> es valido
+													El usuario seleccionado <strong>NO</strong> está disponible
 												</div>
 											</div>
 										</div>
@@ -976,7 +715,7 @@ function respuestaHTTP2c ()
 
 										<div class="form-row">
 
-											<button class="btn btn-outline rounded" type="submit" value="grabar" onclick="enviarHTTPc()">Crear Cuenta</button>
+											<button class="btn btn-outline rounded" type="submit" value="grabar" onclick="enviarHTTPcc()">Crear Cuenta</button>
 
 
 										</div>
