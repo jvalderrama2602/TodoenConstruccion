@@ -264,7 +264,7 @@ function enviarHTTPc ()
 
 	var cont=0;
 
-		
+
 	if(login==""){alert('El Login se encuentra vacio');cont=1;}
 
 
@@ -310,14 +310,14 @@ function enviarHTTPc ()
 
 function respuestaHTTPc ()
 {
-if (http.readyState == 4) 
-	{  
-		if (http.status == 200) 
-		{ 
-			var respuesta_php = http.responseText; 
-			
+if (http.readyState == 4)
+	{
+		if (http.status == 200)
+		{
+			var respuesta_php = http.responseText;
+
 			alert(respuesta_php);
-			
+
 			if(respuesta_php!="")
 			{
 				alert('Se Ha Registrado Correctamente')
@@ -587,18 +587,18 @@ function respuestaHTTP2c ()
 
 
 									<h2 class="commerce-account-heading">Crear Cuenta</h2>
-									
 
 
-									<form class="login">
-										
+
+									<div class="login">
+
 										<div class="form-row">
-											<div id="x1" style="display: none">  
+											<div id="x1" style="display: none">
 												<div class="alert alert-success">
-													El Login es valido 
+													El Login es valido
 												</div>
 											</div>
-									
+
 											<div id="x2" style="display: none">
 												<div class="alert alert-danger">
 													El Login <strong>NO</strong> es valido
@@ -976,21 +976,15 @@ function respuestaHTTP2c ()
 
 										<div class="form-row">
 
-
-
-
-
-
-
 											<button class="btn btn-outline rounded" type="submit" value="grabar" onclick="enviarHTTPc()">Crear Cuenta</button>
-
 
 
 										</div>
 
 
 
-									</form>
+									</div>
+
 
 
 
