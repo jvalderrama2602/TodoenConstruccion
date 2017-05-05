@@ -8,7 +8,9 @@ $login=$_GET['login'];
 	$result60 = $db->query($sql60);
 	$fila60 = $result60 -> fetch_array();
 	
-	$id=$fila60[idusuario];
-
+	$id=trim($fila60[idusuario]);
+	
+	if($id==""){$id=no;}
+		
 echo $id;	
 ?>
