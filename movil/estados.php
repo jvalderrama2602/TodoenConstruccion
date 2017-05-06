@@ -187,18 +187,6 @@ $tipouser = $_SESSION["tipouser"];
           <div class="collapsible-header waves-effect">
             <i class="ion-android-home"></i>Inicio<span class="more"><i class="ion-ios-arrow-right"></i></span>
           </div>
-
-        <!--  <div class="collapsible-body">
-            <ul class="collapsible">
-              <li>
-                <a href="index.html">Classic</a>
-                <a href="index-sliced.html">Sliced</a>
-                <a href="index-slider.html">Slider</a>
-                <a href="index-drawer.html">Drawer</a>
-                <a href="index-walkthrough.html">Walkthrough</a>
-              </li>
-            </ul>
-          </div>-->
         </li>
  <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Categorías</a></li>
   <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Ciudades</a></li>

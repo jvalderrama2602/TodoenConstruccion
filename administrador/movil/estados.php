@@ -207,9 +207,7 @@ $tipouser = $_SESSION["tipouser"];
 
 
         <li>
-          <div class="collapsible-header waves-effect">
-            <i class="ion-android-exit"></i>Salir<span class="more"><i class="ion-ios-arrow-right"></i></span>
-          </div>
+          <a href="../../index.php" class="waves-effect"><i class="ion-android-exit"></i>Salir</a>
 
         </li>
 

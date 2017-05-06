@@ -57,58 +57,27 @@
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="primary-color z-depth-1">
+      <div id="toolbar" class="primary-color-head z-depth-1">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
-        <h1 class="title">Usuario</h1>
-        <div class="open-right" id="open-right" data-activates="slide-out">
+      <h1 class="title">Usuario</h1>
+       <!--   <div class="open-right" id="open-right" data-activates="slide-out">
           <i class="ion-android-person"></i>
-        </div>
+        </div>-->
       </div>
       <!-- End of Toolbar -->
 
       <!-- Page Contents -->
       <div class="page animated fadeinup">
-<?
-require_once('../../conexion/conexion.php');
 
-  $sql2 = "SELECT idtipo_super_usuario,tipo_nombre FROM tipo_super_usuario WHERE suspendido=''";
-  $result2 = $db->query($sql2);
-?>
 
         <!-- Form Inputs -->
         <div class="form-inputs p-20">
 
 
-          <h4 class="shipping-address">Datos del Usuario</h4>
-          <div>
+          <h4 class="shipping-address">Crear Cuenta</h4>
 
-          <label>Seleccione tipo de usuario:</label>
-          <select class="browser-default" id="test3" required>
-            <option value="" disabled selected>--</option>
-              <?
-            while ($query_result = $result2->fetch_array())
-            {
-              $idtipo_usuario= $query_result['idtipo_super_usuario'];
-              $nombre_usuario= $query_result['tipo_nombre'];
-              ?><option <? echo"value='$idtipo_usuario'"; ?>><? echo"$nombre_usuario"; ?></option><?
-            }
-            ?>
-          </select>
-            <div class="input-field">
-              <input id="nombre" type="text" class="validate" required="required">
-              <label for="first_name">Nombre</label>
-            </div>
-            <div class="input-field">
-              <input id="apellido" type="text" class="validate" required="required">
-              <label for="last_name">Apellido</label>
-            </div>
-          </div>
-          <div class="input-field">
-            <input id="email" type="email" required="required">
-            <label for="company">Email</label>
-          </div>
           <div class="input-field">
             <input id="login" type="text" class="validate" required="required">
             <label for="address">Login</label>
@@ -121,7 +90,29 @@ require_once('../../conexion/conexion.php');
             <input id="confirmacion" type="password" class="validate" required="required">
             <label for="city">Confirme su password</label>
           </div>
-          <a class="waves-effect waves-light btn-large primary-color block" onclick="enviarHTTP04()">Agregar Usuario</a>
+          <div>
+
+          <label>Seleccione tipo de usuario:</label>
+          <select class="browser-default" id="test3" required>
+            <option value="" disabled selected>--</option>
+
+          </select>
+          </div>
+            <div class="input-field">
+              <input id="nombre" type="text" class="validate" required="required">
+              <label for="first_name">Nombre</label>
+            </div>
+            <div class="input-field">
+              <input id="apellido" type="text" class="validate" required="required">
+              <label for="last_name">Apellido</label>
+            </div>
+
+          <div class="input-field">
+            <input id="email" type="email" required="required">
+            <label for="company">Email</label>
+          </div>
+
+          <a class="waves-effect waves-light btn-large primary-color block" onclick="enviarHTTPcc()">Crear Cuenta</a>
         </div>
 
         <!-- Footer -->

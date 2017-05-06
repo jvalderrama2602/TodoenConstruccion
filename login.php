@@ -4,90 +4,26 @@ require_once('conexion/conexion.php');
 ?>
 <script language="javascript">
 
-
-
 $(document).ready(function(){
-
-
-
    $("#category").change(function () {
-
-
-
            $("#category option:selected").each(function () {
-
-
-
             id_category = $(this).val();
-
-
-
             $.post("subcategories.php", { id_category: id_category }, function(data){
-
-
-
                 $("#subcategory").html(data);
-
-
-
             });
-
-
-
         });
-
-
-
    })
-
-
-
 });
-
-
-
 </script>
-
-
-
-
-
-
-
 <script language="javascript" type="text/javascript">
-
-
-
 function soloNumeros(evt)
-
-
-
 {
-
-
-
     evt = (evt) ? evt : event;
-
-
-
     var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
-
-
-
     var respuesta = true;
-
-
-
     if (charCode > 31 && (charCode < 48 || charCode > 57)){  respuesta = false;  }
-
-
-
     return respuesta;
-
-
-
 }
-
 </script>
 <script language="javascript" type="text/javascript">
 function getXMLHTTPRequest()

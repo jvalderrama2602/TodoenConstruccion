@@ -29,18 +29,6 @@ $tipouser = $_SESSION["tipouser"];
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/" >
-    -->
-
-
-    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-    <!--
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="">
-    -->
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -99,7 +87,7 @@ $tipouser = $_SESSION["tipouser"];
                     ?>
         <!-- Hero Header -->
         <div class="hero-material animated fadeindown">
-          <div class="parallax primary-color">
+          <div class="parallax primary-color-head">
 
             <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
               <a class="waves-effect waves-light btn mod1al-trigger btn-floating btn-large acce1nt-color" href="agregar_u.php">
