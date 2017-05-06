@@ -1,9 +1,15 @@
+<?php
+session_start();
+$usuario = $_SESSION["s_username"];
+$tipouser = $_SESSION["tipouser"];
+?>
+
 <!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
     <title>Todo en Construcción</title>
-    <meta name="description" content="Todo en Construcción">
+    <meta name="description" content="Material Design Mobile Template">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
@@ -57,11 +63,11 @@
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="primary-color-head z-depth-1">
+      <div id="toolbar" class="nav-material">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
-        <h1 class="title">Todo en Construcción</h1>
+        <h1 class="title none">Administración</h1>
         <div class="open-right" id="open-right" data-activates="slide-out">
           <i class="ion-android-person"></i>
         </div>
@@ -69,199 +75,87 @@
       <!-- End of Toolbar -->
 
       <!-- Page Contents -->
-      <div class="page animated fadein">
-        <!-- Slider -->
-        <div class="swiper-container swiper-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/4.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom center">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
+      <div class="animated fadeinup">
+  <?php
+
+                    session_start();
+
+                    $idtipo=$_SESSION["idtipo"];
+
+                    $login=$_SESSION["login"];
+
+                    ?>
+
+                    <?php
+
+                    session_start();
+
+                    $usuario = $_SESSION["s_username"];
+
+                    $tipouser = $_SESSION["tipouser"];
+
+                    ?>
+        <!-- Hero Header -->
+        <div class="hero-material animated fadeindown">
+          <div class="parallax primary-color">
+
+            <div style="display:none" class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
+              <a class="btn-floating btn-large accent-color" href="#!">
+                <i class="ion-android-add"></i>
+              </a>
+              <ul>
+                <li><a class="btn-floating red"><i class="ion-android-home"></i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="ion-android-star"></i></a></li>
+                <li><a class="btn-floating green"><i class="ion-android-attach"></i></a></li>
+                <li><a class="btn-floating blue"><i class="ion-android-share-alt"></i></a></li>
+              </ul>
             </div>
-            <div class="swiper-slide">
-              <img src="img/5.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom left-align">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="img/3.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom right-align">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- End of Slider -->
-
-        <!-- First Section -->
-        <div class="section center">
-          <i class="ion-aperture infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Versión para movil de todo en construcción</p>
-        </div>
-
-        <!-- Second Section -->
-        <div class="section center grey lighten-5">
-          <i class="ion-code-working infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
-        </div>
-
-        <!-- Third Section -->
-        <div class="section center">
-          <i class="ion-android-color-palette infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
-        </div>
-
-        <!-- Third Section -->
-        <div class="section center grey lighten-5">
-          <i class="ion-android-star-outline infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
-        </div>
-
-        <!-- Buy It -->
-        <div class="section bg-gradient center">
-          <h2 class="heading white-text">Test de llamadas a la acción</h2>
-          <p class="white-text">Aqui puede haber una promoción!</p>
-          <a class="waves-effect waves-light btn-large transparent m-20">Botón con funciones</a>
-        </div>
-
-        <!-- Featured -->
-        <div class="section featured center grey lighten-5">
-          <h2 class="heading">Titulo</h2>
-          <p>Aqui puede haber una promoción</p>
-          <img src="img/featured.png" alt="">
-        </div>
-
-        <!-- Testimonials Slider -->
-        <!-- Slider -->
-        <div class="swiper-container testimonials">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user2.jpg" alt="" class="avatar">
-              <h6 class="m-0">José Valderrama</h6>
-              <p class="small">Programador Front-End, Gendigital</p>
-            </div>
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user4.jpg" alt="" class="avatar">
-              <h6 class="m-0">Luis Yanez</h6>
-              <p class="small">Programador Back-End, Gendigital</p>
-            </div>
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user6.jpg" alt="" class="avatar">
-              <h6 class="m-0">Miguel Ramirez</h6>
-              <p class="small">Emprendedor, Todo en Construcción</p>
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- End of Slider -->
-
-        <!-- Shop -->
-        <div class="section bg-5 center">
-          <div class="opacity-overlay"></div>
-          <div class="relative">
-            <h2 class="heading white-text">LAS PROMOCIONES</h2>
-            <p class="white-text">acaban de empezar!</p>
-            <a class="waves-effect waves-light btn-large primary-color m-20">VER AHORA</a>
+            <div class="banner-title" style="color:gray">HOLA <? echo $login; ?></div>
           </div>
         </div>
+   <div class="upnext">
+          <h5></h5>
 
-        <!-- Portfolio -->
-        <div class="section center">
-          <i class="ion-image infograph"></i>
-          <h2 class="heading">Últimas Publicaciones</h2>
-          <p>Mira estos productos o servicios ofrecidos</p>
+
+          <div class="next-song animated fadeinright delay-1">
+            <span>1</span>
+            <span> <a href="categoria.php" class="dropdown-hover"> <span class="underline">Categoría</span>  <span class="caret"></span></a>
+      </span>
+            <span></span>
+            <span></span>
+            <a href="categoria.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span><i class="ion-ios-more"></i></a>
+          </div>
+          <div class="next-song animated fadeinright delay-2">
+            <span>2</span>
+            <span>Ciudad</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-3">
+            <span>3</span>
+            <span>Estados</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-4">
+            <span>4</span>
+            <span>Usuarios</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-5">
+            <span>5</span>
+            <span>Salir</span>
+            <i class="ion-ios-more"></i>
+          </div>
+
         </div>
-
-        <!-- Controls -->
-        <div class="controls right-align p-20 animated fadeinup delay-2">
-          <button id="ChangeLayout" class="left">Lista</button>
-          <button class="filter" data-filter="all">Todos</button>
-          <button class="filter" data-filter=".category-1">Herramientas</button>
-          <button class="filter" data-filter=".category-2">Maquinaria</button>
-          <button class="filter" data-filter=".category-3">Servicios</button>
-        </div>
-
-        <!-- Images -->
-        <div id="filter">
-          <!-- Swipeboox Contents -->
-          <section id="image-filter">
-            <div class="wrap small-width">
-              <div data-pswp-uid="1" id="demo-gallery" class="demo-gallery">
-                <a href="project.html" class="mix category-3">
-                  <img src="img/1.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/2.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/3.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/4.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-3">
-                  <img src="img/5.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/6.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-3">
-                  <img src="img/7.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/8.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/9.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/10.jpg" alt="image">
-                </a>
-              </div>
-            </div>
-          </section> <!-- End of Swipebox Contents -->
-        </div>
-
-        <div class="clr"></div> <!-- clear for the images floats -->
-
-        <!-- Newsletter -->
-        <div class="section center">
-          <h2 class="heading">Enterate de las últimas publicaciones</h2>
-          <p>Se el primero en conocer nuestros servicios</p>
-          <form>
-            <div class="newsletter">
-              <div class="input-field">
-                <input id="last_name" type="text" class="validate" placeholder="heyfromjhon@gmail.com">
-                <label for="last_name">Email</label>
-              </div>
-              <a class="waves-effect waves-light btn primary-color">Suscribirse</a>
-            </div>
-          </form>
-        </div>
-
+        <!-- Article Content -->
         <!-- Footer -->
         <footer class="page-footer primary-color">
           <div class="section center">
-            <h2 class="heading white-text">Todo en Construcción</h2>
-            <p class="center-align grey-text text-lighten-4">Compra y ofrece tus servicios.</p>
+            <h2 class="heading white-text">Shuttle</h2>
+            <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             <div class="footer-icons">
               <i class="ion-social-facebook m-10 white-text"></i>
               <i class="ion-social-twitter m-10 white-text"></i>
@@ -271,10 +165,11 @@
           </div>
           <div class="footer-copyright">
             <div class="container center">
-              <span>Bien Hecho <i class="ion-ios-heart"></i> en Venezuela</span>
+              <span>Made with <i class="ion-ios-heart"></i> by Codnauts</span>
             </div>
           </div>
         </footer>
+
 
       </div>
       <!-- End of Page Contents -->
@@ -594,5 +489,6 @@
     <script src="js/vendor/swiper.min.js"></script>
     <script src="js/vendor/materialize.min.js"></script>
     <script src="js/main.js"></script>
+    <script type='text/javascript' src='scripts.js'></script>
   </body>
 </html>

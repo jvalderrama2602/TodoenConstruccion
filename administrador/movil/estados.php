@@ -99,7 +99,7 @@ $tipouser = $_SESSION["tipouser"];
                     ?>
         <!-- Hero Header -->
         <div class="hero-material animated fadeindown">
-          <div class="parallax primary-color">
+          <div class="parallax primary-color-head">
 
             <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
               <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large accent-color" href="#modal1">

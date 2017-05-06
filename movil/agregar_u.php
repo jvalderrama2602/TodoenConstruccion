@@ -22,7 +22,17 @@
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
 
+    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/" >
+    -->
 
+    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+    <!--
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    -->
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -47,7 +57,7 @@
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="primary-color-head z-depth-1">
+      <div id="toolbar" class="primary-color z-depth-1">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
@@ -86,18 +96,6 @@ require_once('../../conexion/conexion.php');
             }
             ?>
           </select>
-           <div class="input-field">
-            <input id="login" type="text" class="validate" required="required">
-            <label for="address">Login</label>
-          </div>
-          <div class="input-field">
-            <input id="password" type="password" required="required">
-            <label for="apt">Password</label>
-          </div>
-          <div class="input-field">
-            <input id="confirmacion" type="password" class="validate" required="required">
-            <label for="city">Confirme su password</label>
-          </div>
             <div class="input-field">
               <input id="nombre" type="text" class="validate" required="required">
               <label for="first_name">Nombre</label>
@@ -111,7 +109,18 @@ require_once('../../conexion/conexion.php');
             <input id="email" type="email" required="required">
             <label for="company">Email</label>
           </div>
-
+          <div class="input-field">
+            <input id="login" type="text" class="validate" required="required">
+            <label for="address">Login</label>
+          </div>
+          <div class="input-field">
+            <input id="password" type="password" required="required">
+            <label for="apt">Password</label>
+          </div>
+          <div class="input-field">
+            <input id="confirmacion" type="password" class="validate" required="required">
+            <label for="city">Confirme su password</label>
+          </div>
           <a class="waves-effect waves-light btn-large primary-color block" onclick="enviarHTTP04()">Agregar Usuario</a>
         </div>
 

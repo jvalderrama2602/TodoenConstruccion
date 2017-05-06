@@ -203,6 +203,9 @@ hr {
     color: #01acc6 !important;
 }
 .primary-color {
+    background-color: #01acc6 !important;
+}
+.primary-color-head {
     background-color: #FFFF00 !important;
 }
 .primary-border {
@@ -717,7 +720,7 @@ footer.page-footer .footer-copyright i {
   color: #fff;
 }
 #toolbar.nav-material i {
-  color: #fff;
+  color: #848484;
 }
 #toolbar.transparent {
     background-color: transparent !important;
@@ -740,13 +743,13 @@ footer.page-footer .footer-copyright i {
     position: relative;
 }
 #toolbar i {
-    color: #fff;
+    color: #848484;
 }
 #toolbar .title {
     font-family: 'Varela Round', sans-serif;
     font-size: 22px;
     font-weight: 400;
-    color: #fff;
+    color: #848484;
     line-height: 56px;
     text-align: center;
     margin: 0;

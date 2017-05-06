@@ -99,7 +99,7 @@ $tipouser = $_SESSION["tipouser"];
                     ?>
         <!-- Hero Header -->
         <div class="hero-material animated fadeindown">
-          <div class="parallax primary-color">
+          <div class="parallax primary-color-head">
 
             <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
               <a class="waves-effect waves-light btn mod1al-trigger btn-floating btn-large acce1nt-color" href="agregar_u.php">

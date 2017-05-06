@@ -7,12 +7,12 @@ Version: 1.0
 License: Regular or Extended from ThemeForest only
 Plugin Licenses: GPL or MIT
 Last change: first release
-Primary use: App & Mobile Website 
+Primary use: App & Mobile Website
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [Table of contents]
     0. General
-    1. Typography 
+    1. Typography
     2. Colors & Backgrounds
     3. Animations
     4. Input & Form Elements
@@ -66,7 +66,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
-  color: #666; 
+  color: #666;
   margin: 0;
   overflow-x: hidden;
 }
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Varela Round', sans-serif;
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 400; 
+  font-weight: 400;
   color: #1c212a;
 }
 h1 { font-size: 2.4rem; line-height: 3rem; }
@@ -118,8 +118,8 @@ textarea,
 button,
 select,
 label,
-.btn, 
-.btn-large, 
+.btn,
+.btn-large,
 .btn-flat {
   font-family: 'Varela Round', sans-serif;
 }
@@ -147,7 +147,7 @@ input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
 }
 pre,
 blockquote,
@@ -158,14 +158,14 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem; 
+  margin-bottom: 2.5rem;
 }
 
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #E1E1E1; 
+  border-top: 1px solid #E1E1E1;
 }
 
 .small {
@@ -194,7 +194,7 @@ hr {
     color: #fdd835 !important;
 }
 .accent-color {
-    background-color: #fdd835 !important;
+    background-color: #00B0F0 !important;
 }
 .accent-border {
     border-color: #fdd835 !important;
@@ -204,6 +204,9 @@ hr {
 }
 .primary-color {
     background-color: #01acc6 !important;
+}
+.primary-color-head {
+    background-color: #FFFF00 !important;
 }
 .primary-border {
     border-color: #01acc6 !important;
@@ -239,7 +242,7 @@ hr {
     background: url(../img/9.jpg) no-repeat center / cover !important;
 }
 .bg-material {
-    background: url(../img/material.jpg) no-repeat center / cover !important;
+    background: url(../img/logo-movil.png) no-repeat center / cover !important;
 }
 .bg-blur {
     background: url(../img/blur.jpg) no-repeat center / cover !important;
@@ -364,18 +367,18 @@ hr {
 label {
     font-size: 1.5rem;
 }
-input:not([type]), 
-input[type=text], 
-input[type=password], 
-input[type=email], 
-input[type=url], 
-input[type=time], 
-input[type=date], 
-input[type=datetime], 
-input[type=datetime-local], 
-input[type=tel], 
-input[type=number], 
-input[type=search], 
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
 textarea.materialize-textarea {
   font-size: 1.5rem;
   padding-left: 8px;
@@ -408,17 +411,17 @@ textarea.materialize-textarea {
 }
 /* Checkbox */
 [type="checkbox"]+label,
-[type="radio"]:not(:checked)+label, 
+[type="radio"]:not(:checked)+label,
 [type="radio"]:checked+label {
   font-size: 1.5rem;
 }
-[type="radio"]:checked+label:after, 
+[type="radio"]:checked+label:after,
 [type="radio"].with-gap:checked+label:after {
     background-color: #01acc6;
     z-index: 0;
 }
-[type="radio"]:checked+label:after, 
-[type="radio"].with-gap:checked+label:before, 
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
 [type="radio"].with-gap:checked+label:after {
     border: 2px solid #01acc6;
 }
@@ -557,7 +560,7 @@ footer.page-footer .footer-copyright i {
     position: absolute;
     left: 33px;
     bottom: 30px;
-    color: #fff;
+    /*color: #fff;*/
     line-height: auto;
     margin-left: 9px;
     padding-left: 30px;
@@ -681,7 +684,7 @@ footer.page-footer .footer-copyright i {
     top: 0;
     left: 0;
     right: 0;
-    display: flex; 
+    display: flex;
     transition: all .25s ease-in-out;
 }
 #toolbar.with-tab {
@@ -717,7 +720,7 @@ footer.page-footer .footer-copyright i {
   color: #fff;
 }
 #toolbar.nav-material i {
-  color: #fff;
+  color: #848484;
 }
 #toolbar.transparent {
     background-color: transparent !important;
@@ -740,13 +743,13 @@ footer.page-footer .footer-copyright i {
     position: relative;
 }
 #toolbar i {
-    color: #fff;
+    color: #848484;
 }
 #toolbar .title {
     font-family: 'Varela Round', sans-serif;
     font-size: 22px;
     font-weight: 400;
-    color: #fff;
+    color: #848484;
     line-height: 56px;
     text-align: center;
     margin: 0;
@@ -782,7 +785,7 @@ footer.page-footer .footer-copyright i {
 }
 .sidenav-avatar {
   width: 100%;
-  height: 158px; /* 16:9 aspect ratio if sidebar have 280px width */ 
+  height: 158px; /* 16:9 aspect ratio if sidebar have 280px width */
   position: relative;
 }
 .sidenav-avatar .opacity-overlay-gradient {
@@ -860,7 +863,7 @@ footer.page-footer .footer-copyright i {
   top: -2px;
   position: relative;
 }
-.side-nav .collapsible-body li a, 
+.side-nav .collapsible-body li a,
 .side-nav.fixed .collapsible-body li a {
   line-height: initial;
   height: auto;
@@ -870,7 +873,7 @@ footer.page-footer .footer-copyright i {
   color: #333;
 }
 .side-nav li.active,
-.side-nav .collapsible-header:hover, 
+.side-nav .collapsible-header:hover,
 .side-nav.fixed .collapsible-header:hover {
   background-color: transparent;
   color: #01acc6;
@@ -965,22 +968,22 @@ footer.page-footer .footer-copyright i {
 .swiper-pagination-bullet-active {
   background: #01acc6;
 }
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background-image: none;
   right: 20px;
   width: auto;
   height: auto;
 }
-.swiper-button-prev, 
+.swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   background-image: none;
   left: 20px;
   width: auto;
   height: auto;
 }
-.swiper-container-horizontal>.swiper-pagination-bullets, 
-.swiper-pagination-custom, 
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
 .swiper-pagination-fraction {
     bottom: 20px;
 }
@@ -1116,7 +1119,7 @@ footer.page-footer .footer-copyright i {
 }
 .child {
     margin-bottom: 0;
-} 
+}
 /* Testimonial */
 .testimonials {
   margin: 30px 0;
@@ -1449,7 +1452,7 @@ footer.page-footer .footer-copyright i {
 .comments {
   border-top: 1px solid #ccc;
   padding: 20px;
-} 
+}
 
 /* Event */
 .event-header {
@@ -2336,4 +2339,108 @@ span.data-color {
 .modal.features .col p {
   font-size: 1.2rem;
   margin: 0;
+}
+
+
+
+/* mdl - popup */
+.dark-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  -webkit-transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
+  transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
+}
+
+.fab {
+  z-index: 5;
+  cursor: pointer;
+  border-radius: 50%;
+  position: fixed;
+  right: 400px;
+  top: 100px;
+  color: #fff;
+  background: #d35400;
+  height: 56px;
+  width: 56px;
+  box-shadow: 0 5px 5px rgba(126, 111, 111, 0.39);
+  -webkit-transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
+  transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
+}
+
+.fab.active {
+  cursor: default;
+  background: #FFF;
+  border-radius: .125em;
+  width: 450px;
+  height: 350px;
+  box-shadow: 0 25px 35px 0 rgba(0, 0, 0, 0.35);
+  top: 10%;
+  right: calc(50% - 250px);
+}
+
+.fab-icon {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-12px, -12px);
+  -ms-transform: translate(-12px, -12px);
+  transform: translate(-12px, -12px);
+  line-height: 24px;
+  width: 24px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.active .fab-icon {
+  display: none;
+}
+
+.active .protect {
+  background: none;
+}
+
+.cntt-wrapper {
+  display: none;
+}
+
+.active .cntt-wrapper {
+  display: block;
+}
+
+#fab-hdr {
+  position: absolute;
+  width: 100%;
+  background: #d35400;
+}
+
+#fab-hdr h3 {
+  padding-left: 30px;
+}
+
+.cntt {
+  padding: 100px 35px 0 35px;
+  color: #757575;
+}
+
+.btn-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 8px;
+  padding: 6px 16px;
+}
+
+/* just presenation */
+.center{margin: 0 auto}
+.m-t-100{margin-top:100px}
+.box {
+  height: 300px;
+  padding: 100px;
 }
