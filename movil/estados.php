@@ -99,7 +99,7 @@ $tipouser = $_SESSION["tipouser"];
                     ?>
         <!-- Hero Header -->
         <div class="hero-material animated fadeindown">
-          <div class="parallax primary-color">
+          <div class="parallax primary-color-head">
 
             <div class="fixed-action-btn floating-button animated bouncein delay-3 horizontal click-to-toggle">
               <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large accent-color" href="#modal1">
@@ -187,6 +187,18 @@ $tipouser = $_SESSION["tipouser"];
           <div class="collapsible-header waves-effect">
             <i class="ion-android-home"></i>Inicio<span class="more"><i class="ion-ios-arrow-right"></i></span>
           </div>
+
+        <!--  <div class="collapsible-body">
+            <ul class="collapsible">
+              <li>
+                <a href="index.html">Classic</a>
+                <a href="index-sliced.html">Sliced</a>
+                <a href="index-slider.html">Slider</a>
+                <a href="index-drawer.html">Drawer</a>
+                <a href="index-walkthrough.html">Walkthrough</a>
+              </li>
+            </ul>
+          </div>-->
         </li>
  <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Categorías</a></li>
   <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Ciudades</a></li>
@@ -195,9 +207,7 @@ $tipouser = $_SESSION["tipouser"];
 
 
         <li>
-          <div class="collapsible-header waves-effect">
-            <i class="ion-android-exit"></i>Salir<span class="more"><i class="ion-ios-arrow-right"></i></span>
-          </div>
+          <a href="../../index.php" class="waves-effect"><i class="ion-android-exit"></i>Salir</a>
 
         </li>
 

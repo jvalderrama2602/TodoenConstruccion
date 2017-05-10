@@ -18,3 +18,16 @@
 [05-May-2017 01:00:23 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/bienvenida.php:8) in /home/todoenco/public_html/header.php on line 3
 [05-May-2017 01:01:47 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/bienvenida.php:8) in /home/todoenco/public_html/header.php on line 3
 [05-May-2017 12:26:52 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/bienvenida.php:8) in /home/todoenco/public_html/header.php on line 3
+[05-May-2017 15:27:34 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/bienvenida.php:8) in /home/todoenco/public_html/header.php on line 2
+[05-May-2017 15:44:33 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 15:44:41 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:12:03 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:12:57 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:12:59 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:00 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:00 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:00 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:00 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:03 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:13:04 America/Caracas] PHP Parse error:  syntax error, unexpected '=' in /home/todoenco/public_html/logout.php on line 5
+[05-May-2017 16:46:17 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/bienvenida.php:8) in /home/todoenco/public_html/header.php on line 2
