@@ -1,6 +1,57 @@
 
-
 /*----------------REGISTRO CLIENTE--------------------------*/
+
+
+function permitidos_loc(evt)
+{
+var num_caracteres=document.getElementById("num_local").value.length;
+/*alert(num_caracteres)*/
+
+if(num_caracteres>=7){
+    Materialize.toast("No se permiten más caracteres", 3e3);
+    //$("#codcel").select();
+    return false;
+  };
+
+}
+function permitidos_num(evt)
+{
+var num_caracteres=document.getElementById("num_cel").value.length;
+/*alert(num_caracteres)*/
+
+if(num_caracteres>=7){
+    Materialize.toast("No se permiten más caracteres", 3e3);
+    //$("#codcel").select();
+    return false;
+  };
+
+}
+
+function permitidos_ci(evt)
+{
+var num_caracteres=document.getElementById("ci").value.length;
+/*alert(num_caracteres)*/
+
+if(num_caracteres>=8){
+    Materialize.toast("No se permiten más caracteres", 3e3);
+    //$("#codcel").select();
+    return false;
+  };
+
+}
+
+function permitidos_cod(evt)
+{
+var num_caracteres=document.getElementById("cod_local").value.length;
+/*alert(num_caracteres)*/
+
+if(num_caracteres==3){
+
+    $("#num_local").select();
+    return true;
+  };
+
+}
 
 function soloNumeros(evt)
 {
@@ -24,6 +75,115 @@ function getXMLHTTPRequest()
 var http = getXMLHTTPRequest();
 var http2 = getXMLHTTPRequest();
 
+function  validacion(){
+
+  var login = document.getElementById("loginc").value;
+  if(login==""){
+  Materialize.toast("Debe Rellenar el campo Usuario", 3e3);
+  $("#loginc").select();
+  return false;
+  }else{
+    var query= "login=" + login;
+    http2.open ("GET", "../verificar_login.php?" + query, true);
+    http2.onreadystatechange = respuestaHTTP2cc01;
+    http2.send(null); // se envia la petición
+  }
+
+
+  function respuestaHTTP2cc01 ()
+  {
+  if (http2.readyState == 4)
+  {
+    if (http2.status == 200)
+    {
+      var respuesta_php2 = http2.responseText;
+      if(isNaN(respuesta_php2)==true)
+      {
+  var pass = document.getElementById("passc").value;
+  var nombre = document.getElementById("nombrec").value;
+  var apellido = document.getElementById("apellidoc").value;
+  if(nombre=="" || pass==""){
+    Materialize.toast("Debe Rellenar el campo nombre y password", 3e3);
+    $("#nombrec").select();
+    return false;
+    }else if(apellido==""){
+    Materialize.toast("Debe Rellenar el campo apellido", 3e3);
+    $("#apellidoc").select();
+    return false;
+    }else{
+          var elementos = document.getElementsByName("nac");
+        for(var i=0; i<elementos.length; i++)
+        { if(elementos[i].checked==true){ var nac=elementos[i].value;} }
+        var ci = document.getElementById("ci").value;
+        var lista = document.getElementById("cod_cel");
+        var valorSeleccionado = lista.options[lista.selectedIndex].value;
+          if(ci==""){
+          Materialize.toast("Debe Rellenar el campo Cedula de Identidad", 3e3);
+          $("#ci").select();
+          return false;
+          }else if(valorSeleccionado==""){
+          Materialize.toast("Código Celular no Válido", 3e3);
+          return false;
+          }else{
+          var largo_num_cel = document.getElementById("num_cel").value.length ;
+          var largo_cod_local = document.getElementById("cod_local").value.length;
+          var largo_num_local = document.getElementById("num_local").value.length;
+
+          if(largo_num_cel<7){
+          Materialize.toast("El número celular no es valido", 3e3);
+          $("#num_cel").select();
+          return false;
+          }else if(largo_cod_local<4){
+          Materialize.toast("Código local no Válido", 3e3);
+          $("#cod_local").select();
+          return false;
+          }else if(largo_num_local<7){
+          Materialize.toast("Número local no Válido", 3e3);
+          $("#num_local").select();
+          return false;
+          }else{
+              var lista_category = document.getElementById("category");
+              var valorSeleccionado_lista_category = lista_category.options[lista_category.selectedIndex].value;
+              var lista2 = document.getElementById("subcategory");
+              if (lista2.options[lista2.selectedIndex].value==""){
+              Materialize.toast("Debe Seleccionar una ciudad", 3e3);
+              $("#subcategory").select();
+              return  false;
+              }else{
+              var valorSeleccionado2 = lista2.options[lista2.selectedIndex].value;
+              var email = document.getElementById("emailc").value;
+              if(email==""){
+                  Materialize.toast ("Correo electrónico Obligatorio", 3e3);
+                  $("#emailc").select();
+              }else{
+              emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+              if (emailRegex.test(email)) {
+              enviarHTTPcc ();
+              } else {
+              Materialize.toast("Correo no valido", 3e3);
+              $("#emailc").select();
+              }
+              }
+            }
+          }
+          }
+    }
+      }
+      else
+      {
+        Materialize.toast("El usuario seleccionado&nbsp; <strong>NO</strong>&nbsp; está disponible", 3e3);
+        //document.getElementById('x1').style.display = 'none';
+        //document.getElementById('x2').style.display = '';
+        document.getElementById("loginc").value='';
+      }
+    }
+  }
+}
+
+
+
+}
+
 function enviarHTTPcc ()
 {
   var nombre = document.getElementById("nombrec").value;
@@ -31,45 +191,27 @@ function enviarHTTPcc ()
   var elementos = document.getElementsByName("nac");
   for(var i=0; i<elementos.length; i++)
   { if(elementos[i].checked==true){ var nac=elementos[i].value;} }
-
   var ci = document.getElementById("ci").value;
-
   var lista = document.getElementById("cod_cel");
-
   var valorSeleccionado = lista.options[lista.selectedIndex].value;
   var num_cel = document.getElementById("num_cel").value;
-
   var cod_local = document.getElementById("cod_local").value;
-
   var num_local = document.getElementById("num_local").value;
-
   var lista_category = document.getElementById("category");
-
   var valorSeleccionado_lista_category = lista_category.options[lista_category.selectedIndex].value;
-
   var lista2 = document.getElementById("subcategory");
-
   var valorSeleccionado2 = lista2.options[lista2.selectedIndex].value;
-
   var email = document.getElementById("emailc").value;
-
   var login = document.getElementById("loginc").value;
-
   var pass = document.getElementById("passc").value;
-
   var cont=0;
   if(login==""){alert('El Login se encuentra vacio');cont=1;}
-
-
   if(cont==0)
-
-
-
   {
     var tel_cel=valorSeleccionado+'-'+num_cel;
     var tel_loc=cod_local+'-'+num_local;
     var query= "nombre=" + nombre +"&apellido=" + apellido +"&nac=" + nac +"&ci=" + ci +"&tel_cel=" + tel_cel +"&tel_loc=" + tel_loc +"&idestado=" + valorSeleccionado_lista_category +"&idciudad=" + valorSeleccionado2 +"&email=" + email +"&login=" + login +"&pass=" + pass;
-    http.open ("GET", "grabar_registro.php?" + query, true);
+    http.open ("GET", "../grabar_registro.php?" + query, true);
     http.onreadystatechange = respuestaHTTPcc;
     http.send(null); // se envia la petición
   }
@@ -83,12 +225,12 @@ if (http.readyState == 4)
     {
       var respuesta_php = http.responseText;
 
-      alert(respuesta_php);
+
 
       if(respuesta_php!="")
       {
         //alert('Se Ha Registrado Correctamente')
-        window.location="bienvenida.php";
+        window.location="login.php";
       }
     }
   }
@@ -100,7 +242,7 @@ function enviarHTTP20 ()
   if(nombre!="")
   {
     var query= "login=" + nombre;
-    http2.open ("GET", "verificar_login.php?" + query, true);
+    http2.open ("GET", "../verificar_login.php?" + query, true);
     http2.onreadystatechange = respuestaHTTP2cc;
     http2.send(null); // se envia la petición
   }
@@ -123,7 +265,7 @@ function respuestaHTTP2cc ()
       }
       else
       {
-        Materialize.toast("El usuario seleccionado <strong>NO</strong> está disponible", 3e3);
+        Materialize.toast("El usuario seleccionado <strong>NO</strong>&nbsp; está disponible", 3e3);
         //document.getElementById('x1').style.display = 'none';
         //document.getElementById('x2').style.display = '';
         document.getElementById("loginc").value='';
@@ -133,247 +275,49 @@ function respuestaHTTP2cc ()
 }
 
 
-
-
-
-/*------------------MOVIL-ADMINISTRADOR------------------------*/
-
-function actualizar(a) {
-    switch (a) {
-      case 0:
-        document.getElementById("x1").style.display = "none";
-        document.getElementById("x2").style.display = "none";
-        document.getElementById("grabar").style.display = "";
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        location.reload(true);
-        break;
-
-      case 1:
-        document.getElementById("x1").style.display = "none";
-        document.getElementById("x2").style.display = "none";
-        document.getElementById("grabar").style.display = "";
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        location.reload(true);
-        break;
-
-      case 2:
-        document.getElementById("x1").style.display = "none";
-        document.getElementById("x2").style.display = "none";
-        document.getElementById("grabar").style.display = "";
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        location.reload(true);
-        break;
-
-      case 3:
-        document.getElementById("x1").style.display = "none";
-        document.getElementById("x2").style.display = "none";
-        document.getElementById("grabar").style.display = "";
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        location.reload(true);
-        break;
-
-      default:
-        alert("alert");
-    }
+function getXMLHTTPRequest()
+{
+  try { req = new XMLHttpRequest(); }
+  catch(err1)
+  {
+      try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+    catch (err2)
+    {try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
+  }
+  return req;
 }
-
-function mostrar(a) {
-    switch (a) {
-      case 0:
-        div = document.getElementById("wrapper2");
-        div.style.display = "";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        break;
-
-      case 1:
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        break;
-
-      case 2:
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "";
-        div = document.getElementById("wrapper5");
-        div.style.display = "none";
-        break;
-
-      case 3:
-        div = document.getElementById("wrapper2");
-        div.style.display = "none";
-        div = document.getElementById("wrapper3");
-        div.style.display = "none";
-        div = document.getElementById("wrapper4");
-        div.style.display = "none";
-        div = document.getElementById("wrapper5");
-        div.style.display = "";
-        break;
-
-      default:
-        alert("alert");
-    }
-}
-
-function validar(a) {
-    tecla = document.all ? a.keyCode : a.which;
-    if (8 == tecla) return true;
-    patron = /[A-Za-z\s]/;
-    te = String.fromCharCode(tecla);
-    return patron.test(te);
-}
-
-function getXMLHTTPRequest() {
-    try {
-        req = new XMLHttpRequest();
-    } catch (a) {
-        try {
-            req = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (b) {
-            try {
-                req = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (c) {
-                req = false;
-            }
-        }
-    }
-    return req;
-}
-
 var http = getXMLHTTPRequest();
+function enviarHTTPib ()
+{
+  var login = document.getElementById("usernameib").value;
+  var password = document.getElementById("passwordib").value;
 
-function enviarHTTP01() {
-    var a = window.document.formulario_usuario01.nombre.value;
-    if ("" != a) {
-        var b = "usuario=" + a;
-        http.open("GET", "../categoria/grabar_categoria.php?" + b, true);
-        http.onreadystatechange = respuestaHTTP01;
-        http.send(null);
-    }
+  if(login!="" || password!="")
+  {
+    var query= "login=" + login +"&password=" + password;
+    http.open ("GET", "../verificar_usuario.php?" + query, true);
+    http.onreadystatechange = respuestaHTTPib;
+    http.send(null); // se envia la petición
+  }
 }
-
-function enviarHTTP02() {
-    var a = window.document.formulario_usuario02.tipo.value;
-    var b = window.document.formulario_usuario02.nombre.value;
-    if (0 != a && "" != b) {
-        var c = "estado=" + a + "&nombre=" + b;
-        http.open("GET", "../ciudad/grabar_ciudad.php?" + c, true);
-        http.onreadystatechange = respuestaHTTP02;
-        http.send(null);
+function respuestaHTTPib ()
+{
+  if (http.readyState == 4)
+  {
+    if (http.status == 200)
+    {
+      var respuesta_php = http.responseText;
+      if(isNaN(respuesta_php)==true)
+      {
+        if(respuesta_php==no_existe)
+        {alert('no_existe');}
+        if(respuesta_php==clave_invalida)
+        {alert('clave_invalida');}
+      }
+      else
+      {
+        window.location="index.php";
+      }
     }
-}
-
-function enviarHTTP03() {
-    var a = window.document.formulario_usuario03.nombre.value;
-    if ("" != a) {
-        var b = "usuario=" + a;
-        http.open("GET", "../estado/grabar_estados.php?" + b, true);
-        http.onreadystatechange = respuestaHTTP03;
-        http.send(null);
-    }
-}
-
-function enviarHTTP04() {
-    var a = document.getElementById("test3").value;
-    var b = document.getElementById("nombre").value;
-    var c = document.getElementById("apellido").value;
-    var d = document.getElementById("email").value;
-    var e = document.getElementById("login").value;
-    var f = document.getElementById("password").value;
-    var g = document.getElementById("confirmacion").value;
-    var h = 0;
-    if (f == g) {
-        var i = "tipo=" + a + "&nombre=" + b + "&apellido=" + c + "&email=" + d + "&login=" + e + "&pass=" + f + "&confirmacion=" + g;
-        http.open("GET", "../super_usuario/grabar_usuario.php?" + i, true);
-        http.onreadystatechange = respuestaHTTP04;
-        http.send(null);
-    } else alert("No son iguales el pass");
-}
-
-function respuestaHTTP01() {
-    if (4 == http.readyState) if (200 == http.status) {
-        var a = http.responseText;
-        if ("" == a) Materialize.toast("Atención Registro ya existe", 3e3); else {
-            Materialize.toast("Registro correcto", 3e3);
-            window.document.formulario_usuario01.nombre.value = "";
-            location.reload(true);
-        }
-    }
-}
-
-function respuestaHTTP02() {
-    if (4 == http.readyState) if (200 == http.status) {
-        var a = http.responseText;
-        if ("" == a) Materialize.toast("Atención Registro ya existe", 3e3); else {
-            Materialize.toast("Registro correcto", 3e3);
-            window.document.formulario_usuario02.nombre.value = "";
-            location.reload(true);
-        }
-    }
-}
-
-function respuestaHTTP03() {
-    if (4 == http.readyState) if (200 == http.status) {
-        var a = http.responseText;
-        if ("" == a) Materialize.toast("Atención Registro ya existe", 3e3); else {
-            Materialize.toast("Registro correcto", 3e3);
-            window.document.formulario_usuario03.nombre.value = "";
-            location.reload(true);
-        }
-    }
-}
-
-function respuestaHTTP04() {
-    if (4 == http.readyState) if (200 == http.status) {
-        var a = http.responseText;
-        alert(a);
-        if (0 != a) {
-            Materialize.toast("Se Ha Registrado Correctamente", 3e3);
-            location.href = "usuarios.php";
-        } else {
-            Materialize.toast("NO Se Ha Registrado", 3e3);
-            location.href = "usuarios.php";
-        }
-    }
+  }
 }

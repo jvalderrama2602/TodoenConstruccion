@@ -5,194 +5,62 @@ require_once('conexion/conexion.php');
 
 ?>
 
-
-
-
-
 <script language="javascript" type="text/javascript">
-
-
-
 function getXMLHTTPRequest()
-
-
-
 {
-
-
-
 	try { req = new XMLHttpRequest(); }
-
-
-
 	catch(err1)
-
-
-
 	{
-
-
-
   		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
-
-
-
 		catch (err2)
-
-
-
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
-
-
-
 	}
-
-
-
 	return req;
-
-
-
 }
-
-
-
 var http = getXMLHTTPRequest();
-
 function enviarHTTPib ()
-
 {
-
 	var login = document.getElementById("usernameib").value;
-
 	var password = document.getElementById("passwordib").value;
-
 	alert(login);
-
 		alert(password);
-
 	if(login!="" || password!="")
-
 	{
-
-
-
 		var query= "login=" + login +"&password=" + password;
-
 		http.open ("GET", "verificar_usuario.php?" + query, true);
-
 		http.onreadystatechange = respuestaHTTPib;
-
 		http.send(null); // se envia la petición
-
 	}
-
 }
-
-
-
-
-
-
-
 function respuestaHTTPib ()
-
 {
-
 	if (http.readyState == 4)
-
 	{
-
 		if (http.status == 200)
-
 		{
-
 			var respuesta_php = http.responseText;
-
 			if(isNaN(respuesta_php)==true)
-
 			{
-
 				if(respuesta_php==no_existe)
-
 				{alert('no_existe');}
-
 				if(respuesta_php==clave_invalida)
-
 				{alert('clave_invalida');}
-
 			}
-
 			else
-
 			{
-
 				window.location="index.php";
-
 			}
-
 		}
-
 	}
-
 }
-
-
-
 </script>
-
-
-
-
-
-
 
 <!--AQUI TERMINA EL MENU DEL MOVIL -->
 
-
-
-
-
-
-
 		<div id="wrapper" class="wide-wrap">
-
-
-
-
-
-
-
 			<div class="offcanvas-overlay"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			<div class="heading-container">
-
-
-
-
-
-
-
 				<div class="container heading-standar">
-
-
-
-
-
 
 
 					<div class="page-breadcrumb">
@@ -522,37 +390,21 @@ function respuestaHTTPib ()
 
 
 <script type="text/javascript">
-
 	setTimeout(ocultar,2500);
-
 	function ocultar(){
-
     element=document.getElementById("x1");
-
 		//document.getElementById("x1").style.display="none";
-
 	var op = 1;  // initial opacity
-
     var timer = setInterval(function () {
-
         if (op <= 0.1){
-
             clearInterval(timer);
-
             element.style.display = 'none';
-
         }
-
         element.style.opacity = op;
-
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-
         op -= op * 0.1;
-
     }, 50);
-
 	}
-
 </script>
 
 <?

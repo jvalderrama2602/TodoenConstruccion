@@ -150,539 +150,134 @@ function respuestaHTTP2cc ()
 
 
 <!--AQUI TERMINA EL MENU DEL MOVIL -->
-
-
-
 		<div id="wrapper" class="wide-wrap">
-
-
-
 			<div class="offcanvas-overlay"></div>
-
-
-
-
-
-
-
 			<div class="heading-container">
-
-
-
 				<div class="container heading-standar">
-
-
-
 					<div class="page-breadcrumb">
-
-
-
 						<ul class="breadcrumb">
-
-
-
 							<li>
-
-
-
 								<span>
-
-
-
 									<a class="home" href="#">
-
-
-
 										<span>Inicio</span>
-
-
-
 									</a>
-
-
-
 								</span>
-
-
-
 							</li>
-
-
-
 							<li>
-
-
-
 								<span>Crear Cuenta</span>
-
-
-
 							</li>
-
-
-
 						</ul>
-
-
-
 					</div>
-
-
-
 				</div>
-
-
-
 			</div>
-
-
-
 			<div class="content-container no-padding">
-
-
-
 				<div class="container">
-
-
-
 					<div class="row">
-
-
-
 						<div class="col-md-12">
-
-
-
 							<div class="main-content">
-
-
-
 								<div class="commerce commerce-account">
-
-
-
 									<h2 class="commerce-account-heading">Crear Cuenta</h2>
-
-
-
 									<div class="login">
-
 										<div class="form-row">
 											<div id="x1" style="display: none">
 												<div class="alert alert-success">
 													El usuario seleccionado está disponible
 												</div>
 											</div>
-
 											<div id="x2" style="display: none">
 												<div class="alert alert-danger">
 													El usuario seleccionado <strong>NO</strong> está disponible
 												</div>
 											</div>
 										</div>
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Usuario <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="text" class="input-text" name="loginc" id="loginc" value="" onBlur="enviarHTTP20()"/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="password1">Password <span class="required">*</span></label>
-
-
-
 											<input class="input-text" type="password" name="passc" id="passc"/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Nombre <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="text" class="input-text" name="login" id="nombrec" value=""/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Apellido <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="text" class="input-text" name="login" id="apellidoc" value=""/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Cedula de Identidad<span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="radio" name="nac" id="V" value="V" checked />V&nbsp;&nbsp;
-
-
-
-
-
-
-
 											<input type="radio" name="nac" id="E" value="E" />E&nbsp;&nbsp;
-
-
-
-
-
-
-
 											<input class="input-text" type="text" name="ci" id="ci" size="20"  maxlength="9" placeholder="123456789" onkeypress="return soloNumeros(event);"/>
-
-
-
-
-
-
-
-
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Teléfono Celular <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<select name="cod_cel" id="cod_cel">
-
-
-
-
-
-
-
 											<option value="0412">0412</option>
-
-
-
-
-
-
-
 											<option value="0414">0414</option>
-
-
-
-
-
-
-
 											<option value="0416">0416</option>
-
-
-
-
-
-
-
 											<option value="0424">0424</option>
-
-
-
-
-
-
-
 										</select>&nbsp;
-
-
-
-
-
-
-
 										<input class="input-text" type="text" name="num_cel" id="num_cel" size="12" maxlength="7" placeholder="1234567" onkeypress="return soloNumeros(event);"/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Teléfono Local <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="text" name="cod_local" id="cod_local" size="6" maxlength="4" onkeypress="return soloNumeros(event);"/>&nbsp;
-
-
-
-
-
-
-
 										<input type="text" name="num_local" id="num_local" size="12" maxlength="7" onkeypress="return soloNumeros(event);" />
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Estado <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 												<select name="category" id="category">
-
-
-
 											<?
-
-
-
 												$sql2 = "SELECT idestado,nombre_estado FROM estado WHERE suspendido_estado='' ORDER BY nombre_estado ASC ";
-
-
-
 												$result2 = $db->query($sql2);
-
-
-
-
-
-
-
 												while ($query_result = $result2->fetch_array())
-
-
-
 												{
-
-
-
 													$id_category= $query_result['idestado'];
-
-
-
 													$nombre_estado= $query_result['nombre_estado'];
-
-
-
 													?><option <? echo"value='$id_category'"; ?>><? echo"$nombre_estado"; ?></option><?
-
-
-
 												}
-
-
-
 											?>
-
-
-
 										</select>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Ciudad <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<select name="subcategory" id="subcategory">
-
-
-
-
-
-
-
 				</select>
-
-
-
 										</div>
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
 											<label for="login">
-
-
-
 												Email <span class="required">*</span>
-
-
-
 											</label>
-
-
-
 											<input type="email" class="input-text" name="emailc" id="emailc" value=""/>
-
-
-
 										</div>
-
-
-
 										<div class="form-row">
-
 											<button class="btn btn-outline rounded" type="submit" value="grabar" onclick="enviarHTTPcc()">Crear Cuenta</button>
-
-
 										</div>
-
-
-
 									</div>
-
-
-
-
 								</div>
-
-
-
 							</div>
-
-
-
 						</div>
-
-
-
 					</div>
-
-
-
 				</div>
-
-
-
 			</div>
 
 

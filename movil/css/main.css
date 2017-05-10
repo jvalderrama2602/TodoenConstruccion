@@ -383,6 +383,19 @@ textarea.materialize-textarea {
   font-size: 1.5rem;
   padding-left: 8px;
 }
+
+#cod_local{
+  font-size: 1.5rem;
+  padding-left: 8px;
+  width:25%;
+}
+
+#num_local{
+  font-size: 1.5rem;
+  padding-left: 8px;
+  width:65%;
+}
+
 /* Searchbar */
 .input-field input[type=search] ~ i,
 .input-field input[type=search] ~ i {

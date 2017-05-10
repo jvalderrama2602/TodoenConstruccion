@@ -111,27 +111,46 @@ $tipouser = $_SESSION["tipouser"];
 
           <div class="next-song animated fadeinright delay-1">
             <span>1</span>
-            <span> <a href="categoria.php" class="dropdown-hover"> <span class="underline">Categoría</span>  <span class="caret"></span></a>
-      </span>
-            <span></span>
-            <span></span>
-            <a href="categoria.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span><i class="ion-ios-more"></i></a>
+            <span> <a href="categoria.php" class="dropdown-hover"> <span class="underline">Categoría</span><span class="caret"></span></a>
+            </span>
+            <a href="categoria.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span>
+            <i class="ion-ios-more"></i></a>
           </div>
-          <div class="next-song animated fadeinright delay-2">
+
+
+           <div class="next-song animated fadeinright delay-2">
             <span>2</span>
-            <span>Ciudad</span>
-            <i class="ion-ios-more"></i>
+            <span> <a href="producto.php" class="dropdown-hover"> <span class="underline">Producto</span><span class="caret"></span></a>
+            </span>
+            <a href="producto.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span>
+            <i class="ion-ios-more"></i></a>
           </div>
+
+
 
           <div class="next-song animated fadeinright delay-3">
             <span>3</span>
-            <span>Estados</span>
+            <span> <a href="ciudades.php" class="dropdown-hover"> <span class="underline">Ciudad</span><span class="caret"></span></a>
+            </span>
+            <a href="ciudades.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span>
             <i class="ion-ios-more"></i>
           </div>
 
           <div class="next-song animated fadeinright delay-4">
             <span>4</span>
-            <span>Usuarios</span>
+            <span><a href="estados.php" class="dropdown-hover"> <span class="underline">Estados</span>
+            <span class="caret"></span></a>
+            </span>
+            <a href="estados.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span>
+            <i class="ion-ios-more"></i>
+          </div>
+
+          <div class="next-song animated fadeinright delay-5">
+           <span>5</span>
+            <span><a href="usuarios.php" class="dropdown-hover"> <span class="underline">Usuarios</span>
+            <span class="caret"></span></a>
+            </span>
+            <a href="usuarios.php" class="dropdown-hover"> <span class="underline"></span>  <span class="caret"></span>
             <i class="ion-ios-more"></i>
           </div>
 
