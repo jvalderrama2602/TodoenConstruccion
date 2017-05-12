@@ -1,49 +1,10 @@
-<?php
-session_start();
-$idusuario = $_SESSION["idusuario"];
-$nombre_usuario = $_SESSION["nombre_usuario"];
-$apellido_usuario = $_SESSION["apellido_usuario"];
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+<?    
+include('header.php');
+require_once('conexion/conexion.php');
 
- <script src="js/jquery-3.1.1.min.js"></script>
-  
-   <script>
-     $(function(){   
-       $("#file").on("change", function(){
-           /* Limpiar vista previa */
-           $("#vista-previa").html('');
-           var archivos = document.getElementById('file').files;
-           var navegador = window.URL || window.webkitURL;
-           /* Recorrer los archivos */
-           for(x=0; x<archivos.length; x++)
-		   {
-               /* Validar tamaño y tipo de archivo */
-               var size = archivos[x].size;
-               var type = archivos[x].type;
-               var name = archivos[x].name;
-               if (size > 1024*1024)
-               {
-                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" supera el máximo permitido 1MB</p>");
-               }
-               else if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png' && type != 'image/gif')
-               {
-                   $("#vista-previa").append("<p style='color: red'>El archivo "+name+" no es del tipo de imagen permitida.</p>");
-               }
-               else
-               {
-                 var objeto_url = navegador.createObjectURL(archivos[x]);
-                 $("#vista-previa").append("<img src="+objeto_url+" width='200' height='200'>");
-               }
-           }
-       });
-       
-     });
-</script>
+$sql2 = "SELECT idcategoria,nombre_categoria FROM categoria WHERE suspendido_categoria='' ORDER BY nombre_categoria ASC ";
+$result2 = $db->query($sql2);
+?>
 
 <script language="javascript">
 $(document).ready(function(){
@@ -78,14 +39,11 @@ function enviar()
 	}
 }
 </script>
-</head>
-<body>
-<?
-require_once('conexion/conexion.php');
 
-$sql2 = "SELECT idcategoria,nombre_categoria FROM categoria WHERE suspendido_categoria='' ORDER BY nombre_categoria ASC ";
-$result2 = $db->query($sql2);
-?>
+
+
+
+
 <form method="post" name="formulario" enctype="multipart/form-data" action="agregar_venta1.php">
 
 Categoria
@@ -130,8 +88,11 @@ Condicion
 <br>
 
 Subir imagen: <input type="file" id="file" name="file[]" accept="image/*" multiple>
+*Solo formato JPG.<br>
+*Maximo 8 fotos.
 	<br>
 	<button onClick="enviar()">Grabar</button>
+	
 </form>
 <div id="vista-previa"></div>
 </body>

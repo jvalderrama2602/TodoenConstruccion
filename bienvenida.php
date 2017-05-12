@@ -1,22 +1,45 @@
-<?
-include('header.php');
+<?php
+echo ini_get('display_errors');
 
-require_once('conexion/conexion.php');
+if (!ini_get('display_errors')) {
+    ini_set('display_errors', '1');
+}
 
+echo ini_get('display_errors');
 ?>
 
+
+<?
+
+include('header.php');
+require_once('conexion/conexion.php');
+?>
+
+
 <script language="javascript" type="text/javascript">
+
 function getXMLHTTPRequest()
+
 {
+
 	try { req = new XMLHttpRequest(); }
+
 	catch(err1)
+
 	{
+
   		try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+
 		catch (err2)
+
 		{try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
+
 	}
+
 	return req;
+
 }
+
 var http = getXMLHTTPRequest();
 function enviarHTTPib ()
 {
@@ -26,12 +49,16 @@ function enviarHTTPib ()
 		alert(password);
 	if(login!="" || password!="")
 	{
+
 		var query= "login=" + login +"&password=" + password;
 		http.open ("GET", "verificar_usuario.php?" + query, true);
 		http.onreadystatechange = respuestaHTTPib;
 		http.send(null); // se envia la petición
 	}
 }
+
+
+
 function respuestaHTTPib ()
 {
 	if (http.readyState == 4)
@@ -53,21 +80,36 @@ function respuestaHTTPib ()
 		}
 	}
 }
+
 </script>
+
+
 
 <!--AQUI TERMINA EL MENU DEL MOVIL -->
 
+
+
 		<div id="wrapper" class="wide-wrap">
+
+
+
 			<div class="offcanvas-overlay"></div>
+
+
+
+
+
+
+
 			<div class="heading-container">
+
+
+
 				<div class="container heading-standar">
 
 
+
 					<div class="page-breadcrumb">
-
-
-
-
 
 
 
@@ -75,15 +117,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 							<li>
-
-
-
-
 
 
 
@@ -91,15 +125,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 									<a class="home" href="#">
-
-
-
-
 
 
 
@@ -107,15 +133,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 									</a>
-
-
-
-
 
 
 
@@ -123,15 +141,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 							</li>
-
-
-
-
 
 
 
@@ -139,15 +149,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 								<span>Bienvenida</span>
-
-
-
-
 
 
 
@@ -155,15 +157,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 						</ul>
-
-
-
-
 
 
 
@@ -171,23 +165,11 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 				</div>
 
 
 
-
-
-
-
 			</div>
-
-
-
-
 
 
 
@@ -195,15 +177,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 				<div class="container">
-
-
-
-
 
 
 
@@ -211,15 +185,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 						<div class="col-md-12">
-
-
-
-
 
 
 
@@ -227,15 +193,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 								<div class="commerce commerce-account">
-
-
-
-
 
 
 
@@ -243,39 +201,19 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 									<div class="login">
 
-
-
 										<div class="form-row">
-
 											<div id="x1">
-
 												<div class="alert alert-success">
-
 													Registro Exitoso. <strong>Inicie sesión ahora!</strong>
-
 												</div>
-
 											</div>
-
-
-
 
 
 										</div>
 
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
 
 
 
@@ -283,15 +221,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 												Usuario <span class="required">*</span>
-
-
-
-
 
 
 
@@ -299,23 +229,11 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 											<input type="text" class="input-text" name="usernameib" id="usernameib" value="" />
 
 
 
-
-
-
-
 										</div>
-
-
-
-
 
 
 
@@ -323,15 +241,7 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 											<label for="password1">Password <span class="required">*</span></label>
-
-
-
-
 
 
 
@@ -339,55 +249,28 @@ function respuestaHTTPib ()
 
 
 
-
-
-
-
 										</div>
-
-
 
 										<div class="form-row">
 
 
-
-
-
 											<button class="btn btn-outline rounded" type="submit" value="grabar" onclick="enviarHTTPib()">Entrar</button>
-
-
 
 										</div>
 
-
-
 									</div>
-
-
 
 								</div>
 
-
-
 							</div>
-
-
 
 						</div>
 
-
-
 					</div>
-
-
 
 				</div>
 
-
-
 			</div>
-
-
 
 <script type="text/javascript">
 	setTimeout(ocultar,2500);
@@ -406,9 +289,6 @@ function respuestaHTTPib ()
     }, 50);
 	}
 </script>
-
 <?
-
 include('footer.php');
-
 ?>

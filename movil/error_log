@@ -998,3 +998,7 @@
 [10-May-2017 12:28:42 America/Caracas] PHP Warning:  include_once(../../conexion/conexion.php): failed to open stream: No such file or directory in /home/todoenco/public_html/movil/categoria.php on line 122
 [10-May-2017 12:28:42 America/Caracas] PHP Warning:  include_once(): Failed opening '../../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/todoenco/public_html/movil/categoria.php on line 122
 [10-May-2017 12:28:42 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/todoenco/public_html/movil/categoria.php on line 124
+[10-May-2017 21:38:22 America/Caracas] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/todoenco/public_html/movil/categoria.php:2) in /home/todoenco/public_html/movil/categoria.php on line 3
+[10-May-2017 21:38:22 America/Caracas] PHP Warning:  include_once(../../conexion/conexion.php): failed to open stream: No such file or directory in /home/todoenco/public_html/movil/categoria.php on line 122
+[10-May-2017 21:38:22 America/Caracas] PHP Warning:  include_once(): Failed opening '../../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/todoenco/public_html/movil/categoria.php on line 122
+[10-May-2017 21:38:22 America/Caracas] PHP Fatal error:  Call to a member function query() on null in /home/todoenco/public_html/movil/categoria.php on line 124

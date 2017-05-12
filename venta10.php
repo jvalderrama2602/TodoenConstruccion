@@ -45,7 +45,7 @@ while ($query_result = $result2->fetch_array())
                                 </h4>
                                 <p><? echo $descripcion_producto ; ?></p>
                                 <h4 class="pull-right">Bs. <? echo $monto_producto; ?></h4>
-								<a href="mostrar_producto.php?idproducto" class="btn btn-danger btn-xs">Leer mas</a>
+								<a href="mostrar_producto.php?idproducto=+<? echo $idproducto; ?>" class="btn btn-danger btn-xs">Leer mas</a>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>

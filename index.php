@@ -33,7 +33,7 @@ include('header.php');
 	<center>
 		<h3>Venta</h3>
 		<?
-			$sql2 = "SELECT idfotos_productos,fotos_producto FROM fotos_productos";
+			$sql2 = "SELECT idfotos_productos,fotos_producto FROM fotos_productos WHERE index1=1";
 			$result2 = $db->query($sql2);
 
 			while ($query_result = $result2->fetch_array())

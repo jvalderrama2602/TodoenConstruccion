@@ -18,7 +18,12 @@ $foto=$_POST['file'];
 
 $hoy = date("Y-m-d");
 
-$query2 = "INSERT INTO producto (usuario_idusuario,fecha_ingreso,nombre_producto,descripcion_producto,categoria_idcategoria,monto_producto,cantidad_producto,condicion_producto,tipo_producto_idtipo_producto,puntuacion) VALUES ('$idusuario','$hoy','$nombre','$descripcion','$category','$monto','$cantidad','$condicion','$subcategory','')";
+// $numUploadedfileses la cantidad de fotos que hay subidas
+$numUploadedfiles = count($_FILES['file']['name']);
+
+if($numUploadedfiles>8){$numUploadedfiles=8;}
+
+$query2 = "INSERT INTO producto (usuario_idusuario,fecha_ingreso,nombre_producto,descripcion_producto,categoria_idcategoria,monto_producto,cantidad_producto,condicion_producto,tipo_producto_idtipo_producto,puntuacion,cant_fotos) VALUES ('$idusuario','$hoy','$nombre','$descripcion','$category','$monto','$cantidad','$condicion','$subcategory','','$numUploadedfiles')";
 mysqli_query($db, $query2) or die(mysqli_error($db));
 
 $id=mysqli_insert_id($db);
@@ -29,6 +34,8 @@ $permitidos = array("image/jpg", "image/jpeg");
 $limite_kb = 16384; //16mb es el limite de medium blob
 
 $numUploadedfiles = count($_FILES['file']['name']);
+
+if($numUploadedfiles>8){$numUploadedfiles=8;}
 
 for($i = 0; $i < $numUploadedfiles; $i++)
 {
@@ -49,10 +56,11 @@ for($i = 0; $i < $numUploadedfiles; $i++)
 			$img_origen=imagecreatefromjpeg($imagen_temporal);
 			$ancho_origen=imagesx($img_origen);
 			$alto_origen=imagesy($img_origen);
-			$ancho_limite=90;
-	
+			$ancho_limite=400;
+
+			
 			if($ancho_origen>$alto_origen)
-			{
+			{	
 				$ancho_origen=$ancho_limite;
 				$alto_origen=$ancho_limite*imagesy($img_origen)/imagesx($img_origen);
 			}
@@ -77,9 +85,11 @@ for($i = 0; $i < $numUploadedfiles; $i++)
 			//escapar los caracteres
 			$foto = mysqli_escape_string($db,$foto);
 			
-// grabar compra
-	$query = "INSERT INTO fotos_productos (producto_idproducto,fotos_producto,tipo_imagen,index1,index2) VALUES ('$id','$foto','$extension','','')";
-	mysqli_query($db, $query) or die(mysqli_error($db));
+			if($i==0){$index1=1;}else{$index1='';}
+			
+			// grabar compra
+			$query = "INSERT INTO fotos_productos (producto_idproducto,fotos_producto,tipo_imagen,index1,index2) VALUES ('$id','$foto','$extension','$index1','')";
+			mysqli_query($db, $query) or die(mysqli_error($db));
 	
 	
 		}
