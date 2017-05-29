@@ -1,8 +1,5 @@
-<?PHP
-   session_start ();
-
-      session_destroy ();
-
-
-echo "listo";
+<?PHP
+   session_start ();
+      session_destroy ();
+echo "listo";
 ?>

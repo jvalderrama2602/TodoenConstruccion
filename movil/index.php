@@ -58,6 +58,36 @@ $apellido_usuario = $_SESSION["apellido_usuario"];
 
 
     <script type="text/javascript">
+function getXMLHTTPRequest()
+
+{
+
+  try { req = new XMLHttpRequest(); }
+
+  catch(err1)
+
+  {
+
+      try { req = new ActiveXObject("Msxml2.XMLHTTP"); }
+
+    catch (err2)
+
+    {try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (err3) { req = false; }}
+
+  }
+
+  return req;
+
+}
+
+
+
+var http = getXMLHTTPRequest();
+
+var http2 = getXMLHTTPRequest();
+
+
+
       function enviarHTTPlogout ()
 
 {
@@ -342,37 +372,29 @@ require_once('../conexion/conexion.php');
          else
          {
          ?>
-            <ul class="nav top-nav">
+          <li class="sidenav-avatar bg-material">
+          <div class="opacity-overlay-gradient"></div>
+          <div class="bottom">
+           <!-- <img src="img/user.jpg" alt="" class="avatar">-->
+            <!-- Dropdown Trigger -->
+            <span class="dropdown-button waves-effect waves-light" data-activates="dropdown1">&nbspIngresar&nbsp<i class="ion-android-arrow-dropdown right"></i></span>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="login.php"> Ingresar </a></li>
+              <li class="divider"></li>
+              <li><a href="../mi_cuenta.php?idusuario=+<?=$idusuario;?>">&nbsp Cuenta</a></li>
+              <li><a href='registrar.php'>Registrarse&nbsp<i class="ion-ios-gear"></i></a></li>
+            </ul>
+          </div>
+        </li>
 
-                      <li><a href="login.php" >&nbspIngresar&nbsp</a></li>
-
-                    <!--  <li><a href="" onclick="enviarHTTP()" >&nbspIngresar&nbsp</a></li>-->
-
-                    </ul>
-
-                    <ul class="nav top-nav">
-
-                      <li><a href='registrar.php'>Registrarse&nbsp</a></li>
-
-                    </ul>
-
-                    <? } ?>
-
-
-
-
-
+          <? } ?>
 
         <li>
           <div class="collapsible-header waves-effect">
             <i class="ion-android-home"></i>Inicio<span class="more"><i class="ion-ios-arrow-right"></i></span>
           </div>
         </li>
-
-
-
-
-
 
        <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Galerías</a></li>
         <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Noticias</a></li>
