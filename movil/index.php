@@ -1,3 +1,9 @@
+<?php
+session_start();
+$idusuario = $_SESSION["idusuario"];
+$nombre_usuario = $_SESSION["nombre_usuario"];
+$apellido_usuario = $_SESSION["apellido_usuario"];
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -49,10 +55,38 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
+
+    <script type="text/javascript">
+      function enviarHTTPlogout ()
+
+{
+    http2.open ("GET", "../logout.php", true);
+    http2.onreadystatechange = respuestaHTTPlogout;
+    http2.send(null); // se envia la petición
+}
+
+function respuestaHTTPlogout ()
+{
+    if (http2.readyState == 4)
+  {
+    if (http2.status == 200)
+    {
+      var respuesta = http2.responseText;
+            window.location="index.php";
+    }
+  }
+}
+
+    </script>
   </head>
 
   <body>
+<?
 
+require_once('../conexion/conexion.php');
+
+?>
     <!-- Main Container -->
     <div id="main" class="main">
 
@@ -282,30 +316,68 @@
       <!-- Sidebars -->
       <!-- Left Sidebar -->
         <ul id="slide-out-left" class="side-nav collapsible">
+
+        <?
+
+        if($idusuario!="")
+
+        { ?>
         <li class="sidenav-avatar bg-material">
           <div class="opacity-overlay-gradient"></div>
           <div class="bottom">
            <!-- <img src="img/user.jpg" alt="" class="avatar">-->
             <!-- Dropdown Trigger -->
-            <span class="dropdown-button waves-effect waves-light" data-activates="dropdown1"><? echo $login; ?><i class="ion-android-arrow-dropdown right"></i></span>
+            <span class="dropdown-button waves-effect waves-light" data-activates="dropdown1"><? echo $nombre_usuario; ?><i class="ion-android-arrow-dropdown right"></i></span>
             <!-- Dropdown Structure -->
             <ul id="dropdown1" class="dropdown-content">
               <li><a href="#!"> Hola </a></li>
-
               <li class="divider"></li>
-              <li><a href="#!">Configurar <i class="ion-ios-gear"></i></a></li>
+              <li><a href="../mi_cuenta.php?idusuario=+<?=$idusuario;?>">&nbsp Cuenta</a></li>
+              <li><a onClick="enviarHTTPlogout()">Cerrar Sesión <i class="ion-ios-gear"></i></a></li>
             </ul>
           </div>
         </li>
+        <?
+         }
+         else
+         {
+         ?>
+            <ul class="nav top-nav">
+
+                      <li><a href="login.php" >&nbspIngresar&nbsp</a></li>
+
+                    <!--  <li><a href="" onclick="enviarHTTP()" >&nbspIngresar&nbsp</a></li>-->
+
+                    </ul>
+
+                    <ul class="nav top-nav">
+
+                      <li><a href='registrar.php'>Registrarse&nbsp</a></li>
+
+                    </ul>
+
+                    <? } ?>
+
+
+
+
+
+
         <li>
           <div class="collapsible-header waves-effect">
             <i class="ion-android-home"></i>Inicio<span class="more"><i class="ion-ios-arrow-right"></i></span>
           </div>
         </li>
+
+
+
+
+
+
        <li><a href="categoria.php" class="waves-effect"><i class="ion-android-map"></i> Galerías</a></li>
         <li><a href="ciudades.php" class="waves-effect"><i class="ion-android-map"></i> Noticias</a></li>
          <li><a href="usuarios.php" class="waves-effect"><i class="ion-android-map"></i> Contacto</a></li>
-        <li><a href="registrar.php" class="waves-effect"><i class="ion-android-map"></i> Registrarse</a></li>
+       <!-- <li><a href="registrar.php" class="waves-effect"><i class="ion-android-map"></i> Registrarse</a></li>-->
 
 
 
