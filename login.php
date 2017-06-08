@@ -1,17 +1,10 @@
 <?
-
 include('header.php');
-
 require_once('conexion/conexion.php');
-
 ?>
-
 <script language="javascript">
-
 $(document).ready(function(){
-
    $("#category").change(function () {
-
 
            $("#category option:selected").each(function () {
 
@@ -420,233 +413,39 @@ function respuestaHTTP2cc ()
 
 
 		<div id="wrapper" class="wide-wrap">
-
-
-
-
-
-
-
 			<div class="offcanvas-overlay"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<div class="heading-container">
-
-
-
-
-
-
+   			<div class="heading-container">
 
 				<div class="container heading-standar">
 
-
-
-
-
-
-
 					<div class="page-breadcrumb">
-
-
-
-
-
-
-
 						<ul class="breadcrumb">
-
-
-
-
-
-
-
 							<li>
-
-
-
-
-
-
-
 								<span>
 
-
-
-
-
-
-
 									<a class="home" href="#">
-
-
-
-
-
-
-
 										<span>Inicio</span>
-
-
-
-
-
-
-
 									</a>
-
-
-
-
-
-
-
 								</span>
-
-
-
-
-
-
-
 							</li>
-
-
-
-
-
-
-
 							<li>
-
-
-
-
-
-
-
 								<span>Crear Cuenta</span>
-
-
-
-
-
-
-
 							</li>
-
-
-
-
-
-
-
 						</ul>
-
-
-
-
-
-
-
 					</div>
-
-
-
-
-
-
-
 				</div>
-
-
-
-
-
-
-
 			</div>
 
 
-
-
-
-
-
 			<div class="content-container no-padding">
-
-
-
-
-
-
-
 				<div class="container">
-
-
-
-
-
-
-
 					<div class="row">
-
-
-
-
-
-
-
 						<div class="col-md-12">
-
-
-
-
-
-
-
 							<div class="main-content">
-
-
-
-
-
-
-
 								<div class="commerce commerce-account">
-
-
-
-
-
-
-
 									<h2 class="commerce-account-heading">Crear Cuenta</h2>
-
-
-
-
-
-
-
 									<div class="login">
-
-
-
 										<div class="form-row">
 
 											<div id="x1" style="display: none">
@@ -658,9 +457,6 @@ function respuestaHTTP2cc ()
 												</div>
 
 											</div>
-
-
-
 											<div id="x2" style="display: none">
 
 												<div class="alert alert-danger">
@@ -673,404 +469,52 @@ function respuestaHTTP2cc ()
 
 										</div>
 
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
-
-
-
 											<label for="login">
-
-
-
-
-
-
-
 												Usuario <span class="required">*</span>
-
-
-
-
-
-
-
 											</label>
-
-
-
-
-
-
-
 											<input type="text" class="input-text" name="loginc" id="loginc" value="" onBlur="enviarHTTP20()"/>
-
-
-
-
-
-
-
 										</div>
 
 
 
 
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
-
-
-
 											<label for="password1">Password <span class="required">*</span></label>
-
-
-
-
-
-
-
 											<input class="input-text" type="password" name="passc" id="passc"/>
-
-
-
-
-
-
-
 										</div>
-
-
-
-
-
-
-
-										<div class="form-row form-row-wide">
-
-
-
-
-
-
+									<div class="form-row form-row-wide">
 
 											<label for="login">
-
-
-
-
-
-
-
 												Nombre <span class="required">*</span>
-
-
-
-
-
-
-
 											</label>
-
-
-
-
-
-
-
 											<input type="text" class="input-text" name="login" id="nombrec" value=""/>
-
-
-
-
-
-
-
 										</div>
-
-
-
-
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
-
-
-
 											<label for="login">
-
-
-
-
-
-
-
 												Apellido <span class="required">*</span>
-
-
-
-
-
-
-
 											</label>
-
-
-
-
-
-
-
 											<input type="text" class="input-text" name="login" id="apellidoc" value=""/>
-
-
-
-
-
-
-
 										</div>
-
-
-
-
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
-
-
-
 											<label for="login">
-
-
-
-
-
-
-
 												Cedula de Identidad<span class="required">*</span>
-
-
-
-
-
-
-
 											</label>
-
-
-
-
-
-
-
 											<input type="radio" name="nac" id="V" value="V" checked />V&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<input type="radio" name="nac" id="E" value="E" />E&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<input class="input-text" type="text" name="ci" id="ci" size="20"  maxlength="9" placeholder="123456789" onkeypress="return soloNumeros(event);"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 										</div>
-
-
-
-
-
-
-
 										<div class="form-row form-row-wide">
-
-
-
-
-
-
-
 											<label for="login">
-
-
-
-
-
-
-
 												Teléfono Celular <span class="required">*</span>
-
-
-
-
-
-
-
 											</label>
-
-
-
-
-
-
-
 											<select name="cod_cel" id="cod_cel">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<option value="0412">0412</option>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<option value="0414">0414</option>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<option value="0416">0416</option>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 											<option value="0424">0424</option>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 										</select>&nbsp;
-
-
-
-
-
-
-
-
-
-
-
 
 
 

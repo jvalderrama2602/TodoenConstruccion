@@ -1,3 +1,8 @@
+<?
+
+require_once('../conexion/conexion.php');
+
+?>
 <?php
 session_start();
 $idusuario = $_SESSION["idusuario"];
@@ -7,7 +12,7 @@ $apellido_usuario = $_SESSION["apellido_usuario"];
 <!DOCTYPE html>
 <html class="no-js">
   <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
     <title>Todo en Construcción</title>
     <meta name="description" content="Todo en Construcción">
     <meta name="HandheldFriendly" content="True">
@@ -45,8 +50,7 @@ $apellido_usuario = $_SESSION["apellido_usuario"];
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <!-- Icons -->
-    <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
-
+     <link href="css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/materialize.min.css">
@@ -55,7 +59,6 @@ $apellido_usuario = $_SESSION["apellido_usuario"];
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
-
 
     <script type="text/javascript">
 function getXMLHTTPRequest()
@@ -112,16 +115,13 @@ function respuestaHTTPlogout ()
   </head>
 
   <body>
-<?
 
-require_once('../conexion/conexion.php');
 
-?>
     <!-- Main Container -->
     <div id="main" class="main">
 
       <!-- Toolbar -->
-      <div id="toolbar" class="primary-color-head z-depth-1">
+     <div id="toolbar" class="primary-color-head z-depth-1">
         <div class="open-left" id="open-left" data-activates="slide-out-left">
           <i class="ion-android-menu"></i>
         </div>
@@ -135,191 +135,37 @@ require_once('../conexion/conexion.php');
       <!-- Page Contents -->
       <div class="page animated fadein">
         <!-- Slider -->
-        <div class="swiper-container swiper-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/4.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom center">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="img/5.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom left-align">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img src="img/3.jpg" alt="">
-              <div class="opacity-overlay"></div>
-              <div class="bottom right-align">
-                <h4 class="white-text m-0"><strong>Aqui va una imagen!</strong></h4>
-                <p class="text-flow white-text m-0">Texto opcional 01</p>
-              </div>
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
+
         <!-- End of Slider -->
 
         <!-- First Section -->
         <div class="section center">
           <i class="ion-aperture infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Versión para movil de todo en construcción</p>
+          <h2 class="heading"><a href="agregar_venta.php">Agregar <br> Producto para Vender</a></h2>
+          <p>Publica un producto nuevo o usado</p>
         </div>
 
         <!-- Second Section -->
         <div class="section center grey lighten-5">
           <i class="ion-code-working infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
+          <h2 class="heading"><a href="preguntas_responder.php">Responde <br> las preguntas de tus interesados</a></h2>
+          <p>Respondele rápido y sé amable</p>
         </div>
 
         <!-- Third Section -->
         <div class="section center">
           <i class="ion-android-color-palette infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
+          <h2 class="heading">Agregar <br> Servicios Profesionales</h2>
+          <p>Ofrezca sus servicios aqui.</p>
         </div>
 
-        <!-- Third Section -->
-        <div class="section center grey lighten-5">
-          <i class="ion-android-star-outline infograph"></i>
-          <h2 class="heading">Titulos Opcionales</h2>
-          <p>Construyendo la versión móvil</p>
-        </div>
 
-        <!-- Buy It -->
-        <div class="section bg-gradient center">
-          <h2 class="heading white-text">Test de llamadas a la acción</h2>
-          <p class="white-text">Aqui puede haber una promoción!</p>
-          <a class="waves-effect waves-light btn-large transparent m-20">Botón con funciones</a>
-        </div>
 
-        <!-- Featured -->
-        <div class="section featured center grey lighten-5">
-          <h2 class="heading">Titulo</h2>
-          <p>Aqui puede haber una promoción</p>
-          <img src="img/featured.png" alt="">
-        </div>
-
-        <!-- Testimonials Slider -->
-        <!-- Slider -->
-        <div class="swiper-container testimonials">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user2.jpg" alt="" class="avatar">
-              <h6 class="m-0">José Valderrama</h6>
-              <p class="small">Programador Front-End, Gendigital</p>
-            </div>
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user4.jpg" alt="" class="avatar">
-              <h6 class="m-0">Luis Yanez</h6>
-              <p class="small">Programador Back-End, Gendigital</p>
-            </div>
-            <div class="swiper-slide center">
-              <p class="testimonial">"Ejemplos de textos de comentarios de clientes y sus últimas adquisición de servicios"</p>
-              <img src="img/user6.jpg" alt="" class="avatar">
-              <h6 class="m-0">Miguel Ramirez</h6>
-              <p class="small">Emprendedor, Todo en Construcción</p>
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- End of Slider -->
-
-        <!-- Shop -->
-        <div class="section bg-5 center">
-          <div class="opacity-overlay"></div>
-          <div class="relative">
-            <h2 class="heading white-text">LAS PROMOCIONES</h2>
-            <p class="white-text">acaban de empezar!</p>
-            <a class="waves-effect waves-light btn-large primary-color m-20">VER AHORA</a>
-          </div>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="section center">
-          <i class="ion-image infograph"></i>
-          <h2 class="heading">Últimas Publicaciones</h2>
-          <p>Mira estos productos o servicios ofrecidos</p>
-        </div>
-
-        <!-- Controls -->
-        <div class="controls right-align p-20 animated fadeinup delay-2">
-          <button id="ChangeLayout" class="left">Lista</button>
-          <button class="filter" data-filter="all">Todos</button>
-          <button class="filter" data-filter=".category-1">Herramientas</button>
-          <button class="filter" data-filter=".category-2">Maquinaria</button>
-          <button class="filter" data-filter=".category-3">Servicios</button>
-        </div>
-
-        <!-- Images -->
-        <div id="filter">
-          <!-- Swipeboox Contents -->
-          <section id="image-filter">
-            <div class="wrap small-width">
-              <div data-pswp-uid="1" id="demo-gallery" class="demo-gallery">
-                <a href="project.html" class="mix category-3">
-                  <img src="img/1.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/2.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/3.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/4.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-3">
-                  <img src="img/5.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/6.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-3">
-                  <img src="img/7.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-1">
-                  <img src="img/8.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/9.jpg" alt="image">
-                </a>
-                <a href="project.html" class="mix category-2">
-                  <img src="img/10.jpg" alt="image">
-                </a>
-              </div>
-            </div>
-          </section> <!-- End of Swipebox Contents -->
-        </div>
 
         <div class="clr"></div> <!-- clear for the images floats -->
 
         <!-- Newsletter -->
-        <div class="section center">
-          <h2 class="heading">Enterate de las últimas publicaciones</h2>
-          <p>Se el primero en conocer nuestros servicios</p>
-          <form>
-            <div class="newsletter">
-              <div class="input-field">
-                <input id="last_name" type="text" class="validate" placeholder="heyfromjhon@gmail.com">
-                <label for="last_name">Email</label>
-              </div>
-              <a class="waves-effect waves-light btn primary-color">Suscribirse</a>
-            </div>
-          </form>
-        </div>
+
 
         <!-- Footer -->
         <footer class="page-footer primary-color">
@@ -345,7 +191,7 @@ require_once('../conexion/conexion.php');
 
       <!-- Sidebars -->
       <!-- Left Sidebar -->
-        <ul id="slide-out-left" class="side-nav collapsible">
+      <ul id="slide-out-left" class="side-nav collapsible">
 
         <?
 
@@ -455,7 +301,6 @@ require_once('../conexion/conexion.php');
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/vendor/HeadsUp.js"></script>
-    <script src="js/vendor/jquery.smoothState.js"></script>
     <script src="js/vendor/chart.min.js"></script>
     <script src="js/vendor/jquery.mixitup.min.js"></script>
     <script src="js/vendor/jquery.swipebox.min.js"></script>
