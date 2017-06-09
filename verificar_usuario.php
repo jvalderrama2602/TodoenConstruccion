@@ -22,6 +22,7 @@ $password=md5($_GET['password']);
 			$_SESSION["idusuario"] = $fila60[idusuario];
 			$_SESSION["nombre_usuario"] = $fila60[nombre_usuario];
 			$_SESSION["apellido_usuario"] = $fila60[apellido_usuario];
+			$_SESSION['detalle'] = array();
 		}
 		else{$id=clave_invalida;}
 	}

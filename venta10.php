@@ -2,93 +2,81 @@
 
 include('header.php');
 
-?>    <!-- Page Content -->
+?> 
+
+     
+<script language="javascript">
+$(document).ready(function(){
+   $("#category").change(function () {
+           $("#category option:selected").each(function () {
+            id_category = $(this).val();
+            $.post("tipo_producto_sub.php", { id_category: id_category }, function(data){
+                $("#subcategory").html(data);
+            });            
+        });
+   })
+});
+</script>
+   
+
+  <!-- Page Content -->
  <br>
     <div class="container">
-
         <div class="row">
 
             <div class="col-md-2">
+               <form name="formulario" id="formulario" method="post" action="venta10.php" >
                 <p class="lead">Venta</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+					<a class="list-group-item"><strong>Categoria</strong>
+                    	<div>
+                    		<?		
+							$sql2 = "SELECT idcategoria,nombre_categoria FROM categoria WHERE suspendido_categoria='' ORDER BY nombre_categoria ASC ";
+							$result2 = $db->query($sql2);
+							?>
+							<select name="category" id="category" >
+								
+								<option value="">Selecciona .....</option>
+								<?
+									while ($query_result = $result2->fetch_array())
+									{
+										$id_category= $query_result['idcategoria'];
+										$nombre_estado= $query_result['nombre_categoria'];
+										?><option <? echo"value='$id_category'"; ?>><? echo"$nombre_estado"; ?></option><?
+									}
+								?>
+							</select>
+						</div>
+                    </a>
+					<a class="list-group-item"><strong>Producto</strong>
+                    	<div>
+                    		<select name="subcategory" id="subcategory" >
+			
+							</select>
+						</div>
+                    </a>
+					<a class="list-group-item"><strong>Condicion</strong>
+                    	<div>
+                    		<select name="condicion" id="condicion" >
+                    			<option value="">Selecciona .....</option>
+								<option value="NUEVO">NUEVO</option>
+								<option value="USADO">USADO</option>
+							</select>
+						</div>
+                    </a>
                 </div>
+                
+				</form>
             </div>
 
+
             <div class="col-md-10">
-                <div class="row">
-
- <?               
-$sql2 = "SELECT idproducto,nombre_producto,descripcion_producto,monto_producto FROM producto";
-$result2 = $db->query($sql2);
-
-while ($query_result = $result2->fetch_array())
-{
-	$idproducto= $query_result['idproducto'];
-	$nombre_producto= $query_result['nombre_producto']; 
-	$descripcion_producto= $query_result['descripcion_producto'];
-	$monto_producto= $query_result['monto_producto'];
-	
-	$sql60 = "SELECT fotos_producto,tipo_imagen FROM fotos_productos WHERE producto_idproducto='$idproducto' LIMIT 1";
-	$result60 = $db->query($sql60);
-	$fila60 = $result60 -> fetch_array();
-
-?>					<div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="data:image/jpg; base64 ,<? echo base64_encode($fila60[fotos_producto]); ?>" width="200" />
-                            <div class="caption">
-                                
-                                <h4>
-                                	<a href="single.php"><? echo $nombre_producto; ?></a>
-                                </h4>
-                                <p><? echo $descripcion_producto ; ?></p>
-                                <h4 class="pull-right">Bs. <? echo $monto_producto; ?></h4>
-								<a href="mostrar_producto.php?idproducto=+<? echo $idproducto; ?>" class="btn btn-danger btn-xs">Leer mas</a>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-<?
-}
-?>    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
-                                </h4>
-                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+            	<div class="row">
+            		<div id="refrescar">
+            	
+            			
+					</div>
+				</div>
             </div>
 
         </div>
@@ -113,6 +101,39 @@ while ($query_result = $result2->fetch_array())
     <!-- /.container -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+<script>	
+$(document).ready( function() {  
+    $("#category").change( function() {   
+		llamar();
+    }); 
+	
+	$("#subcategory").change( function() {   
+		llamar();
+    }); 
+	
+	$("#condicion").change( function() {   
+		llamar();
+    }); 
+});
+</script>
+
+<script>
+function llamar()
+{	
+	var valor=$("#category").val();
+		alert(valor);
+		var subcategory=$("#subcategory").val();
+		alert(subcategory);
+		var condicion=$("#condicion").val();
+		alert(condicion);
+	
+	$.post("miscript.php", { variable: valor,  subcategory: subcategory, condicion: condicion }, function(data){
+		$("#refrescar").html(data);
+	});	
+	
+}
+</script>
 
 </body>
 

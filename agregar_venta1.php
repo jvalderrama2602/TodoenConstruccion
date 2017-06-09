@@ -29,72 +29,41 @@ mysqli_query($db, $query2) or die(mysqli_error($db));
 $id=mysqli_insert_id($db);
 
 
-$permitidos = array("image/jpg", "image/jpeg");
-//$permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
-$limite_kb = 16384; //16mb es el limite de medium blob
+// crear carpeta si no existe  ... $id es el id del producto agregado
+$carpetaDestino = 'fotos/'.$idusuario.'/producto/'.$id.'/';
+if (!file_exists($carpetaDestino)) { mkdir($carpetaDestino, 0777, true);}
 
-$numUploadedfiles = count($_FILES['file']['name']);
-
-if($numUploadedfiles>8){$numUploadedfiles=8;}
-
-for($i = 0; $i < $numUploadedfiles; $i++)
+# si hay algun archivo que subir
+if($_FILES["file"]["name"][0])
 {
-		
-	if (in_array($_FILES['file']['type'][$i], $permitidos) && $_FILES['file']['size'][$i] <= $limite_kb * 1024)
+	# recorremos todos los arhivos que se han subido
+	for($i=0;$i<$numUploadedfiles;$i++)
+	{
+		# si es un formato de imagen
+		if($_FILES["file"]["type"][$i]=="image/jpeg" || $_FILES["file"]["type"][$i]=="image/pjpeg" || $_FILES["file"]["type"][$i]=="image/gif" || $_FILES["file"]["type"][$i]=="image/png")
 		{
-			//este es el tipo de archivo
-			$foto_type = $_FILES['file']['type'][$i];
-			
-			if ($foto_type=="image/x-png" OR $foto_type=="image/png"){$extension="image/png";$tipo_img=1;}
-			if ($foto_type=="image/pjpeg" OR $foto_type=="image/jpeg"){$extension="image/jpeg";$tipo_img=2;}
-			if ($foto_type=="image/gif" OR $foto_type=="image/gif"){$extension="image/gif";$tipo_img=3;}
-			
-			//este es el archivo temporal
-			$imagen_temporal  = $_FILES['file']['tmp_name'][$i];  
-			
-			//tamano imagen
-			$img_origen=imagecreatefromjpeg($imagen_temporal);
-			$ancho_origen=imagesx($img_origen);
-			$alto_origen=imagesy($img_origen);
-			$ancho_limite=400;
+			$origen=$_FILES["file"]["tmp_name"][$i];
+			$destino=$carpetaDestino.$_FILES["file"]["name"][$i];
 
+ 			# movemos el archivo
+			@move_uploaded_file($origen, $destino);
 			
-			if($ancho_origen>$alto_origen)
-			{	
-				$ancho_origen=$ancho_limite;
-				$alto_origen=$ancho_limite*imagesy($img_origen)/imagesx($img_origen);
-			}
-			else
-			{
-				$alto_origen=$ancho_limite;
-				$ancho_origen=$ancho_limite*imagesx($img_origen)/imagesy($img_origen);
-			}
-	
-			$img_destino=imagecreatetruecolor($ancho_origen,$alto_origen);
-			imagecopyresized($img_destino,$img_origen,0,0,0,0,$ancho_origen,$alto_origen,imagesx($img_origen),imagesy($img_origen));
-			
-			if($tipo_img==1){imagepng($img_destino,$imagen_temporal);}
-			if($tipo_img==2){imagejpeg($img_destino,$imagen_temporal);}
-			if($tipo_img==3){imagegif($img_destino,$imagen_temporal);}
-			
-			//leer el archivo temporal en binario
-			$fp   = fopen($imagen_temporal, 'r+b');
-			$foto = fread($fp, filesize($imagen_temporal));
-			fclose($fp);
-			
-			//escapar los caracteres
-			$foto = mysqli_escape_string($db,$foto);
-			
-			if($i==0){$index1=1;}else{$index1='';}
-			
-			// grabar compra
-			$query = "INSERT INTO fotos_productos (producto_idproducto,fotos_producto,tipo_imagen,index1,index2) VALUES ('$id','$foto','$extension','$index1','')";
-			mysqli_query($db, $query) or die(mysqli_error($db));
-	
-	
-		}
-	
-	
-	
+				
+				if($i==0){$index1=1;}else{$index1='';}
+				
+				$tipo_imagen=$_FILES["file"]["type"][$i];
+				
+				
+				// grabar compra
+				$query = "INSERT INTO fotos_productos (producto_idproducto,tipo_imagen,index1,index2,ruta_fotos) VALUES ('$id','$tipo_imagen','$index1','','$destino')";
+				mysqli_query($db, $query) or die(mysqli_error($db));
+				
+         }
+
+	}
+
 }
 ?>
+<script>
+	history.back(-1);
+</script>
