@@ -119,16 +119,14 @@ $(document).ready( function() {
 </script>
 
 <script>
-function llamar()
+function llamar(pag)
 {	
+	var pag;
 	var valor=$("#category").val();
-		alert(valor);
-		var subcategory=$("#subcategory").val();
-		alert(subcategory);
-		var condicion=$("#condicion").val();
-		alert(condicion);
+	var subcategory=$("#subcategory").val();
+	var condicion=$("#condicion").val();
 	
-	$.post("miscript.php", { variable: valor,  subcategory: subcategory, condicion: condicion }, function(data){
+	$.post("miscript.php", { variable: valor,  subcategory: subcategory, condicion: condicion, Pagina:pag }, function(data){
 		$("#refrescar").html(data);
 	});	
 	
@@ -136,5 +134,4 @@ function llamar()
 </script>
 
 </body>
-
 </html>

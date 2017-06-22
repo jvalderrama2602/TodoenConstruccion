@@ -6,6 +6,8 @@ $id_category = $_POST['id_category'];
 	$sql2 = "SELECT idtipo_producto,tipo_producto FROM tipo_producto WHERE suspendido_tipo_producto='' && categoria_idcategoria='$id_category' ORDER BY tipo_producto ASC ";
 	$result2 = $db->query($sql2);
 
+	?><option <? echo"value=''"; ?>><? echo"Selecciona ....."; ?></option><?
+
 while ($query_result = $result2->fetch_array())
 					{
 						$id_category= $query_result['idtipo_producto'];

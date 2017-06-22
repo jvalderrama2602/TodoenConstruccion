@@ -45,9 +45,16 @@
 				<?php }?>
 			</div>
 		</div>
+		
+		<div>
+			<center>
+				<a href="concretar.php" class="btn btn-outline rounded">Concretar</a>
+			</center>
+		</div>
+		
  	</div>
 	
-	
+	<br>
 
 
 

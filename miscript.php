@@ -17,7 +17,20 @@ if($categoria=='' && $subcategory=='' && $condicion!=''){ $where="WHERE condicio
 $sql2 = "SELECT idproducto,nombre_producto,descripcion_producto,monto_producto FROM producto $where";
 $result2 = $db->query($sql2);
 
-while ($query_result = $result2->fetch_array())
+// total usuarios
+$cant_registro = mysqli_num_rows($result2);
+
+//Paginacion
+	$PorPagina=3;
+	$Paginas=ceil($cant_registro/$PorPagina);
+
+	$Pagina = (isset($_POST['Pagina']))?(int)$_POST['Pagina']:1;
+	$Iniciar = ($Pagina-1)*$PorPagina;
+
+$sql3 = "SELECT idproducto,nombre_producto,descripcion_producto,monto_producto FROM producto $where limit $Iniciar,$PorPagina";
+$result3 = $db->query($sql3);
+
+while ($query_result = $result3->fetch_array())
 {
 	$idproducto= $query_result['idproducto'];
 	$nombre_producto= $query_result['nombre_producto']; 
@@ -38,7 +51,7 @@ while ($query_result = $result2->fetch_array())
                                 </h4>
                                 <p><? echo $descripcion_producto ; ?></p>
                                 <h4 class="pull-right">Bs. <? echo $monto_producto; ?></h4>
-								<a href="mostrar_producto.php?idproducto" class="btn btn-danger btn-xs">Leer mas</a>
+								<a href="mostrar_producto.php?idproducto=+<? echo"$idproducto"; ?>" class="btn btn-danger btn-xs">Leer mas</a>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
@@ -53,8 +66,39 @@ while ($query_result = $result2->fetch_array())
                         </div>
                     </div>
 
-
-
 <?
-}  
+} 
+
+		$Anterior=($Pagina-1);
+		$Siguiente=($Pagina+1);
+						
 ?> 
+
+<ul class="pagination">
+  <?php if(!($Pagina<=1)): ?>
+		<li>
+			<a <?php echo" onClick='llamar($Anterior)'"?> aria-label="Anterior">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+	<?php endif;?>
+  					
+						  <?php
+							  if($Paginas>=1)
+							  {
+								  for($x=1;$x<=$Paginas;$x++)
+								  {
+									  echo($x==$Pagina)?"<li class='active'><a onClick='llamar($x)'>$x</a></li>":
+									  "<li><a onClick='llamar($x)'>$x</a></li>";
+								  }
+							  }
+							?>
+							
+  <?php if(!($Pagina>=$Paginas)):?>
+							<li>
+							  <a <?  echo" onClick='llamar($Siguiente)'"; ?> aria-label="Siguiente">
+								<span aria-hidden="true">&raquo;</span>
+							  </a>
+							</li>
+							<?php endif;?>
+</ul>
